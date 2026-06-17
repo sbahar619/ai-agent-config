@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Communication
 
-Applies to **Agent chat only** (not Inline Edit / Cmd+K).
+Applies to **Agent chat only** (not Inline Edit / Cmd+K). Applies to **every** reply type — questions, reviews, checks, planning — not just simple Q&A.
 
 Default to **short, concise answers** (~3–8 lines when possible). Give only what is needed to address the request.
 
@@ -13,6 +13,9 @@ Default to **short, concise answers** (~3–8 lines when possible). Give only wh
 - Do not front-load background, alternatives, or long explanations unless the user asked for them.
 - If the user wants more detail, they will ask — then expand.
 - When work is not finished, end with **one clear next step** — not a full plan.
+- When this rule conflicts with a habit of being thorough, **stay concise** unless the user asked for exhaustive or detailed output.
+- Do not match prior reply length or tone from the same thread.
+- Put optional depth in the end prompt — answer concise first, expand on request.
 
 ## End-of-response prompt
 
