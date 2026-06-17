@@ -1,0 +1,17 @@
+---
+description: Never git commit, push, amend, or create a PR unless the user explicitly asks
+alwaysApply: false
+---
+
+# Git Guardrails
+
+Do not run these unless the user **explicitly** requests them:
+
+- `git commit` (including empty or drive-by commits)
+- `git push` (including `-u origin`)
+- `git commit --amend`
+- Create or update a pull request (`gh pr create`, etc.)
+
+**Allowed without asking:**
+- Read-only git in any checkout — `git status`, `git diff`, `git log`, `git branch`, staging inspection.
+- **Git write actions inside a git worktree** (isolated checkout) — commit, amend, stage, branch, rebase for repro or experiments. Do not push or open a PR from a worktree unless the user explicitly asks.
