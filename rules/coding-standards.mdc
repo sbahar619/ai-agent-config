@@ -1,0 +1,45 @@
+---
+description: General coding standards — minimal change, readability, maintainability
+globs: "**/*"
+alwaysApply: false
+---
+
+# Coding Standards
+
+## Principles
+
+1. **Minimal change** — smallest diff that solves the problem; follow existing patterns.
+2. **Single responsibility** — one clear purpose per function/type/module.
+3. **Avoid duplication** — don't repeat logic. Before finishing, review your changes:
+   if the same logic appears more than once, extract it. With a single caller, keep
+   inline unless extraction clearly improves readability or another concrete benefit.
+4. **Focused functions** — one clear job per function; split when a block is hard to
+   follow, test, or reuse.
+5. **Encapsulation** — minimal public API; keep implementation details private/internal.
+6. **Top-down order** — public/caller code first, helpers below.
+7. **Respect abstractions** — use existing layers, interfaces, and boundaries; extend
+   through them rather than bypassing, duplicating, or reaching into internals.
+8. **Prefer existing utilities** — before implementing logic, check stdlib, repo
+   helpers, and already-imported deps first. A new dependency is fine when the benefit
+   clearly outweighs the cost (weight, maintenance, coupling).
+9. **Prefer library constants** — before hardcoding values (enums, formats, limits,
+   well-known strings), check stdlib and existing deps for exported vars/constants.
+
+## Naming & comments
+
+- **Names** — intent-driven and self-explanatory for functions, vars, and types;
+  follow language/repo conventions and idiomatic best practices.
+- Clarity over comments; let names carry meaning first.
+- Comments for non-obvious intent, constraints, or tradeoffs — not narrating obvious code.
+- Document public API only; skip boilerplate on internals.
+
+## Modules & boundaries
+
+- Clear module/package boundaries; minimal dependencies; no circular imports.
+- Prefer pure utilities — explicit inputs/outputs, avoid hidden side effects.
+
+## Validation
+
+After changes, review the diff (duplication, abstractions, scope), then run lint and
+tests for what you touched (repo Makefile/CI when available). Do not commit — git
+guardrails apply.
