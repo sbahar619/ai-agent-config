@@ -17,12 +17,15 @@ alwaysApply: false
    follow, test, or reuse.
 5. **Encapsulation** — minimal public API; keep implementation details private/internal.
 6. **Top-down order** — public/caller code first, helpers below.
-7. **Respect abstractions** — use existing layers, interfaces, and boundaries; extend
+7. **Locality** — define vars and helpers as close as possible to where they're
+   used; widen scope (shared helper, package-level) only when reused or the API
+   requires it.
+8. **Respect abstractions** — use existing layers, interfaces, and boundaries; extend
    through them rather than bypassing, duplicating, or reaching into internals.
-8. **Prefer existing utilities** — before implementing logic, check stdlib, repo
+9. **Prefer existing utilities** — before implementing logic, check stdlib, repo
    helpers, and already-imported deps first. A new dependency is fine when the benefit
    clearly outweighs the cost (weight, maintenance, coupling).
-9. **Prefer library constants** — before hardcoding values (enums, formats, limits,
+10. **Prefer library constants** — before hardcoding values (enums, formats, limits,
    well-known strings), check stdlib and existing deps for exported vars/constants.
 
 ## Naming & comments
