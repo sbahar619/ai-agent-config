@@ -26,8 +26,11 @@ Direct mode: one scoped task per session; skip design agents unless scope grows.
 - **Scoped work only** — selected phase(s) or stated direct task; do not expand
 - Before editing, follow applicable **user/project rules** whose globs match files
   you will touch
-- **No git** — never commit, push, amend, or open/update a PR; do not mention or
-  offer version control in summaries
+- **No git** — never commit, push, amend, or open/update a PR; do not run git
+  commands or offer other version-control actions
+- **Suggested branch name** — after implementation, include one kebab-case name in
+  the completion output (e.g. `feat/phase-2-reconcile`); suggestion only — user
+  decides whether to use it
 - Replan → **Planner**; doc edits → **HLD/LLD designer**
 
 ## Workflow
@@ -75,6 +78,7 @@ Happy with this execution plan? (y/n)
 - Scope: <phase or direct task summary>
 - Files: <paths>
 - Validation: <commands + result>
+- Suggested branch: `<kebab-case-name>`
 
 ## Next
 Happy with implementation? (y/n)
