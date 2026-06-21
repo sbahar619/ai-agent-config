@@ -30,6 +30,8 @@ Also follow **coding-standards**. This file adds test-only rules below.
 - Tests describe **observable behavior and contracts**, not internals.
 - Good: "reports error when build fails" · Bad: "returns false when rebuild nil"
 - Put scenario wording in nested/sub-test names, not the top-level test identifier.
+- Don't prefix vars with `test` — the file already signals test code; name for intent
+  (`input`, `want`, `user`). Repeat only when disambiguation is needed.
 
 ## Structure
 

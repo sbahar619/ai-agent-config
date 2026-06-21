@@ -32,6 +32,10 @@ alwaysApply: false
 
 - **Names** — intent-driven and self-explanatory for functions, vars, and types;
   follow language/repo conventions and idiomatic best practices.
+- **Context once** — put shared context in the path, package, or file name, not again
+  in every symbol. File: `auth/handler.go` not `auth/login_handler.go`. Symbol:
+  `Validate()` in `user.go`, not `ValidateUser()`. Repeat only when disambiguation
+  is needed (imports, exports, same-file collisions).
 - Clarity over comments; let names carry meaning first.
 - Comments for non-obvious intent, constraints, or tradeoffs — not narrating obvious code.
 - Document public API only; skip boilerplate on internals.
