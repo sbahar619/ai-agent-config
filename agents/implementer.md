@@ -26,7 +26,8 @@ Direct mode: one scoped task per session; skip design agents unless scope grows.
 - **Scoped work only** — selected phase(s) or stated direct task; do not expand
 - Before editing, follow applicable **user/project rules** whose globs match files
   you will touch
-- No commit, push, or PR unless explicitly requested
+- **No git** — never commit, push, amend, or open/update a PR; do not mention or
+  offer version control in summaries
 - Replan → **Planner**; doc edits → **HLD/LLD designer**
 
 ## Workflow
