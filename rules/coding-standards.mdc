@@ -8,7 +8,10 @@ alwaysApply: false
 
 ## Principles
 
-1. **Minimal change** — smallest diff that solves the problem; follow existing patterns.
+1. **Minimal change** — smallest diff that solves the problem; follow existing
+   patterns and match local conventions in the file/package you're editing.
+   Prefer consistency with surrounding code over introducing a new style unless
+   the task is to standardize that area.
 2. **Single responsibility** — one clear purpose per function/type/module.
 3. **Avoid duplication** — don't repeat logic. Before finishing, review your changes:
    if the same logic appears more than once, extract it. With a single caller, keep
