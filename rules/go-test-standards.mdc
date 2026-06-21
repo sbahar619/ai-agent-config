@@ -1,0 +1,14 @@
+---
+description: Go test standards — outer Test naming. Use with test-standards.
+globs: "**/*_test.go"
+alwaysApply: false
+---
+
+# Go Test Standards
+
+Go-specific additions to **test-standards** for `*_test.go` files.
+
+## Naming
+
+- Outer `Test` name: `Test` + PascalCase of symbol under test, no underscores
+  (e.g. `TestValidateLogSpec`, `TestCappValidatorHandle`).

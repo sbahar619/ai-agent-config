@@ -1,0 +1,53 @@
+---
+description: General test standards — naming, structure, assertions. Applies when writing or editing tests.
+globs:
+  - "**/*_test.*"
+  - "**/*.test.*"
+  - "**/*.spec.*"
+  - "**/test_*.*"
+  - "**/*_spec.*"
+alwaysApply: false
+---
+
+# Test Standards
+
+Also follow **coding-standards**. This file adds test-only rules below.
+
+## Scope & design
+
+- Add a test only when it **justifies its cost** — new coverage, a distinct behavior or
+  edge case, or a regression you need to lock in.
+- Test **project-owned logic** — your code, contracts, and wiring. Do not test stdlib,
+  framework, or third-party library behavior (e.g. that an import works as documented).
+- **Minimal and direct** — one clear behavior per test; shortest setup and asserts needed.
+- Do not re-assert outcomes already covered by other tests; skip redundant steps and
+  assertions within a test.
+- Before finishing, review the suite for overlapping tests and duplicate logic; merge or
+  remove what adds no new signal.
+
+## Naming
+
+- Tests describe **observable behavior and contracts**, not internals.
+- Good: "reports error when build fails" · Bad: "returns false when rebuild nil"
+- Put scenario wording in nested/sub-test names, not the top-level test identifier.
+
+## Structure
+
+- Pick the simplest pattern — plain test, table-driven/parameterized, or sub-tests.
+  Table-driven for many same-shape cases; sub-tests when setup or assertions differ.
+
+## Assertions
+
+- Prefer **fail-fast** checks — stop when a precondition fails so later asserts don't
+  run on bad state.
+- Assert stable contract fields exactly (e.g. error codes, reason enums); assert
+  human-readable messages loosely (non-empty or stable substring).
+
+## Helpers
+
+- Shared fixtures and helpers in a dedicated test helper file/module for the package.
+- Mark test helpers as such per the language/framework convention.
+
+## Validation
+
+Per **coding-standards**, then run the affected tests.
