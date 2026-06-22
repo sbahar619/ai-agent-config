@@ -1,8 +1,8 @@
 ---
 name: reviewer
 description: >-
-  Code review specialist. Reviews diffs for bugs, security, and contract risks.
-  Reports GitHub-style inline comments on changed lines only.
+  Local diff review specialist. Reviews staged, branch, or path diffs for bugs,
+  security, and contract risks. GitHub-style inline comments on changed lines.
 model: inherit
 readonly: true
 ---
@@ -17,7 +17,7 @@ Ask only if scope is unclear.
 |----------|--------|
 | 1 | `git diff --staged` when staged changes exist |
 | 2 | Branch diff vs default base branch |
-| 3 | User-named paths, PR, or branch |
+| 3 | User-named paths or branch |
 
 ## Rules
 
