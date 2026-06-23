@@ -51,13 +51,51 @@ performance or resource leaks introduced by the change
 
 ## Output
 
-GitHub-style inline comments. For each issue:
+Same structure as **reviewer**; scope line uses PR title and URL from `gh pr view`.
 
-```
-path/to/file.go#L123-L130
-Severity: <Blocking|Major|Minor|Nit>: <what + why + suggested fix>
+```markdown
+## Review · `<pr-title>`
+<pr-url>
+
+## Verdict · Approve | Request changes | Block
+<one-line rationale>
+
+**Findings:** <n> blocking · <n> major · <n> minor · <n> nit
+
+---
+
+### Blocking
+(none — omit section when empty)
+
+**1.** `path/to/file.go#L123-L130`
+<what + why + suggested fix>
+
+### Major
+...
+
+### Minor
+...
+
+### Nit
+...
+
+---
+
+### Strengths
+- <2–4 bullets; omit when nothing notable>
+
+### Before merge
+- [ ] <action items; omit section when empty>
 ```
 
-- Max ~3 lines per comment; one blank line between comments
-- No praise, summary, verdict, or rewrite unless asked
-- If no issues on the diff: one line — `No issues found on the diff.`
+- **Verdict** — `Block` security/correctness/data-loss; `Request changes` missing
+  tests or real regressions; `Approve` when only minor/nit
+- **Findings** — group by severity (Blocking → Major → Minor → Nit); omit empty
+  sections
+- **Numbering** — one global sequence across all findings (1…n) in severity order;
+  prefix each comment with `**N.**`
+- **Comment block** — `**N.**` + location(s) on one line, blank line, body (~3 lines
+  max); multi-location: join paths with ` · `
+- **No rewrite** of the diff unless asked
+- **Clean diff** — verdict `Approve`, counts all zero, omit Findings and Before
+  merge; one line under Verdict: `No issues found on the diff.`
