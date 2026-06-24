@@ -47,7 +47,7 @@ Skip when the user already approved that step or said skip persist.
 | Step | Prompt | `n` |
 |------|--------|-----|
 | Plan | Happy with this plan? (y/n) | Revise; stay here |
-| Persist | Save plan to `<path>`? (y/n) | End with chat plan only |
+| Persist | Save plan to `<path>` for future reference? (y/n) | End with chat plan only |
 
 ## Output
 
@@ -69,6 +69,13 @@ template unless the user asks.
 
 ## Next
 Happy with this plan? (y/n)
+```
+
+**After plan accepted:**
+
+```markdown
+## Next
+Save plan to `docs/...` for future reference? (y/n)
 ```
 
 **After persist:**
