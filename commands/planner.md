@@ -1,7 +1,6 @@
 # Plan only
 
 **Plan only** — high-level phased plan. No source edits, commits, or implementation.
-Do not spawn a planner subagent; follow this command in the parent session.
 
 ## Input
 
