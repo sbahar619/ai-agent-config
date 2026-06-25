@@ -9,7 +9,7 @@ Whatever the user names in this turn: diff, PR, plan, error, selection, path, ag
 ## Rules
 
 - Read and inspect as needed — no writes, no git mutations
-- **Be brief** — entire reply ≤8 lines; one line per section; no bullets unless unavoidable
+- **Be brief** — ≤8 non-blank lines; one line per section; no bullets unless unavoidable
 - **Decision-first** — always land on **Action**; this is not a neutral recap
 - Cite repo evidence with `path:line` when referencing code; say when guessing
 - **Must not** — long summaries, multi-paragraph prose, findings lists, or implementation
@@ -23,7 +23,7 @@ Before replying:
 
 ## Output
 
-Use this structure. One line per section.
+Use this structure. One line per section; **blank line between sections**.
 
 ```
 Scope: <what this is about>
