@@ -1,24 +1,25 @@
 # cursor-config
 
-Configuration for Cursor and related AI agents: **rules**, **agents**, and
-**commands**. Edit config only — not application code.
+Configuration for Cursor and related AI agents: **rules** and **commands**.
+Edit config only — not application code.
 
 ## Layout
 
 - `rules/` — persistent constraints (`.mdc` + frontmatter)
-- `agents/` — subagent role definitions
-- `commands/` — slash-command prompts
+- `commands/` — slash-command prompts (one role per command; parent session only)
 
 Browse each directory for what exists today; do not duplicate inventories here.
 
+Command scope boundaries live in `docs/plans/agents-to-commands.md` when needed.
+
 ## Adding or editing config
 
-Every rule, agent, and command should be:
+Every rule and command should be:
 
 - **Short and concise** — bullets over prose; one clear job; cut filler
 - **Best practice** — actionable, scoped, concrete output when the role needs it
-- **Independent** — self-contained; no required reads of other agents or commands
-- **Stateless** — no assumed prior agent, session, or workflow step; input comes
+- **Independent** — self-contained; no required reads of other commands
+- **Stateless** — no assumed prior command, session, or workflow step; input comes
   from the user or paths they give in this turn
 - **Non-redundant** — one concern per file; extend or link instead of copying
 
