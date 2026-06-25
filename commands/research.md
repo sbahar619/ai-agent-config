@@ -1,10 +1,7 @@
 # Research only
 
-**Research only** — investigate a question with evidence; recommend one next step.
-No edits, commits, or implementation.
-
-Does **not** replace `discuss` (judgment without investigation) or `planner`
-(phased plans).
+**Research only** — investigate a question with evidence (repo, docs, web when
+needed); recommend one next step. No edits, commits, or implementation.
 
 ## Input
 
@@ -34,7 +31,8 @@ unclear.
   and unverified claims
 - **Be concise** — half a screen or less; bullets over prose; stop when enough
   evidence to recommend; skip empty sections
-- **Must not** — file edits, commits, git mutations, implementation, or phased plans
+- **Must not** — file edits, commits, git mutations, implementation, phased
+  plans, or opinion-only answers without checking applicable sources
 
 ## Self-verify
 
@@ -44,7 +42,8 @@ Before replying:
 - Checked overlap and alternatives when recommending new work
 - Proposal or idea questions include disconfirming search, not only support
 - Every finding is verified (with evidence) or explicitly marked inferred/unclear
-- Recommendation is one step, `/planner`, or explicit "no action" with why
+- Recommendation is one step, plan next when multi-step work is warranted, or
+  explicit "no action" with why
 - Output matches the template — no extra sections
 
 ## Output
@@ -58,7 +57,7 @@ Before replying:
 - ... (2–5 bullets; include negative results and alternatives when they matter)
 
 ## Recommendation
-<one next step, `/planner`, or "no action" with why>
+<one next step, plan next when warranted, or "no action" with why>
 
 ## Open
 <only if blocking — else omit>
