@@ -19,5 +19,7 @@ Use this structure. Keep each section concise.
 
 **Recommendation:** one concrete next step, 1–2 sentences max
 
+---
+
 No preamble, summary, or filler unless asked.
 Omit empty sections except Issue.
