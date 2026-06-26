@@ -13,13 +13,13 @@ No unreviewed side effects — do not edit files, commit code, or take any actio
 
 Use this structure. Keep each section concise.
 
+```
 **Issue:** one sentence restating the question or goal
 
 **Findings:** facts, options, or tradeoffs — 3–5 bullets max
 
 **Recommendation:** one concrete next step, 1–2 sentences max
-
----
+```
 
 No preamble, summary, or filler unless asked.
 Omit empty sections except Issue.
