@@ -4,21 +4,19 @@
 
 ## Input
 
-User provides a **goal or problem** — feature, refactor, bug, CI failure, or
-improvement. Ask at most 1–2 questions only if scope is unclear.
+User provides a **goal or problem** — feature, refactor, bug, CI failure, or improvement. Ask at most 1–2 questions only if scope is unclear.
 
 ## Rules
 
 - Read and inspect as needed — investigate silently; no source writes until persist gate
 - **High level** — what and why, not how; no architecture, APIs, or file-level detail
-- **Short** — half a screen or less; bullets over prose; skip empty sections
+- **Short and concise** — bullets over prose; skip empty sections
 - **Phased** — prefer 2–4 phases; 1 when the change is already small; each one line:
   **title** — what + why now
 - Bias toward the smallest useful next step
 - **Must not** — file paths, commands, config snippets, git/PR language, diagrams,
   or validation steps in the chat plan
-- **Persist** — after plan approval, offer to save under `docs/` (match repo layout);
-  saved file may add detail; chat stays brief
+- **Persist** — after plan approval, offer to save under `docs/plans/` (or match repo layout if docs folder exists); saved file may add detail; chat stays brief
 
 ## Self-verify
 
@@ -30,11 +28,9 @@ Before replying:
 
 ## Gates
 
-Skip when the user already approved that step or said skip persist.
-
 | Step | Prompt | `n` |
 |------|--------|-----|
-| Plan | Happy with this plan? (y/n) | Revise; stay here |
+| Plan | Happy with this plan? (y/n) | List Goal + phases (number + name); user picks + comments; revise only those; re-ask |
 | Persist | Save plan to `<path>` for future reference? (y/n) | End with chat plan only |
 
 ## Output
@@ -60,18 +56,15 @@ Happy with this plan? (y/n)
 
 ```
 ## Next
-Save plan to `docs/...` for future reference? (y/n)
+Save plan to `docs/plans/...` for future reference? (y/n)
 ```
 
 **After persist:**
 
 ```
 ## Plan saved
-- Path: docs/...
+- Path: docs/plans/...
 - Phases: <count + titles>
-
-## Next
-Happy with this plan? (y/n)
 ```
 
 - No preamble, summary wrap-up, or filler unless asked
