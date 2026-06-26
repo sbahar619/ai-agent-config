@@ -2,8 +2,6 @@
 
 **Review only** — focused evaluation of a code block, line range, or symbol. No edits, commits, or implementation.
 
-Does **not** replace diff-wide Bugbot or security review.
-
 ## Input
 
 | Priority | Source |
