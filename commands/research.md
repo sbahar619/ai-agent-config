@@ -4,7 +4,7 @@ Research only — investigate with evidence; return one next step. No edits, com
 
 ## Input
 
-A question, idea, or problem. Ask as many clarifying questions as needed before starting if scope, codebase context, or constraints are unclear — group them in one message.
+A question, idea, or problem. If scope, codebase context, or constraints are unclear, ask all clarifying questions in one numbered list and wait for answers before proceeding. The user may answer by number.
 
 ## Rules
 
