@@ -23,5 +23,15 @@ Every rule and command should be:
   from the user or paths they give in this turn
 - **Non-redundant** — one concern per file; extend or link instead of copying
 
-State explicitly what the artifact **does** and **must not do**. Put shared
-conventions in one place (this file or a parent rule), not repeated across files.
+State explicitly what the artifact does and must not do. Put shared conventions
+in one place (this file or a parent rule), not repeated across files.
+
+### Prompt formatting
+
+Full conventions: `docs/prompt-formatting.md`. In brief:
+
+- Open with one direct task line
+- Separate major concerns with clear section headers (Rules, Output, Input)
+- One bullet per constraint; merge tiny related blocks instead of extra headers
+- Wrap output templates in fenced code blocks; put omit-empty / numbering rules as bullets after the block
+- Keep Input minimal — behavioral rules belong in Rules
