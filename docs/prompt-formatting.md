@@ -13,6 +13,14 @@ Best practices for authoring rules and slash commands in this repo.
 - One bullet per constraint — one idea per line reduces ambiguity
 - Bold within bullets (`**must not**`) adds little — skip it
 - Merge small related sections rather than giving each its own header (e.g. "Check for" inside Rules)
+- Fold pre-reply checks into Rules — one `Before replying:` bullet (or `Before each gate reply:` when gates exist); do not use a separate Self-verify section
+
+## Gates
+
+- Use a separate `**Gates**` section when the command has approve / retry workflow — not flat bullets in Rules
+- Table columns: Step · Prompt · `n` (what happens on no / retry)
+- One intro line when needed (e.g. "Skip when the user already approved that step")
+- Gates are workflow state, not constraints — keep the table scannable; do not fold into Rules prose
 
 ## Output templates
 

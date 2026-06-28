@@ -4,6 +4,7 @@ Review PR only — GitHub pull request via gh; inline comments on changed lines.
 
 **Rules**
 
+- Ask at most 1 question if no PR URL is given or scope is ambiguous — do not proceed blindly
 - Read and inspect as needed — no writes, no git mutations
 - PR scope only — ignore local staged/uncommitted changes unless part of the PR diff
 - Changed lines only — comment on diff hunks, not untouched code
@@ -12,16 +13,9 @@ Review PR only — GitHub pull request via gh; inline comments on changed lines.
 - Apply applicable user/project rules on changed lines when they indicate real risk
 - Do not guess — say when context is missing
 - Skip style nits unless they hide a real bug
-- Ask at most 1 question if no PR URL is given or scope is ambiguous — do not proceed blindly
 - Check for — correctness and edge cases · security (injection, auth, secrets) · error handling · missing tests for new behavior · breaking API/contract changes · performance or resource leaks introduced by the change
 - Must not — file edits, fixes, refactors, local diff review without a PR URL
-
-**Self-verify**
-
-- Review source is the PR diff from gh, not local-only changes
-- Every finding cites a changed hunk (`path#Lstart-Lend`)
-- Drop speculative findings without evidence from the diff or minimal context
-- Verdict consistent with findings
+- Before replying: review source is the PR diff from gh, not local-only changes; every finding cites a changed hunk (`path#Lstart-Lend`); drop speculative findings without evidence from the diff or minimal context; verdict consistent with findings
 
 **Output**
 

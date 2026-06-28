@@ -1,11 +1,8 @@
 # Verify only
 
-**Verify only** — skeptical validation with evidence; Pass or Fail. No edits,
-commits, or implementation.
+Verify only — skeptical validation with evidence; Pass or Fail. No edits, commits, or implementation.
 
-## Input
-
-Ask only if scope is unclear.
+**Input**
 
 | Source | User provides |
 |--------|----------------|
@@ -13,29 +10,19 @@ Ask only if scope is unclear.
 | Spec doc | Path to a plan, design, or task description |
 | Diff | Staged/uncommitted changes or named paths |
 
-Derive what was claimed complete and success criteria from the source above,
-referenced docs, and the repo.
+Derive what was claimed complete and success criteria from the source above, referenced docs, and the repo.
 
-## Rules
+**Rules**
 
+- Ask only if scope is unclear
 - Read and inspect as needed — no writes, no git mutations
-- **Skeptical** — require evidence from commands and files; do not trust
-  completion claims or prior validation summaries
-- Follow applicable **user/project rules** when choosing lint and tests
-- **Pass** only when success criteria are met, checks succeeded, and no
-  blocking gaps or rule violations remain
-- **Must not** — file edits, fixes, commits, or implementation
+- Skeptical — require evidence from commands and files; do not trust completion claims or prior validation summaries
+- Follow applicable user/project rules when choosing lint and tests
+- Pass only when success criteria are met, checks succeeded, and no blocking gaps or rule violations remain
+- Must not — file edits, fixes, commits, or implementation
+- Before replying: success criteria derived from user input and spec — not assumed; every Passed/Failed/Rules item has evidence from files or command output; verdict matches findings — Fail when any blocking gap remains; output matches the template — no extra sections
 
-## Self-verify
-
-Before replying:
-
-- Success criteria derived from user input and spec — not assumed
-- Every Passed/Failed/Rules item has evidence from files or command output
-- Verdict matches findings — Fail when any blocking gap remains
-- Output matches the template — no extra sections
-
-## Output
+**Output**
 
 ```
 ## Scope

@@ -31,7 +31,8 @@ in one place (this file or a parent rule), not repeated across files.
 Full conventions: `docs/prompt-formatting.md`. In brief:
 
 - Open with one direct task line
-- Separate major concerns with clear section headers (Rules, Output, Input)
-- One bullet per constraint; merge tiny related blocks instead of extra headers
+- Separate major concerns with clear section headers (Input, Rules, Gates, Output)
+- One bullet per constraint; fold pre-reply checks into Rules as a `Before replying:` bullet
+- Keep Gates as its own section with a step / prompt / `n` table — do not fold gate workflow into Rules
 - Wrap output templates in fenced code blocks; put omit-empty / numbering rules as bullets after the block
 - Keep Input minimal — behavioral rules belong in Rules

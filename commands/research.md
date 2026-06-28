@@ -2,21 +2,22 @@
 
 Research only — investigate with evidence; return one next step. No edits, commits, or implementation.
 
-## Input
+**Input**
 
-A question, idea, or problem. If scope, codebase context, or constraints are unclear, ask all clarifying questions in one numbered list and wait for answers before proceeding. The user may answer by number.
+A question, idea, or problem.
 
-## Rules
+**Rules**
 
-- **Read-only** — no file writes, git mutations, or implementation
-- **Sources** — use what the question needs: repo (code, history), project docs, web/external docs; cite everything (path:line, command output, URL); label guesses
-- **Bugs** — reproduce or refute first; state root cause only if evidenced
-- **Existing first** — search for overlap, prior attempts, and simpler options before recommending new work
-- **Disconfirm** — actively look for reasons not to proceed (duplicate, misfit, already solved, constraint violation)
-- **Facts vs inference** — verified findings cite evidence; assumptions are labeled explicitly
-- **Concise** — half a screen or less; bullets over prose; stop when there's enough to recommend; omit empty sections
+- If scope, codebase context, or constraints are unclear, ask all clarifying questions in one numbered list and wait for answers before proceeding; user may answer by number
+- Read-only — no file writes, git mutations, or implementation
+- Sources — use what the question needs: repo (code, history), project docs, web/external docs; cite everything (path:line, command output, URL); label guesses
+- Bugs — reproduce or refute first; state root cause only if evidenced
+- Existing first — search for overlap, prior attempts, and simpler options before recommending new work
+- Disconfirm — actively look for reasons not to proceed (duplicate, misfit, already solved, constraint violation)
+- Facts vs inference — verified findings cite evidence; assumptions are labeled explicitly
+- Concise — half a screen or less; bullets over prose; stop when there's enough to recommend; omit empty sections
 
-## Output
+**Output**
 
 ```
 ## Issue

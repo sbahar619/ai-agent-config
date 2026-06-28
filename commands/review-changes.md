@@ -4,21 +4,15 @@ Review diff only — full git diff review (staged, branch, or named paths). GitH
 
 **Rules**
 
+- Ask at most 1 question if the diff scope is unclear — do not proceed blindly
 - Read and inspect as needed — no writes, no git mutations
 - Changed lines only — comment on diff hunks, not untouched code
 - Apply applicable user/project rules on changed lines when they indicate real risk
 - Do not guess — say when context is missing
 - Skip style nits unless they hide a real bug
-- Ask at most 1 question if the diff scope is unclear — do not proceed blindly
 - Must not — file edits, fixes, refactors, or rewriting the diff
 - Check for — correctness and edge cases · security (injection, auth, secrets) · error handling · missing tests for new behavior · breaking API/contract changes · performance or resource leaks introduced by the change
-
-**Self-verify**
-
-- Scope matches the diff actually read
-- Every finding cites a changed hunk (`path#Lstart-Lend`)
-- Drop speculative findings without evidence from the diff or minimal context
-- Verdict consistent with findings
+- Before replying: scope matches the diff actually read; every finding cites a changed hunk (`path#Lstart-Lend`); drop speculative findings without evidence from the diff or minimal context; verdict consistent with findings
 
 **Output**
 

@@ -2,25 +2,21 @@
 
 Ultra-short decision brief: scope, what matters, whether action is needed. No edits, commits, or implementation.
 
-## Input
+**Input**
 
-Whatever the user names in this turn: diff, PR, plan, error, selection, path, agent output, or question. If the target is unclear, ask one question before proceeding.
+Whatever the user names in this turn: diff, PR, plan, error, selection, path, agent output, or question.
 
-## Rules
+**Rules**
 
+- If the target is unclear, ask one question before proceeding
 - Read and inspect as needed — no writes, no git mutations
 - Decision-first — always land on Action; this is not a neutral recap
 - Cite repo evidence as `path:line`; mark inferred references as `[inferred]`
 - Action guidance: None = no meaningful risk or opportunity; Optional = low-stakes improvement available; Required = risk, breakage, or blocking issue present
 - Must not: long summaries, multi-paragraph prose, findings lists, or implementation
+- Before replying: scope matches what the user pointed at; Action level matches the Action guidance above; if Action is Required or Optional, Why and Next are present and concrete
 
-## Self-verify (silent)
-
-1. Scope matches what the user pointed at
-2. Action level matches the Action guidance above
-3. If Action is Required or Optional, Why and Next are present and concrete
-
-## Output
+**Output**
 
 ```
 Scope: <what this is about>
