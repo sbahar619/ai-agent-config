@@ -15,7 +15,8 @@ User provides a goal or problem — feature, refactor, bug, CI failure, or impro
 - Phased — prefer 2–4 phases; 1 when the change is already small; each one line: title — what + why now
 - Bias toward the smallest useful next step
 - Must not — file paths, commands, config snippets, git/PR language, diagrams, or validation steps in the chat plan
-- Persist — after plan approval, offer to save under `docs/plans/` (or match repo layout if docs folder exists); saved file may add detail; chat stays brief
+- Persist — after plan approval, offer to save under `docs/plans/` (or match repo layout if docs folder exists); saved file uses the same plan body shown in chat
+- Render — output the plan as rendered markdown in chat; never wrap the plan in a code fence; chat plan body matches what is written to the file (gate prompts are chat-only)
 - Before replying: plan matches the output template — no extra sections; each phase is one line; count is 1–4; strip anything implementer-shaped (paths, commands, git/PR, config)
 
 **Gates**
@@ -27,37 +28,37 @@ User provides a goal or problem — feature, refactor, bug, CI failure, or impro
 
 **Output**
 
-**Draft plan:**
+**Draft plan** — reproduce as rendered markdown (not a code block); plan body is identical to the persisted file:
 
-```
 ## Goal
-<one sentence>
+
+{one sentence}
 
 ## Plan
-1. **<title>** — <what + why now>
+
+1. **{title}** — {what + why now}
 2. ...
 
 ## Blockers
-<only if any — else omit>
+
+{only if any — else omit}
 
 ## Next
+
 Happy with this plan? (y/n)
-```
 
 **After plan accepted:**
 
-```
 ## Next
+
 Save plan to `docs/plans/...` for future reference? (y/n)
-```
 
 **After persist:**
 
-```
 ## Plan saved
+
 - Path: docs/plans/...
-- Phases: <count + titles>
-```
+- Phases: {count + titles}
 
 - No preamble, summary wrap-up, or filler unless asked
 - Omit empty sections except Goal and Plan
