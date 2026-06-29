@@ -1,6 +1,6 @@
-# cursor-config
+# ai-agent-config
 
-Configuration for Cursor and related AI agents: **rules** and **commands**.
+Configuration for AI coding agents: **rules** and **commands**.
 Edit config only — not application code.
 
 ## Layout
