@@ -23,9 +23,11 @@ Review a single GitHub PR review comment for correctness against the current cod
 **Reviewer's point:** <one-line restatement>
 
 **Verdict:** Valid | Partially valid | Invalid | Needs clarification
+
 <2-4 sentences, evidence from the current code>
 
 **Recommendation:** Code fix | No changes | Clarify with reviewer
+
 <concrete next step; if a fix, name it briefly>
 
 ---
@@ -38,5 +40,6 @@ Review a single GitHub PR review comment for correctness against the current cod
 ````
 
 - Reply draft is its own fenced code block, plain text, ready to copy-paste — no quoting of the original comment back
+- Blank line after every bold label (`**Verdict:**`, `**Recommendation:**`) before its body text — a single newline collapses to a space in rendered markdown
 - If the user asks to post: reply to a discussion comment with `gh api repos/<owner>/<repo>/pulls/<pr>/comments/<id>/replies -f body='<text>'`; reply to an issue comment with `gh pr comment <pr> -b '<text>'`
 - No preamble or filler unless asked
