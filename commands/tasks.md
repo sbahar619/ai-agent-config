@@ -29,9 +29,22 @@ Read referenced docs from the repo; treat as the source of truth.
 | Step | Prompt | n |
 |------|--------|---|
 | Tasks | Happy with these tasks? (y/n) | Revise per feedback; re-ask |
-| Persist | Save to `<path>`? (y/n) | End with chat output only |
+| Persist | Save to `<path>`? (y/n) | End with chat summary only |
 
-**Output**
+**Output — chat (high-level summary)**
+
+```
+## Tasks — {goal}
+
+1. **{title}** — {one-line concern}
+2. **{title}** — {one-line concern}
+…
+
+## Next
+Happy with these tasks? (y/n)
+```
+
+**Output — file (full detail, written on persist)**
 
 ```
 ## Tasks — {goal}
@@ -48,13 +61,12 @@ Read referenced docs from the repo; treat as the source of truth.
 - Done when: …
 
 …
-
-## Next
-Happy with these tasks? (y/n)
 ```
 
+- Chat shows only numbered titles + one-line concerns; no file lists or done-when
+- File includes full detail per task (concern, files, depends on, done when)
 - Number tasks sequentially (T01, T02, …)
 - Include `Depends on:` only when a task requires a prior task's output
 - Omit empty fields; keep each task 3–5 lines
-- After approval, offer to persist under `docs/plans/` (or match repo layout)
+- Persist under `docs/plans/` (or match repo layout)
 - No preamble, summary wrap-up, or filler unless asked
