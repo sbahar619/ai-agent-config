@@ -21,20 +21,22 @@ Trace a reported issue to root cause and propose solutions. Do not modify code.
 If a gate fails, stop and state what's missing instead of proceeding.
 
 ## Output
+Render as formatted markdown — do not wrap in a code fence.
+
 ```
-Issue: <one line>
+**Issue:** <one line>
 
-Root cause: <one line>
-  <2-4 line mechanism, not narrative>
+**Root cause:** <one line>
+<2-4 line mechanism, not narrative>
 
-Evidence:
-  - <file:line / log / commit ref>
+**Evidence:**
+- <file:line / log / commit ref>
 
-Confidence: high | medium | low — <why>
+**Confidence:** high | medium | low — <why>
 
-Suggested solutions:
-  1. <option> — <tradeoff>
-  2. <option> — <tradeoff>
+**Suggested solutions:**
+1. <option> — <tradeoff>
+2. <option> — <tradeoff>
 ```
 - Omit Evidence bullets with no traceable source.
 - Number solutions in ranked order; cap at 3.

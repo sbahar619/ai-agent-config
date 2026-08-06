@@ -13,13 +13,15 @@ Subject given in this turn — a task, tool, process, or question (e.g. "set up 
 - Before replying: walk the steps in order and confirm nothing is skipped or assumed.
 
 **Output**
+Render as formatted markdown — do not wrap in a code fence.
+
 ```
 # <Subject>
 
-Prerequisites:
+**Prerequisites:**
 - <item>
 
-Steps:
+**Steps:**
 1. <action>
    <verification, if applicable>
 2. <action>
