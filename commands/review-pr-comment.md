@@ -39,7 +39,7 @@ Review a single GitHub PR review comment for correctness against the current cod
 ```
 ````
 
-- Reply draft is its own fenced code block, plain text, ready to copy-paste — no quoting of the original comment back
+- Reply draft is its own fenced code block, plain text, ready to copy-paste — no quoting of the original comment back; use one sentence per line so the block stays readable without horizontal scrolling
 - Blank line after every bold label (`**Verdict:**`, `**Recommendation:**`) before its body text — a single newline collapses to a space in rendered markdown
 - If the user asks to post: reply to a discussion comment with `gh api repos/<owner>/<repo>/pulls/<pr>/comments/<id>/replies -f body='<text>'`; reply to an issue comment with `gh pr comment <pr> -b '<text>'`
 - No preamble or filler unless asked
