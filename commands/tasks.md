@@ -68,5 +68,5 @@ Happy with these tasks? (y/n)
 - Number tasks sequentially (T01, T02, …)
 - Include `Depends on:` only when a task requires a prior task's output
 - Omit empty fields; keep each task 3–5 lines
-- Persist under `docs/plans/` (or match repo layout)
+- Persist under `docs/plans/tasks/`
 - No preamble, summary wrap-up, or filler unless asked
