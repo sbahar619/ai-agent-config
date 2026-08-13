@@ -17,8 +17,11 @@ Generate a short GitHub PR/issue comment from a discussion thread or code review
 
 **Output**
 
+`<path>:<line>` (omit for general/issue comments)
+
 > <the comment text, rendered markdown>
 
-- Output only the blockquote — no explanation, preamble, or alternatives
+- When the thread references a specific file and line, show the code reference (`path:line`) above the blockquote
+- Output only the reference (when applicable) and blockquote — no explanation, preamble, or alternatives
 - Do not wrap the comment in a fenced code block; render it as markdown so formatting (bold, inline code, etc.) is visible in the chat
 - If the user asks to post: run `gh pr comment <ref> -b '<body>'` or the equivalent issue command and confirm
