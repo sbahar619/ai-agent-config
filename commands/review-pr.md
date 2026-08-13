@@ -8,7 +8,8 @@ Review PR only — GitHub pull request via gh; inline comments on changed lines.
 - Read and inspect as needed — no writes, no git mutations
 - PR scope only — ignore local staged/uncommitted changes unless part of the PR diff
 - Changed lines only — comment on diff hunks, not untouched code
-- Resolve with `gh pr view <ref> --json baseRefName,headRefName,title,url` — stop on error; fetch diff with `gh pr diff <ref>`
+- Resolve with `gh pr view <ref> --json baseRefName,headRefName,title,url,body` — stop on error; fetch diff with `gh pr diff <ref>`
+- Derive the user-facing problem from the PR body, linked issues, or the diff when the description is sparse
 - Read changed files in workspace when paths exist; if workspace is not the PR repo, review from the diff and note missing local context
 - Apply applicable user/project rules on changed lines when they indicate real risk
 - Do not guess — say when context is missing
@@ -22,6 +23,8 @@ Review PR only — GitHub pull request via gh; inline comments on changed lines.
 ```
 ## Review · `<pr-title>`
 <pr-url>
+
+**What this solves:** <1–2 sentences; the user-facing problem or need this PR addresses>
 
 ## Verdict · Approve | Request changes | Block
 <one-line rationale>
