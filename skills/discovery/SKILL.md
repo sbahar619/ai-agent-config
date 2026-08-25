@@ -10,8 +10,7 @@ disable-model-invocation: true
 # Discovery
 
 Research a potential issue, plan if it's worth the work, and break into tasks
-when the plan is complex. Produces artifacts the implement-workflow skill
-consumes.
+when the plan is complex. Produces artifacts under `docs/plans/<feature>/`.
 
 ## Workflow
 
