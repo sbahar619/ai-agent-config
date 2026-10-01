@@ -48,7 +48,6 @@ Also follow **coding-standards**. This file adds test-only rules below.
 ## Helpers
 
 - Shared fixtures and helpers in a dedicated test helper file/module for the package.
-- Mark test helpers as such per the language/framework convention.
 
 ## Validation
 

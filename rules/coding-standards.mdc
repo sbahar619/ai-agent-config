@@ -40,11 +40,11 @@ alwaysApply: false
   is needed (imports, exports, same-file collisions).
 - Clarity over comments; let names carry meaning first.
 - Comments for non-obvious intent, constraints, or tradeoffs — not narrating obvious code.
-- Document public API only; skip boilerplate on internals.
+- Linters enforce exported-symbol docs; skip boilerplate on internals.
 
 ## Modules & boundaries
 
-- Clear module/package boundaries; minimal dependencies; no circular imports.
+- Clear module/package boundaries; minimal dependencies.
 - Prefer pure utilities — explicit inputs/outputs, avoid hidden side effects.
 - **File granularity** — before adding a file, check the target package for an
   existing file in the same concern. Default to extending it when the change is a
