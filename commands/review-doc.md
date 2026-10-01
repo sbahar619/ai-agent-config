@@ -14,6 +14,7 @@ description: Review a document, design, plan, task write-up, or other non-code a
 - Correctness — are there factual, logical, or technical errors?
 - Risk — what could go wrong if this is approved or implemented as-is, and how severe?
 - Scope — does it try to cover too much or too little for its stated purpose?
+- Coding-standards compliance — for design docs that propose interfaces, functions, or types: check that proposed symbols don't duplicate existing repo logic; prefer extending over parallel creation; verify naming follows repo conventions
 
 **Constraints:**
 - One comment per issue; don't bundle unrelated feedback into a single bullet.

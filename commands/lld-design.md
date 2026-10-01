@@ -15,6 +15,7 @@ Path to an architecture doc and phase number (and title if not obvious).
 - Short — bullets, actionable; implementation detail, not architecture
 - Mirror a nearby LLD (`docs/**/design/**/lld/**` or repo norm)
 - Match repo API names and reconcile patterns; state assumptions when info is missing
+- Before proposing a new function or type, check the repo for existing symbols that serve a similar purpose; prefer extending (optional param, overload, wrapper) over creating a parallel symbol — per coding-standards
 - Must not — source code edits, implementation, git mutations, architecture-only docs (components and flows without deliverable detail), or work outside the named phase
 - Authoring — typical sections: Scope, Goals, Deliverables (ordered steps, key decisions, status/condition contracts with types/reasons/messages, resource naming/ownership/labels when relevant, tests for this phase)
 - Before each gate reply: doc plan has path under `docs/`; scope limited to the named phase; after create, LLD matches approved doc plan; assumptions stated where info is missing; output matches the template for the current gate — no extra sections

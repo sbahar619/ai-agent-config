@@ -19,7 +19,7 @@ Read referenced docs from the repo; treat as the spec.
 - Run lint/tests as you go; fix failures caused by your changes; stop and report failures that appear unrelated to your changes (pre-existing, environmental, or config issues)
 - Suggested branch — one kebab-case name in completion output only
 - Must not — commit, push, amend, or open/update a PR; modify architecture or plan docs; work outside the stated spec
-- Before replying: changed files match the spec; validation run and reported; output matches the Done template — no extra sections
+- Before replying: changed files match the spec; diff reviewed for coding-standards compliance (duplication, naming, locality); validation run and reported; output matches the Done template — no extra sections
 
 **Gates**
 
