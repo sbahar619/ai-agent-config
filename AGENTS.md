@@ -17,7 +17,7 @@ Command scope boundaries live in `docs/plans/agents-to-commands.md` when needed.
 Every rule and command should be:
 
 - **Short and concise** — bullets over prose; one clear job; cut filler
-- **Best practice** — actionable, scoped, concrete output when the role needs it
+- **Best practice** — grounded in ecosystem and community conventions (language idioms, well-known libraries, canonical patterns), not just internal rules; actionable, scoped, concrete output when the role needs it
 - **Independent** — self-contained; no required reads of other commands
 - **Stateless** — no assumed prior command, session, or workflow step; input comes
   from the user or paths they give in this turn

@@ -7,7 +7,7 @@ Review diff only — full git diff review (staged, branch, or named paths). GitH
 - Ask at most 1 question if the diff scope is unclear — do not proceed blindly
 - Read and inspect as needed — no writes, no git mutations
 - Changed lines only — comment on diff hunks, not untouched code
-- Apply applicable user/project rules on changed lines when they indicate real risk
+- Apply applicable user/project rules on changed lines when they indicate real risk; also flag deviations from language/ecosystem conventions
 - Do not guess — say when context is missing
 - Skip style nits unless they hide a real bug
 - Must not — file edits, fixes, refactors, or rewriting the diff

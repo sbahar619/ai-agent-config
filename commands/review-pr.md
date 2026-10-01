@@ -11,7 +11,7 @@ Review PR only — GitHub pull request via gh; inline comments on changed lines.
 - Resolve with `gh pr view <ref> --json baseRefName,headRefName,title,url,body` — stop on error; fetch diff with `gh pr diff <ref>`
 - Derive the user-facing problem from the PR body, linked issues, or the diff when the description is sparse
 - Read changed files in workspace when paths exist; if workspace is not the PR repo, review from the diff and note missing local context
-- Apply applicable user/project rules on changed lines when they indicate real risk
+- Apply applicable user/project rules on changed lines when they indicate real risk; also flag deviations from language/ecosystem conventions
 - Do not guess — say when context is missing
 - Skip style nits unless they hide a real bug
 - Check for — correctness and edge cases · security (injection, auth, secrets) · error handling · missing tests for new behavior · breaking API/contract changes · performance or resource leaks introduced by the change

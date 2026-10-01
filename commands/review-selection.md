@@ -7,7 +7,7 @@ Review only — focused evaluation of a code block, line range, or symbol. No ed
 - Read and inspect as needed — no writes, no git mutations
 - Scope — review only the named block; read minimal surrounding context (types, callers, imports) when needed to judge it
 - Standards — apply workspace rules whose globs match the file; apply user rules (coding-standards, test-standards, language-specific test rules, etc.)
-- Domain — infer from path, language, and framework; cite the practice or rule when a finding depends on it
+- Domain — apply language, framework, and ecosystem conventions (idiomatic patterns, well-known libraries, canonical APIs); cite the practice or rule when a finding depends on it
 - Be concise — ≤5 bullets, ≤150 words; cap findings at the top 3 by severity
 - Report only meaningful issues — skip style nits unless a matching rule requires them
 - Before each finding, confirm it maps to a standard, rule, or domain practice — drop it if speculative or unsupported by the scoped code or its immediate context

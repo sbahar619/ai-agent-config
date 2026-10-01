@@ -15,7 +15,7 @@ Read referenced docs from the repo; treat as the spec.
 
 - Ask at most one clarifying question if scope is unclear; otherwise state your assumption and proceed
 - Scoped work — only what the doc or task specifies; stop and explain if the spec is insufficient
-- Follow applicable user/project rules (coding and test standards) for files you will touch
+- Follow applicable user/project rules (coding and test standards) and language/ecosystem conventions for files you will touch
 - Run lint/tests as you go; fix failures caused by your changes; stop and report failures that appear unrelated to your changes (pre-existing, environmental, or config issues)
 - Suggested branch — one kebab-case name in completion output only
 - Must not — commit, push, amend, or open/update a PR; modify architecture or plan docs; work outside the stated spec

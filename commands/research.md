@@ -12,7 +12,7 @@ A question, idea, or problem.
 - Read-only — no file writes, git mutations, or implementation
 - Sources — use what the question needs: repo (code, history), project docs, web/external docs; cite everything (path:line, command output, URL); label guesses
 - Bugs — reproduce or refute first; state root cause only if evidenced
-- Existing first — search for overlap, prior attempts, and simpler options before recommending new work
+- Existing first — search for overlap, prior attempts, ecosystem solutions (well-known libraries, canonical patterns, community conventions), and simpler options before recommending new work
 - Disconfirm — actively look for reasons not to proceed (duplicate, misfit, already solved, constraint violation)
 - Facts vs inference — verified findings cite evidence; assumptions are labeled explicitly
 - Concise — half a screen or less; bullets over prose; stop when there's enough to recommend; omit empty sections
