@@ -12,23 +12,22 @@ alwaysApply: false
    patterns and match local conventions in the file/package you're editing.
    Prefer consistency with surrounding code over introducing a new style unless
    the task is to standardize that area.
-2. **Single responsibility** — one clear purpose per function/type/module.
+2. **Single responsibility** — one clear purpose per function/type/module; split
+   when a block is hard to follow, test, or reuse.
 3. **Avoid duplication** — don't repeat logic. Before finishing, review your changes:
    if the same logic appears more than once, extract it. With a single caller, keep
    inline unless extraction clearly improves readability or another concrete benefit.
-4. **Focused functions** — one clear job per function; split when a block is hard to
-   follow, test, or reuse.
-5. **Encapsulation** — minimal public API; keep implementation details private/internal.
-6. **Top-down order** — public/caller code first, helpers below.
-7. **Locality** — define vars and helpers as close as possible to where they're
+4. **Encapsulation** — minimal public API; keep implementation details private/internal.
+5. **Top-down order** — public/caller code first, helpers below.
+6. **Locality** — define vars and helpers as close as possible to where they're
    used; widen scope (shared helper, package-level) only when reused or the API
    requires it.
-8. **Respect abstractions** — use existing layers, interfaces, and boundaries; extend
+7. **Respect abstractions** — use existing layers, interfaces, and boundaries; extend
    through them rather than bypassing, duplicating, or reaching into internals.
-9. **Prefer existing utilities** — before implementing logic, check stdlib, repo
+8. **Prefer existing utilities** — before implementing logic, check stdlib, repo
    helpers, and already-imported deps first. A new dependency is fine when the benefit
    clearly outweighs the cost (weight, maintenance, coupling).
-10. **Prefer library constants** — before hardcoding values (enums, formats, limits,
+9. **Prefer library constants** — before hardcoding values (enums, formats, limits,
    well-known strings), check stdlib and existing deps for exported vars/constants.
 
 ## Naming & comments
