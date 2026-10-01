@@ -46,12 +46,12 @@ alwaysApply: false
 
 - Clear module/package boundaries; minimal dependencies; no circular imports.
 - Prefer pure utilities — explicit inputs/outputs, avoid hidden side effects.
-- **File granularity** — before adding a file, scan the target package for existing
-  `util`, `helpers`, `common`, or similar. Default to extending that file when the
-  change is a small helper or few lines in the same concern. Add a new file only when
-  the code is a cohesive unit (multiple related symbols), the existing util is already
-  large or mixed-concern, or the repo splits that domain into its own file. When
-  unsure, extend the existing file; split later if it grows.
+- **File granularity** — before adding a file, check the target package for an
+  existing file in the same concern. Default to extending it when the change is a
+  small helper or few lines. Add a new file only when the code is a cohesive unit
+  (multiple related symbols), the existing file is already large or mixed-concern,
+  or the repo convention splits that domain into its own file. When unsure, extend
+  the existing file; split later if it grows.
 
 ## Validation
 
