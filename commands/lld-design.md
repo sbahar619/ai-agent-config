@@ -14,6 +14,7 @@ Path to an architecture doc and optional phase number (and title if not obvious)
 - Scope — covers all phases by default (`lld.md`); when the user explicitly targets a single phase, scope to that phase only (`lld-phase-N.md`)
 - Short — bullets, actionable; implementation detail, not architecture
 - Co-locate with the plan — save as `docs/plans/<topic>/lld.md` or `docs/plans/<topic>/lld-phase-N.md`
+- Open questions — number each; if any need user input, present them and wait for answers before asking for approval
 - Match repo API names and reconcile patterns; state assumptions when info is missing
 - Before proposing a new function or type, check the repo for existing symbols that serve a similar purpose; prefer extending (optional param, overload, wrapper) over creating a parallel symbol — per coding-standards
 - Must not — source code edits, implementation, git mutations, architecture-only docs (components and flows without deliverable detail), or work outside the stated scope
@@ -39,9 +40,10 @@ Path to an architecture doc and optional phase number (and title if not obvious)
 - Sections: <outline>
 
 ## Key decisions · Open questions
-- ...
+1. ...
 
 ## Next
+{if open questions: ask them and wait for answers before approval}
 Happy with this doc plan? (y/n)
 ```
 

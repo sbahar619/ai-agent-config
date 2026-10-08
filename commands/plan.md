@@ -14,6 +14,7 @@ User provides a goal or problem — feature, refactor, bug, CI failure, or impro
 - Short and concise — bullets over prose; skip empty sections
 - Phased — prefer 2–4 phases; 1 when the change is already small; each one line: title — what + why now
 - Bias toward the smallest useful next step
+- Open questions — number each; if any need user input, present them and wait for answers before asking for approval
 - Must not — file paths, commands, config snippets, git/PR language, diagrams, or validation steps in the chat plan
 - Persist — on approval, auto-save as `docs/plans/<topic>/plan.md`; saved file uses the same plan body shown in chat
 - Render — output the plan as rendered markdown in chat; never wrap the plan in a code fence; chat plan body matches what is written to the file (gate prompts are chat-only)
@@ -38,12 +39,13 @@ User provides a goal or problem — feature, refactor, bug, CI failure, or impro
 1. **{title}** — {what + why now}
 2. ...
 
-## Blockers
+## Open questions
 
-{only if any — else omit}
+1. {question — omit section if none}
 
 ## Next
 
+{if open questions: ask them and wait for answers before approval}
 Happy with this plan? (y/n)
 
 **After approval (auto-saved):**
