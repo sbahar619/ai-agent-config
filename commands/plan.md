@@ -12,7 +12,7 @@ User provides a goal or problem — feature, refactor, bug, CI failure, or impro
 - Read and inspect as needed — investigate silently; no source writes until approval
 - High level — what and why, not how; no architecture, APIs, or file-level detail
 - Short and concise — bullets over prose; skip empty sections
-- Phased — prefer 2–4 phases; 1 when the change is already small; each one line: title — what + why now
+- Phased — prefer 2–4 phases; 1 when the change is already small; each phase is one logical deliverable (independently reviewable and completable — bundle tightly coupled work, separate unrelated concerns); each one line: title — what + why now
 - Bias toward the smallest useful next step
 - Open questions — number each; if any need user input, present them and wait for answers before asking for approval
 - Must not — file paths, commands, config snippets, git/PR language, diagrams, or validation steps in the chat plan
