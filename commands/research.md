@@ -31,7 +31,7 @@ A question, idea, or problem.
 <one next step, "plan next" if multi-step, or "no action: <why>">
 
 ## Open
-<blocking unknowns only — omit if none>
+1. <blocking unknown — omit section if none>
 ```
 
 No preamble, filler, or closing summary.

@@ -36,5 +36,5 @@ description: Review a document, design, plan, task write-up, or other non-code a
 - [Section/Line] Suggestion — why it matters
 
 ## Open Questions
-- Question the artifact doesn't answer but should
+1. Question the artifact doesn't answer but should
 ```
