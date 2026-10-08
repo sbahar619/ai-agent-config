@@ -9,13 +9,13 @@ User provides a goal or problem — feature, refactor, bug, CI failure, or impro
 **Rules**
 
 - Ask at most 1–2 questions only if scope is unclear
-- Read and inspect as needed — investigate silently; no source writes until persist gate
+- Read and inspect as needed — investigate silently; no source writes until approval
 - High level — what and why, not how; no architecture, APIs, or file-level detail
 - Short and concise — bullets over prose; skip empty sections
 - Phased — prefer 2–4 phases; 1 when the change is already small; each one line: title — what + why now
 - Bias toward the smallest useful next step
 - Must not — file paths, commands, config snippets, git/PR language, diagrams, or validation steps in the chat plan
-- Persist — after plan approval, offer to save as `docs/plans/<topic>/plan.md`; saved file uses the same plan body shown in chat
+- Persist — on approval, auto-save as `docs/plans/<topic>/plan.md`; saved file uses the same plan body shown in chat
 - Render — output the plan as rendered markdown in chat; never wrap the plan in a code fence; chat plan body matches what is written to the file (gate prompts are chat-only)
 - Before replying: plan matches the output template — no extra sections; each phase is one line; count is 1–4; strip anything implementer-shaped (paths, commands, git/PR, config)
 
@@ -24,7 +24,6 @@ User provides a goal or problem — feature, refactor, bug, CI failure, or impro
 | Step | Prompt | n |
 |------|--------|---|
 | Plan | Happy with this plan? (y/n) | List Goal + phases (number + name); user picks + comments; revise only those; re-ask |
-| Persist | Save plan to `<path>` for future reference? (y/n) | End with chat plan only |
 
 **Output**
 
@@ -47,13 +46,7 @@ User provides a goal or problem — feature, refactor, bug, CI failure, or impro
 
 Happy with this plan? (y/n)
 
-**After plan accepted:**
-
-## Next
-
-Save plan to `docs/plans/<topic>/plan.md` for future reference? (y/n)
-
-**After persist:**
+**After approval (auto-saved):**
 
 ## Plan saved
 

@@ -30,7 +30,6 @@ Read referenced docs from the repo; treat as the source of truth.
 | Step | Prompt | n |
 |------|--------|---|
 | Tasks | Happy with these tasks? (y/n) | Revise per feedback; re-ask |
-| Persist | Save to `<path>`? (y/n) | End with chat summary only |
 
 **Output — chat (high-level summary)**
 
@@ -45,7 +44,7 @@ Read referenced docs from the repo; treat as the source of truth.
 Happy with these tasks? (y/n)
 ```
 
-**Output — file (full detail, written on persist)**
+**Output — file (full detail, auto-saved on approval)**
 
 ```
 ## Tasks — {goal}
@@ -72,5 +71,5 @@ Happy with these tasks? (y/n)
 - Include `Depends on:` only when a task requires a prior task's output
 - Include `Docs:` only when a relevant design doc section exists; use relative path from the tasks file to the doc; multiple links allowed (comma-separated)
 - Omit empty fields; keep each task 3–6 lines
-- Persist as `docs/plans/<topic>/tasks.md`
+- Persist — on approval, auto-save as `docs/plans/<topic>/tasks.md`
 - No preamble, summary wrap-up, or filler unless asked

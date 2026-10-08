@@ -9,7 +9,7 @@ Path to an architecture doc and optional phase number (and title if not obvious)
 **Rules**
 
 - Ask at most 1–2 questions only if scope is unclear
-- Read and inspect as needed — no source writes until create gate
+- Read and inspect as needed — no source writes until approval
 - LLD only — write and edit LLDs as `docs/plans/<topic>/lld.md` (or `lld-phase-N.md` for a single phase) after approval
 - Scope — covers all phases by default (`lld.md`); when the user explicitly targets a single phase, scope to that phase only (`lld-phase-N.md`)
 - Short — bullets, actionable; implementation detail, not architecture
@@ -18,17 +18,13 @@ Path to an architecture doc and optional phase number (and title if not obvious)
 - Before proposing a new function or type, check the repo for existing symbols that serve a similar purpose; prefer extending (optional param, overload, wrapper) over creating a parallel symbol — per coding-standards
 - Must not — source code edits, implementation, git mutations, architecture-only docs (components and flows without deliverable detail), or work outside the stated scope
 - Authoring — typical sections: Scope, Goals, Deliverables (ordered steps, key decisions, status/condition contracts with types/reasons/messages, resource naming/ownership/labels when relevant, tests)
-- Before each gate reply: doc plan has path as `docs/plans/<topic>/lld.md` or `lld-phase-N.md`; scope matches user request; after create, LLD matches approved doc plan; assumptions stated where info is missing; output matches the template for the current gate — no extra sections
+- Before each gate reply: doc plan has path as `docs/plans/<topic>/lld.md` or `lld-phase-N.md`; scope matches user request; after approval, LLD matches approved doc plan; assumptions stated where info is missing; output matches the template — no extra sections
 
 **Gates**
-
-Skip when the user already approved that step or said skip create.
 
 | Step | Prompt | n |
 |------|--------|---|
 | Doc plan | Happy with this doc plan? (y/n) | Revise; stay here |
-| Create | Create this doc? (y/n) | Revise doc plan |
-| LLD review | Happy with this LLD? (y/n) | Refactor; re-ask |
 
 **Output**
 
@@ -49,7 +45,7 @@ Skip when the user already approved that step or said skip create.
 Happy with this doc plan? (y/n)
 ```
 
-**After create:**
+**After approval (auto-created and saved):**
 
 ```
 ## LLD saved
@@ -58,9 +54,6 @@ Happy with this doc plan? (y/n)
 
 ## Summary
 <2–4 bullets: deliverables and contracts>
-
-## Next
-Happy with this LLD? (y/n)
 ```
 
 - No preamble, summary wrap-up, or filler unless asked
