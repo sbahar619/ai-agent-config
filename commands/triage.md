@@ -8,7 +8,7 @@ Path to a plan doc (e.g. from `/plan`).
 
 **Rules**
 
-- Read the plan doc; scan `docs/` for any existing HLD, LLD, or tasks files related to the plan
+- Read the plan doc; scan the plan's topic directory (`docs/plans/<topic>/`) for sibling artifacts (`hld.md`, `lld.md`, `lld-phase-*.md`, `tasks.md`)
 - Classify each plan phase independently using these signals:
   - **Light** — single concern, no new types/APIs/contracts, test-only or mechanical change, ≤ 1 file cluster
   - **Medium** — multiple files but well-scoped, clear boundaries, no new external contracts, 2–3 concerns
@@ -40,7 +40,7 @@ Source: `{path}`
 - **Heavy:** plan → hld → lld → tasks → implement
 
 ### Recommended next step
-{what to run next and on which phase — e.g. "/tasks docs/plans/foo.md phase 1–2" or "/hld-design docs/plans/foo.md phase 3"}
+{what to run next and on which phase — e.g. "/tasks docs/plans/foo/plan.md phase 1–2" or "/hld-design docs/plans/foo/plan.md phase 3"}
 ```
 
 - Workflow paths are per-phase — adjacent phases with the same path may be grouped (e.g. "phases 1–2: medium")

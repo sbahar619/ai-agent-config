@@ -1,6 +1,6 @@
 # HLD only
 
-HLD only — concise architecture doc (what/why, components, flows) under `docs/`. No source edits, commits, or implementation.
+HLD only — concise architecture doc (what/why, components, flows) co-located with the plan. No source edits, commits, or implementation.
 
 **Input**
 
@@ -10,14 +10,14 @@ A goal or path to a plan doc.
 
 - Ask at most 1–2 questions only if scope is unclear
 - Read and inspect as needed — no source writes until create gate
-- HLD only — write and edit architecture docs under `docs/` after approval
+- HLD only — write and edit architecture docs as `docs/plans/<topic>/hld.md` after approval
 - Short — bullets, ~1 page; what/why, components, flows
-- Mirror a nearby HLD (`docs/**/design/hld/**` or repo norm)
+- Co-locate with the plan — save as `docs/plans/<topic>/hld.md`
 - Mermaid only when it clarifies; state assumptions when info is missing
 - Stay within stated scope
 - Must not — source code edits, implementation, git mutations, high-level phased goals without architecture detail, or low-level deliverable detail (ordered steps, API contracts, per-phase tests)
 - Authoring — pick sections by relevance; justify include/skip in the doc plan. Usually include: Summary, Goals / Non-goals, Architecture; add when relevant: Data model / APIs, Workflow / Sequence, Rollout / phasing, Failure modes, Security, Observability
-- Before each gate reply: doc plan has path under `docs/`; every included/skipped section justified; after create, HLD matches approved doc plan; assumptions stated where info is missing; output matches the template for the current gate — no extra sections
+- Before each gate reply: doc plan has path as `docs/plans/<topic>/hld.md`; every included/skipped section justified; after create, HLD matches approved doc plan; assumptions stated where info is missing; output matches the template for the current gate — no extra sections
 
 **Gates**
 
@@ -38,7 +38,7 @@ Skip when the user already approved that step or said skip create.
 <one sentence>
 
 ## Doc plan
-- Path: docs/...
+- Path: docs/plans/<topic>/hld.md
 - Include: <section> — <why>
 - Skip: <section> — <why or N/A>
 
@@ -57,7 +57,7 @@ Happy with this doc plan? (y/n)
 
 ```
 ## HLD saved
-- Path: docs/...
+- Path: docs/plans/<topic>/hld.md
 - Phases: <count + titles>
 
 ## Summary

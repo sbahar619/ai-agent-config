@@ -10,7 +10,7 @@ Edit config only — not application code.
 
 Browse each directory for what exists today; do not duplicate inventories here.
 
-Command scope boundaries live in `docs/plans/agents-to-commands.md` when needed.
+Command scope boundaries live in `docs/plans/agents-to-commands/plan.md` when needed.
 
 ## Adding or editing config
 
