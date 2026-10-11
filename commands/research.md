@@ -1,6 +1,6 @@
 # Research only
 
-Research only — investigate with evidence; return one next step. No edits, commits, or implementation.
+Research only — investigate with evidence; return one next step. No source edits, commits, or implementation.
 
 **Input**
 
@@ -9,13 +9,21 @@ A question, idea, or problem.
 **Rules**
 
 - If scope, codebase context, or constraints are unclear, ask all clarifying questions in one numbered list and wait for answers before proceeding; user may answer by number
-- Read-only — no file writes, git mutations, or implementation
+- Read-only — no source edits, git mutations, or implementation
 - Sources — use what the question needs: repo (code, history), project docs, web/external docs; cite everything (path:line, command output, URL); label guesses
 - Bugs — reproduce or refute first; state root cause only if evidenced
 - Existing first — search for overlap, prior attempts, ecosystem solutions (well-known libraries, canonical patterns, community conventions), and simpler options before recommending new work
 - Disconfirm — actively look for reasons not to proceed (duplicate, misfit, already solved, constraint violation)
 - Facts vs inference — verified findings cite evidence; assumptions are labeled explicitly
 - Concise — half a screen or less; bullets over prose; stop when there's enough to recommend; omit empty sections
+- Render — output findings as rendered markdown in chat; research body matches what is written to the file (gate prompt is chat-only)
+- Persist — on approval, auto-save as `docs/plans/<topic>/research.md`; saved file uses the same body shown in chat
+
+**Gates**
+
+| Step | Prompt | n |
+|------|--------|---|
+| Save | Save findings? (topic name to save, or n to skip) | Skip; no file written |
 
 **Output**
 
@@ -35,3 +43,11 @@ A question, idea, or problem.
 ```
 
 No preamble, filler, or closing summary.
+Omit empty sections except Issue and Findings.
+
+**After approval (auto-saved):**
+
+```
+## Research saved
+- Path: docs/plans/<topic>/research.md
+```
