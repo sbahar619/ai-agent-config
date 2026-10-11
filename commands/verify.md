@@ -32,13 +32,13 @@ Derive what was claimed complete and success criteria from the source above, ref
 - ...
 
 ## Passed
-- <check> — <evidence>
+- <check> — <evidence> (cap at top 5; group related checks)
 
 ## Failed
 - <issue> — <expected vs observed> (or "None")
 
 ## Rules
-- <passed or violation> — <evidence> (or "None")
+- <violation> — <evidence> (or "None"; omit passed rules)
 
 ## Verdict
 **Pass** | **Fail** — <one-line summary>

@@ -23,7 +23,7 @@ Scope: <path:lines — symbol or one-line summary>
 Verdict: Pass | Minor issues | Needs change
 
 Findings:
-- [must|should|nit] <issue> — <why vs standard or domain practice>
+- [must|should|nit] <issue> → <action to fix>
 
 Reasoning:
 - <1–2 bullets tying verdict to the most important findings>
