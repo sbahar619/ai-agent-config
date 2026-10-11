@@ -8,6 +8,7 @@ Review PR only — GitHub pull request via gh; inline comments on changed lines.
 - Read and inspect as needed — no writes, no git mutations
 - PR scope only — ignore local staged/uncommitted changes unless part of the PR diff
 - Changed lines only — comment on diff hunks, not untouched code
+- Concise findings — one concern per finding; state issue and fix, skip background the reader already has
 - Resolve with `gh pr view <ref> --json baseRefName,headRefName,title,url,body` — stop on error; fetch diff with `gh pr diff <ref>`
 - Derive the user-facing problem from the PR body, linked issues, or the diff when the description is sparse
 - Read changed files in workspace when paths exist; if workspace is not the PR repo, review from the diff and note missing local context
@@ -37,7 +38,7 @@ Review PR only — GitHub pull request via gh; inline comments on changed lines.
 (none — omit section when empty)
 
 **1.** `path/to/file.go#L123-L130`
-<what + why + suggested fix>
+<issue → fix>
 
 ### Major
 ...
@@ -60,6 +61,6 @@ Review PR only — GitHub pull request via gh; inline comments on changed lines.
 - Verdict — Block: security/correctness/data-loss; Request changes: missing tests or real regressions; Approve: only minor/nit
 - Findings — group by severity (Blocking → Major → Minor → Nit); omit empty sections
 - Numbering — one global sequence (1…n) in severity order; prefix **N.**
-- Comment block — **N.** + location(s), blank line, body (~3 lines max); multi-location: join with ·
+- Comment block — **N.** + location(s), blank line, body (1–2 lines: issue → fix); multi-location: join with ·
 - Clean diff — Approve, all counts zero: omit Findings and Before merge; one line under Verdict: "No issues found on the diff."
 - No preamble, summary wrap-up, or filler unless asked

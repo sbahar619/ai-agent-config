@@ -7,6 +7,7 @@ Review diff only — full git diff review (staged, branch, or named paths). GitH
 - Ask at most 1 question if the diff scope is unclear — do not proceed blindly
 - Read and inspect as needed — no writes, no git mutations
 - Changed lines only — comment on diff hunks, not untouched code
+- Concise findings — one concern per finding; state issue and fix, skip background the reader already has
 - Apply applicable user/project rules on changed lines when they indicate real risk; also flag deviations from language, framework, and ecosystem conventions (idiomatic patterns, well-known libraries, canonical APIs)
 - Do not guess — say when context is missing
 - Skip style nits unless they hide a real bug
@@ -31,7 +32,7 @@ Review diff only — full git diff review (staged, branch, or named paths). GitH
 (none — omit section when empty)
 
 **1.** `path/to/file.go#L123-L130`
-<what + why + suggested fix>
+<issue → fix>
 
 ### Major
 ...
@@ -54,6 +55,6 @@ Review diff only — full git diff review (staged, branch, or named paths). GitH
 - Verdict — Block: security/correctness/data-loss; Request changes: missing tests or real regressions; Approve: only minor/nit
 - Findings — group by severity (Blocking → Major → Minor → Nit); omit empty sections
 - Numbering — one global sequence (1…n) in severity order; prefix **N.**
-- Comment block — **N.** + location(s), blank line, body (~3 lines max); multi-location: join with ·
+- Comment block — **N.** + location(s), blank line, body (1–2 lines: issue → fix); multi-location: join with ·
 - Clean diff — Approve, all counts zero: omit Findings and Before merge; one line under Verdict: "No issues found on the diff."
 - No preamble, summary wrap-up, or filler unless asked

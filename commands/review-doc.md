@@ -17,24 +17,25 @@ description: Review a document, design, plan, task write-up, or other non-code a
 - Coding-standards compliance — for design docs that propose interfaces, functions, or types: check that proposed symbols don't duplicate existing repo logic **or** framework/library built-ins (cobra/pflag, gin, client-go, etc.); prefer using what exists over reimplementing; verify naming follows repo conventions
 
 **Constraints:**
-- One comment per issue; don't bundle unrelated feedback into a single bullet.
-- Reference the specific section, line, or heading for every issue raised.
-- Separate blocking issues from suggestions explicitly — never mix them in one list.
-- Do not rewrite the artifact wholesale; propose targeted edits only.
-- Skip generic praise; only note strengths that are specific and actionable.
+- One finding per bullet — one concern, one line; add context only when the fix is ambiguous without it
+- Reference the specific section or heading for every finding
+- Every finding ends with a concrete action (`→ <what to change>`)
+- Separate blocking issues from suggestions — never mix in one list
+- Propose targeted edits only — do not rewrite the artifact wholesale
+- Skip generic praise; only note strengths that are specific and actionable
 
 **Output format:**
 
 ```
 ## Summary
-<1–3 sentence verdict: ready / ready with changes / needs rework>
+<1 sentence verdict: ready / ready with changes / needs rework>
 
-## Blocking Issues
-- [Section/Line] Issue — why it matters
+## Blocking
+- [Section] Issue → <action to fix>
 
 ## Suggestions
-- [Section/Line] Suggestion — why it matters
+- [Section] Suggestion → <action to fix>
 
 ## Open Questions
-1. Question the artifact doesn't answer but should
+1. <question the artifact doesn't answer but should>
 ```
