@@ -17,7 +17,8 @@ A question, idea, or problem.
 - Facts vs inference — verified findings cite evidence; assumptions are labeled explicitly
 - Concise — half a screen or less; bullets over prose; stop when there's enough to recommend; omit empty sections
 - Render — output findings as rendered markdown in chat; research body matches what is written to the file (gate prompt is chat-only)
-- Persist — on approval, auto-save as `docs/plans/<topic>/research.md`; saved file uses the same body shown in chat
+- Open blocks save — do not prompt the Save gate while the Open section has unanswered items; wait for user responses, update findings if answers change anything, then proceed to the gate
+- Persist — after the user approves the Save gate, write to `docs/plans/<topic>/research.md`; saved file uses the same body shown in chat
 
 **Gates**
 
@@ -45,7 +46,7 @@ A question, idea, or problem.
 No preamble, filler, or closing summary.
 Omit empty sections except Issue and Findings.
 
-**After approval (auto-saved):**
+**After user approves the Save gate:**
 
 ```
 ## Research saved
