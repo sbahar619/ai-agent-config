@@ -10,16 +10,16 @@ Path to an architecture doc and optional phase number (and title if not obvious)
 
 - Ask at most 1–2 questions only if scope is unclear
 - Read and inspect as needed — no source writes until approval
-- LLD only — write and edit LLDs as `docs/plans/<topic>/lld.md` (or `lld-phase-N.md` for a single phase) after approval
-- Scope — covers all phases by default (`lld.md`); when the user explicitly targets a single phase, scope to that phase only (`lld-phase-N.md`)
+- LLD only — write and edit LLDs as `docs/plans/<topic>/lld.md` (or `phase-N/lld.md` for a single phase) after approval
+- Scope — covers all phases by default (`lld.md`); when the user explicitly targets a single phase, scope to that phase only (`phase-N/lld.md`)
 - Short — bullets, actionable; implementation detail, not architecture
-- Co-locate with the plan — save as `docs/plans/<topic>/lld.md` or `docs/plans/<topic>/lld-phase-N.md`
+- Co-locate with the plan — save as `docs/plans/<topic>/lld.md` or `docs/plans/<topic>/phase-N/lld.md`
 - Open questions — number each; if any need user input, present them and wait for answers before asking for approval
 - Match repo API names and reconcile patterns; state assumptions when info is missing
 - Before proposing a new function or type, check the repo for existing symbols that serve a similar purpose; prefer extending (optional param, overload, wrapper) over creating a parallel symbol — per coding-standards
 - Must not — source code edits, implementation, git mutations, architecture-only docs (components and flows without deliverable detail), or work outside the stated scope
 - Authoring — typical sections: Scope, Goals, Deliverables (ordered steps, key decisions, status/condition contracts with types/reasons/messages, resource naming/ownership/labels when relevant, tests)
-- Before each gate reply: doc plan has path as `docs/plans/<topic>/lld.md` or `lld-phase-N.md`; scope matches user request; after approval, LLD matches approved doc plan; assumptions stated where info is missing; output matches the template — no extra sections
+- Before each gate reply: doc plan has path as `docs/plans/<topic>/lld.md` or `phase-N/lld.md`; scope matches user request; after approval, LLD matches approved doc plan; assumptions stated where info is missing; output matches the template — no extra sections
 
 **Gates**
 
@@ -36,7 +36,7 @@ Path to an architecture doc and optional phase number (and title if not obvious)
 <N> — <title> · source: docs/plans/<topic>/hld.md
 
 ## Doc plan
-- Path: docs/plans/<topic>/lld.md (or lld-phase-N.md)
+- Path: docs/plans/<topic>/lld.md (or phase-N/lld.md)
 - Sections: <outline>
 
 ## Key decisions · Open questions
@@ -51,7 +51,7 @@ Happy with this doc plan? (y/n)
 
 ```
 ## LLD saved
-- Path: docs/plans/<topic>/lld.md (or lld-phase-N.md)
+- Path: docs/plans/<topic>/lld.md (or phase-N/lld.md)
 - Phase: <N> — <title>
 
 ## Summary
