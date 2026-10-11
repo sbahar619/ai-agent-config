@@ -16,7 +16,7 @@ Path to an architecture doc and optional phase number (and title if not obvious)
 - Co-locate with the plan — save as `docs/plans/<topic>/lld.md` or `docs/plans/<topic>/phase-N/lld.md`
 - Open questions — number each; if any need user input, present them and wait for answers before asking for approval
 - Match repo API names and reconcile patterns; state assumptions when info is missing
-- Before proposing a new function or type, check the repo for existing symbols that serve a similar purpose; prefer extending (optional param, overload, wrapper) over creating a parallel symbol — per coding-standards
+- Before proposing a new function or type, check the repo for existing symbols **and** the framework/library API (cobra/pflag, gin, client-go, etc.) for built-in equivalents; prefer using what exists over reimplementing — per coding-standards; cite what was checked
 - Must not — source code edits, implementation, git mutations, architecture-only docs (components and flows without deliverable detail), or work outside the stated scope
 - Authoring — typical sections: Scope, Goals, Deliverables (ordered steps, key decisions, status/condition contracts with types/reasons/messages, resource naming/ownership/labels when relevant, tests)
 - Before each gate reply: doc plan has path as `docs/plans/<topic>/lld.md` or `phase-N/lld.md`; scope matches user request; after approval, LLD matches approved doc plan; assumptions stated where info is missing; output matches the template — no extra sections

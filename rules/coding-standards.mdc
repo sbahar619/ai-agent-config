@@ -25,7 +25,8 @@ alwaysApply: false
 7. **Respect abstractions** — use existing layers, interfaces, and boundaries; extend
    through them rather than bypassing, duplicating, or reaching into internals.
 8. **Prefer existing utilities** — before implementing logic, check stdlib, repo
-   helpers, and already-imported deps first. A new dependency is fine when the benefit
+   helpers, framework/library APIs (cobra, gin, client-go, etc.), and
+   already-imported deps first. A new dependency is fine when the benefit
    clearly outweighs the cost (weight, maintenance, coupling).
 9. **Prefer library constants** — before hardcoding values (enums, formats, limits,
    well-known strings), check stdlib and existing deps for exported vars/constants.
