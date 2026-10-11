@@ -23,7 +23,8 @@ Read referenced docs from the repo; treat as the source of truth.
 - Horizontal tasks allowed — uniform mechanical changes across many files (e.g. add nil guard everywhere) may be one task when the concern is single
 - Design-doc links — after reading the plan, scan for sibling design docs (`hld.md`, `lld.md`, `lld-phase-*.md`) in the plan's topic directory (`docs/plans/<topic>/`); for each task, if a design doc section covers that task's concern, add a `Docs:` line linking to the doc with the section name (e.g. `[IB01 — Validation function](lld.md#ib01--validation-function)`); omit `Docs:` when no design doc section applies
 - Must not — produce source edits, commits, or implementation; include architecture decisions or design rationale beyond what the plan states
-- Before replying: every task has concern + files + done-when; no task mixes concerns; ordering respects dependencies; design-doc links point to real sections; output matches template
+- Documentation task — if the scope adds or changes user-visible behavior (API, CLI, config, UI), scan for project docs (README, API docs, CLI docs, guides, CLAUDE.md) and include a documentation task when updates are needed; omit when the change is purely internal
+- Before replying: every task has concern + files + done-when; no task mixes concerns; ordering respects dependencies; design-doc links point to real sections; a documentation task is present when user-visible behavior changes; output matches template
 
 **Gates**
 
