@@ -4,11 +4,9 @@ globs: "**/*_test.go"
 alwaysApply: false
 ---
 
-# Go Test Standards
+Apply these additions to **test-standards** when writing or editing Go tests (`*_test.go`).
 
-Go-specific additions to **test-standards** for `*_test.go` files.
-
-## Naming
+**Naming**
 
 - Outer `Test` name: `Test` + PascalCase of symbol under test, no underscores
   (e.g. `TestValidateLogSpec`, `TestCappValidatorHandle`).

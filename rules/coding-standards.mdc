@@ -4,9 +4,9 @@ globs: "**/*"
 alwaysApply: false
 ---
 
-# Coding Standards
+Apply these standards when writing or editing code; do not use them to expand the task scope.
 
-## Principles
+**Principles**
 
 1. **Minimal change** — smallest diff that solves the problem; follow existing
    patterns and match local conventions in the file/package you're editing.
@@ -14,9 +14,9 @@ alwaysApply: false
    the task is to standardize that area.
 2. **Single responsibility** — one clear purpose per function/type/module; split
    when a block is hard to follow, test, or reuse.
-3. **Avoid duplication** — don't repeat logic. Before finishing, review your changes:
-   if the same logic appears more than once, extract it. With a single caller, keep
-   inline unless extraction clearly improves readability or another concrete benefit.
+3. **Avoid duplication** — extract repeated logic when it represents the same
+   concept and sharing it improves maintenance; similar code alone is not enough.
+   With a single caller, keep inline unless extraction clearly improves readability.
 4. **Encapsulation** — minimal public API; keep implementation details private/internal.
 5. **Top-down order** — public/caller code first, helpers below.
 6. **Locality** — define vars and helpers as close as possible to where they're
@@ -31,19 +31,19 @@ alwaysApply: false
 9. **Prefer library constants** — before hardcoding values (enums, formats, limits,
    well-known strings), check stdlib and existing deps for exported vars/constants.
 
-## Naming & comments
+**Naming & comments**
 
 - **Names** — intent-driven and self-explanatory for functions, vars, and types;
   follow language/repo conventions and idiomatic best practices.
-- **Context once** — put shared context in the path, package, or file name, not again
-  in every symbol. File: `auth/handler.go` not `auth/login_handler.go`. Symbol:
-  `Validate()` in `user.go`, not `ValidateUser()`. Repeat only when disambiguation
-  is needed (imports, exports, same-file collisions).
+- **Context once** — avoid repeating context already clear from the package or
+  receiver at the call site: `user.Validate()` rather than `user.ValidateUser()`
+  when `user` is the package. A filename alone does not provide caller context;
+  retain specific names when needed to distinguish responsibilities.
 - Clarity over comments; let names carry meaning first.
 - Comments for non-obvious intent, constraints, or tradeoffs — not narrating obvious code.
-- Linters enforce exported-symbol docs; skip boilerplate on internals.
+- Document public APIs according to language and repository conventions.
 
-## Modules & boundaries
+**Modules & boundaries**
 
 - Clear module/package boundaries; minimal dependencies.
 - Prefer pure utilities — explicit inputs/outputs, avoid hidden side effects.
@@ -54,8 +54,8 @@ alwaysApply: false
   or the repo convention splits that domain into its own file. When unsure, extend
   the existing file; split later if it grows.
 
-## Validation
+**Validation**
 
 After changes, review the diff (duplication, abstractions, scope), then run lint and
-tests for what you touched (repo Makefile/CI when available). Do not commit — git
-guardrails apply.
+tests for what you touched (repo Makefile/CI when available). Follow **git-guardrails**
+for Git operations.

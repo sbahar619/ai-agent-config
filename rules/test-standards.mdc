@@ -9,11 +9,11 @@ globs:
 alwaysApply: false
 ---
 
-# Test Standards
+Apply these standards when writing or editing tests; do not add tests solely to satisfy this rule.
 
 Also follow **coding-standards**. This file adds test-only rules below.
 
-## Scope & design
+**Scope & design**
 
 - Add a test only when it **justifies its cost** — new coverage, a distinct behavior or
   edge case, or a regression you need to lock in.
@@ -25,30 +25,29 @@ Also follow **coding-standards**. This file adds test-only rules below.
 - Before finishing, review the suite for overlapping tests and duplicate logic; merge or
   remove what adds no new signal.
 
-## Naming
+**Naming**
 
 - Tests describe **observable behavior and contracts**, not internals.
 - Good: "reports error when build fails" · Bad: "returns false when rebuild nil"
-- Put scenario wording in nested/sub-test names, not the top-level test identifier.
+- Place scenario names according to framework and repository conventions; use
+  descriptive case names when using parameterized or nested tests.
 - Don't prefix vars with `test` — the file already signals test code; name for intent
   (`input`, `want`, `user`). Repeat only when disambiguation is needed.
 
-## Structure
+**Structure**
 
 - Pick the simplest pattern — plain test, table-driven/parameterized, or sub-tests.
   Table-driven for many same-shape cases; sub-tests when setup or assertions differ.
 
-## Assertions
+**Assertions**
 
 - Prefer **fail-fast** checks — stop when a precondition fails so later asserts don't
   run on bad state.
-- Assert stable contract fields exactly (e.g. error codes, reason enums); assert
-  human-readable messages loosely (non-empty or stable substring).
+- Assert stable contract fields exactly (e.g. error codes, reason enums).
+- Check messages with meaningful substrings when wording is incidental; use exact
+  equality when wording is part of the contract.
 
-## Helpers
+**Helpers**
 
-- Shared fixtures and helpers in a dedicated test helper file/module for the package.
-
-## Validation
-
-Per **coding-standards**, then run the affected tests.
+- Keep fixtures and helpers local to their tests; extract a shared file/module
+  when reuse across files or framework conventions warrant it.
