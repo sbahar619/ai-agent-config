@@ -27,6 +27,12 @@ Best practices for authoring rules and slash commands in this repo.
 - Always wrap in a code block — without it the model may treat the template as instructions rather than a format to reproduce
 - Trailing format rules (omit empty sections, numbering logic) go as plain bullets after the code block, not inside it
 
+## Open questions
+
+- Each numbered item must ask a concrete, unresolved question ending in `?`, followed by `Recommendation:` with a proposed answer and brief rationale
+- Keep settled decisions and assumptions separate from open questions; never present statements as questions or invent questions to fill the section
+- Omit the section when nothing remains unresolved; when user input is required, wait for answers before requesting approval
+
 ## Input
 
 - One line is enough if the input is unambiguous — tables only when the input forms are genuinely non-obvious

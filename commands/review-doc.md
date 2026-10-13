@@ -37,5 +37,8 @@ description: Review a document, design, plan, task write-up, or other non-code a
 - [Section] Suggestion → <action to fix>
 
 ## Open Questions
-1. <question the artifact doesn't answer but should>
+1. <concrete unresolved question the artifact should answer, ending in ?>
+   Recommendation: <proposed answer and brief rationale>
 ```
+
+- Omit Open Questions when nothing remains unresolved; settled decisions and assumptions are not questions

@@ -14,7 +14,7 @@ Path to an architecture doc and optional phase number (and title if not obvious)
 - Scope — covers all phases by default (`lld.md`); when the user explicitly targets a single phase, scope to that phase only (`phase-N/lld.md`)
 - Short — bullets, actionable; implementation detail, not architecture
 - Co-locate with the plan — save as `docs/plans/<topic>/lld.md` or `docs/plans/<topic>/phase-N/lld.md`
-- Open questions — number each; if any need user input, present them and wait for answers before asking for approval
+- Open questions — use the question + recommendation format below; keep decisions and assumptions separate; if any need user input, wait for answers before asking for approval
 - Match repo API names and reconcile patterns; state assumptions when info is missing
 - Before proposing a new function or type, check the repo for existing symbols **and** the framework/library API (cobra/pflag, gin, client-go, etc.) for built-in equivalents; prefer using what exists over reimplementing — per coding-standards; cite what was checked
 - Must not — source code edits, implementation, git mutations, architecture-only docs (components and flows without deliverable detail), or work outside the stated scope
@@ -40,12 +40,18 @@ Path to an architecture doc and optional phase number (and title if not obvious)
 - Path: docs/plans/<topic>/lld.md (or phase-N/lld.md)
 - Sections: <outline>
 
-## Key decisions · Open questions
-1. ...
+## Key decisions
+1. <settled decision and rationale>
+
+## Assumptions
+- <unverified assumption>
+
+## Open questions
+1. <concrete unresolved question ending in ?>
+   Recommendation: <proposed answer and brief rationale>
 
 ## Next
-{if open questions: ask them and wait for answers before approval}
-Happy with this doc plan? (y/n)
+{if questions need user input: request answers and stop; otherwise: Happy with this doc plan? (y/n)}
 ```
 
 **After approval (auto-created and saved):**

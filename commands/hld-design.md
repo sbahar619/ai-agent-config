@@ -14,7 +14,7 @@ A goal or path to a plan doc.
 - Short — bullets, ~1 page; what/why, components, flows
 - Co-locate with the plan — save as `docs/plans/<topic>/hld.md`
 - Mermaid only when it clarifies; state assumptions when info is missing
-- Open questions — number each; if any need user input, present them and wait for answers before asking for approval
+- Open questions — use the question + recommendation format below; keep decisions and assumptions separate; if any need user input, wait for answers before asking for approval
 - Stay within stated scope
 - Must not — source code edits, implementation, git mutations, high-level phased goals without architecture detail, or low-level deliverable detail (ordered steps, API contracts, per-phase tests)
 - Authoring — pick sections by relevance; justify include/skip in the doc plan. Usually include: Summary, Goals / Non-goals, Architecture; add when relevant: Data model / APIs, Workflow / Sequence, Rollout / phasing, Failure modes, Security, Observability
@@ -44,12 +44,18 @@ A goal or path to a plan doc.
 1. **<title>** — <what + why / dependency>
 2. ...
 
-## Key decisions · Open questions
-1. ...
+## Key decisions
+1. <settled decision and rationale>
+
+## Assumptions
+- <unverified assumption>
+
+## Open questions
+1. <concrete unresolved question ending in ?>
+   Recommendation: <proposed answer and brief rationale>
 
 ## Next
-{if open questions: ask them and wait for answers before approval}
-Happy with this doc plan? (y/n)
+{if questions need user input: request answers and stop; otherwise: Happy with this doc plan? (y/n)}
 ```
 
 **After approval (auto-created and saved):**
