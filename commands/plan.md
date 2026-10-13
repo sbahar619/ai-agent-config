@@ -30,6 +30,9 @@ User provides a goal or problem — feature, refactor, bug, CI failure, or impro
 
 **Draft plan** — reproduce as rendered markdown (not a code block); plan body is identical to the persisted file:
 
+```
+**Purpose:** Define phased outcomes and why they matter; architecture, API contracts, and implementation details are outside this document's scope.
+
 ## Goal
 
 {one sentence}
@@ -47,6 +50,7 @@ User provides a goal or problem — feature, refactor, bug, CI failure, or impro
 
 {if open questions: ask them and wait for answers before approval}
 Happy with this plan? (y/n)
+```
 
 **After approval (auto-saved):**
 

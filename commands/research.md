@@ -30,6 +30,8 @@ A question, idea, or problem.
 **Output**
 
 ```
+**Purpose:** Evaluate the question using evidence, compare options, and recommend one next step; detailed architecture and implementation design are outside this document's scope.
+
 ## Issue
 <one sentence>
 

@@ -19,6 +19,7 @@ Path to an architecture doc and optional phase number (and title if not obvious)
 - Before proposing a new function or type, check the repo for existing symbols **and** the framework/library API (cobra/pflag, gin, client-go, etc.) for built-in equivalents; prefer using what exists over reimplementing — per coding-standards; cite what was checked
 - Must not — source code edits, implementation, git mutations, architecture-only docs (components and flows without deliverable detail), or work outside the stated scope
 - Authoring — typical sections: Scope, Goals, Deliverables (ordered steps, key decisions, status/condition contracts with types/reasons/messages, resource naming/ownership/labels when relevant, tests)
+- Document header — begin the saved LLD with: `**Purpose:** Specify implementable deliverables, contracts, and tests within the stated scope; revisiting the architecture or implementing source code is outside this document's scope.`
 - Before each gate reply: doc plan has path as `docs/plans/<topic>/lld.md` or `phase-N/lld.md`; scope matches user request; after approval, LLD matches approved doc plan; assumptions stated where info is missing; output matches the template — no extra sections
 
 **Gates**

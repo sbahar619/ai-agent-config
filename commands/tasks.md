@@ -48,6 +48,8 @@ Happy with these tasks? (y/n)
 **Output — file (full detail, auto-saved on approval)**
 
 ```
+**Purpose:** Break the agreed scope into ordered tasks with files, dependencies, and completion criteria; new architecture decisions and design rationale are outside this document's scope.
+
 ## Tasks — {goal}
 
 ### T01 — {title}
