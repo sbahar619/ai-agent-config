@@ -4,6 +4,7 @@ set -euo pipefail
 # Sync commands (and rules where applicable) to Codex and Cursor locally.
 # Usage: ./scripts/sync.sh [--remote user@host]
 # --remote also syncs to the supplied SSH destination.
+# Command destinations mirror commands/; destination-only files are deleted.
 
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 repo_dir="$(cd -- "$script_dir/.." && pwd)"
@@ -22,6 +23,22 @@ while [[ $# -gt 0 ]]; do
         *) printf 'Unknown option: %s\n' "$1" >&2; exit 1 ;;
     esac
 done
+
+sync_commands() {
+    local destination="$1"
+    local change name
+    rsync -a --delete --itemize-changes --out-format='%i %n' -- \
+        "$repo_dir/commands/" "$destination" |
+        while IFS= read -r change; do
+            name="${change:12}"
+            case "${change:0:11}" in
+                '*deleting  ') printf 'Deleted: %s%s\n' "$destination" "$name" ;;
+                *+++++++++) printf 'Added: %s%s\n' "$destination" "$name" ;;
+                .d*) ;; # Ignore directory metadata changes.
+                *) printf 'Updated: %s%s\n' "$destination" "$name" ;;
+            esac
+        done
+}
 
 # --- Codex: commands go to prompts/, rules flatten to AGENTS.md -------------
 
@@ -46,7 +63,7 @@ check_agents_guard() {
 check_agents_guard "$codex_dir"
 
 mkdir -p -- "$codex_prompts"
-cp -- "$repo_dir"/commands/*.md "$codex_prompts/"
+sync_commands "$codex_prompts/"
 cp -- "$generated_agents" "$codex_dir/AGENTS.md"
 
 printf 'Synced commands + rules to %s.\n' "$codex_dir"
@@ -57,7 +74,7 @@ cursor_dir="${CURSOR_HOME:-$HOME/.cursor}"
 cursor_commands="$cursor_dir/commands"
 
 mkdir -p -- "$cursor_commands"
-cp -- "$repo_dir"/commands/*.md "$cursor_commands/"
+sync_commands "$cursor_commands/"
 
 printf 'Synced commands to %s.\n' "$cursor_dir"
 
@@ -76,9 +93,9 @@ if [[ -n "$remote" ]]; then
 REMOTE_GUARD
 )"
 
-    rsync -a -- "$repo_dir"/commands/*.md "$remote:~/.codex/prompts/"
+    sync_commands "$remote:~/.codex/prompts/"
     rsync -a -- "$generated_agents"          "$remote:~/.codex/AGENTS.md"
-    rsync -a -- "$repo_dir"/commands/*.md "$remote:~/.cursor/commands/"
+    sync_commands "$remote:~/.cursor/commands/"
 
     printf 'Synced to %s.\n' "$remote"
 fi
