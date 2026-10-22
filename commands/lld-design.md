@@ -4,7 +4,7 @@ LLD only — concise low-level design (deliverables, contracts, tests) for a top
 
 **Input**
 
-Path to an architecture doc and optional phase number (and title if not obvious).
+Path to an architecture doc and optional delivery-phase selection (plan path, number, and title when known).
 
 **Rules**
 
@@ -13,6 +13,7 @@ Path to an architecture doc and optional phase number (and title if not obvious)
 - LLD only — write and edit LLDs after approval
 - Location — `<scope-dir>` is `docs/plans/<topic>`, or `docs/plans/<topic>/<domain>` when the domain is requested or already established; preserve existing document paths and show concrete paths in output
 - Scope — covers all phases of the selected topic or domain by default (`<scope-dir>/lld.md`); for an explicitly selected phase, use `<scope-dir>/phase-N/lld.md`, with the shared HLD above phase folders
+- Phase mapping — for a single phase, identify its delivery plan, number, and title; use that number for new `phase-N` folders, never an HLD rollout-stage label. Preserve existing folder names and record their mapping explicitly; resolve missing or conflicting mappings before the gate.
 - Updates — revise only affected content within the selected scope; identify follow-up for another document in Next without editing that document.
 - Short — bullets, actionable; own detailed contracts, technical deliverables, and tests within the architecture; surface unresolved architecture decisions instead of settling them here
 - Requirements — read supplied requirements and `requirements.md` in the selected scope and its topic root when present; link deliverables and acceptance criteria to relevant requirement IDs, and surface conflicts for resolution without redefining requirements. A separate requirements file is not mandatory.
@@ -24,6 +25,7 @@ Path to an architecture doc and optional phase number (and title if not obvious)
 - Must not — source code edits, implementation, git mutations, architecture-only docs (components and flows without deliverable detail), or work outside the stated scope
 - Authoring — typical sections: Scope, Goals, Deliverables (technical behavior and choices within the architecture, status/condition contracts with types/reasons/messages, resource naming/ownership/labels when relevant, tests); task IDs, per-task file inventories, task ordering, and completion tracking belong in tasks
 - Document header — begin the saved LLD with: `**Purpose:** Specify implementable deliverables, contracts, and tests within the stated scope; revisiting the architecture or implementing source code is outside this document's scope.`
+- Phase header — for a single phase, follow Purpose with `**Delivery phase:** [<plan title>](<relative plan path>) — <number>: <title>` in the saved LLD
 - Before each gate reply: doc plan has a concrete path matching the selected scope; after approval, LLD matches approved doc plan; assumptions stated where info is missing; output matches the template — no extra sections
 
 **Gates**
@@ -38,7 +40,8 @@ Path to an architecture doc and optional phase number (and title if not obvious)
 
 ```
 ## Phase
-<selected phase, or all phases of the selected topic/domain> · source: <architecture doc path>
+<linked delivery plan — phase number and title, or all phases of the selected topic/domain>
+Architecture: <architecture doc path>
 
 ## Doc plan
 - Path: <resolved LLD path>
@@ -64,7 +67,7 @@ Path to an architecture doc and optional phase number (and title if not obvious)
 ```
 ## LLD saved
 - Path: <resolved LLD path>
-- Phase: <selected phase, or all phases of the selected topic/domain>
+- Phase: <linked delivery plan — phase number and title, or all phases of the selected topic/domain>
 
 ## Summary
 <2–4 bullets: deliverables and contracts>

@@ -49,6 +49,18 @@ planning and design documents.
 - Give requirements stable IDs and observable success criteria; plans and designs
   reference those IDs without duplicating or silently changing the requirements.
 
+**Phase identity**
+
+- Identify delivery phases by plan path, number, and title; do not silently
+  renumber phases referenced elsewhere.
+- For new `phase-N/` folders, use the delivery-plan number. Each phase LLD and
+  task file records a Delivery phase header with a relative plan link, number,
+  and title. Preserve existing folder names and state their mapping explicitly.
+- Resolve missing or conflicting mappings before approval; unphased work stays
+  at topic or domain scope without requiring a delivery plan.
+- Label architectural rollout sequencing as stages and map them to delivery
+  phases when defined; stages and phases need not correspond one-to-one.
+
 **Lifecycle**
 
 - Follow the invoking command's approval and save gates; resolve questions requiring

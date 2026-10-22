@@ -19,6 +19,7 @@ User provides a goal, problem, or path to research or requirements.
 - Document state — keep assumptions separate from agreed outcomes; approval or saving the plan does not mean its phases are implemented or validated
 - Short and concise — bullets over prose; skip empty sections
 - Phased — prefer 2–4 phases; 1 when the change is already small; each phase is one logical deliverable (independently reviewable and completable — bundle tightly coupled work, separate unrelated concerns); each one line: title — what + why now
+- Phase identity — delivery phases are identified by this plan's path, phase number, and title; do not silently renumber phases referenced by other documents. Identify any required remapping in Next.
 - Bias toward the smallest useful next step
 - Open questions — use the question + recommendation format below; if any need user input, wait for answers before asking for approval
 - Must not — implementation file paths, commands, config snippets, git/PR language, diagrams, or validation steps in the chat plan; document references are allowed

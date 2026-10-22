@@ -22,6 +22,7 @@ Read referenced docs from the repo; treat as the source of truth.
 - Bias small — prefer more smaller tasks over fewer large ones; a task should be 1 `/implement` invocation
 - Horizontal tasks allowed — uniform mechanical changes across many files (e.g. add nil guard everywhere) may be one task when the concern is single
 - Location — `<scope-dir>` is `docs/plans/<topic>`, or `docs/plans/<topic>/<domain>` when the domain is requested or already established; preserve existing document paths and show concrete paths in output
+- Phase mapping — for a single phase, identify its delivery plan, number, and title; use that number for new `phase-N` folders, never an HLD rollout-stage label. Preserve existing folder names and record their mapping explicitly; resolve missing or conflicting mappings before the gate.
 - Design-doc links — scan the selected scope for `hld.md`, `lld.md`, and `phase-*/lld.md`, plus topic-level architecture for domain work; for topic-wide work, include relevant domain design docs. For each task, link covering sections in `Docs:` (e.g. `[IB01 — Validation function](lld.md#ib01--validation-function)`); omit when none applies.
 - Must not — produce source edits, commits, or implementation; introduce architecture or contract decisions, or repeat design rationale
 - Design gaps — if a task needs an unresolved architecture or contract decision, report the gap and wait for its resolution; do not invent the decision in the task list or require a separate design document when the supplied scope is already sufficient
@@ -41,6 +42,8 @@ Read referenced docs from the repo; treat as the source of truth.
 ```
 ## Tasks — {goal}
 
+**Delivery phase:** [{plan title}]({plan path}) — {number}: {title}
+
 1. **{title}** — {one-line concern}
 2. **{title}** — {one-line concern}
 …
@@ -54,6 +57,8 @@ Happy with these tasks? (y/n)
 
 ```
 **Purpose:** Break the agreed scope into ordered tasks with files, dependencies, and completion criteria; new architecture decisions and design rationale are outside this document's scope.
+
+**Delivery phase:** [{plan title}]({relative plan path}) — {number}: {title}
 
 ## Tasks — {goal}
 
@@ -73,7 +78,8 @@ Happy with these tasks? (y/n)
 …
 ```
 
-- Chat shows only numbered titles + one-line concerns; no file lists or done-when
+- Include Delivery phase in chat and file only for a single selected phase; use the same mapping in both
+- Chat shows the phase mapping when applicable, numbered titles, and one-line concerns; no file lists or done-when
 - File includes full detail per task (concern, files, docs, depends on, done when)
 - Number tasks sequentially (T01, T02, …)
 - Include `Depends on:` only when a task requires a prior task's output

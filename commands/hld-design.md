@@ -15,12 +15,13 @@ A goal or path to a plan doc, with optional domain scope.
 - Location — save `hld.md` in `docs/plans/<topic>/`, or `docs/plans/<topic>/<domain>/` when the domain is requested or already established; keep shared architecture above phase folders, preserve existing document paths, and show concrete paths in output
 - Requirements — read supplied requirements and `requirements.md` in the selected scope and its topic root when present; explain how the architecture satisfies in-scope requirements by ID and surface conflicts for resolution without changing them. A separate requirements file is not mandatory.
 - References — link relevant existing document sections instead of repeating their contents; use relative paths in the saved file and verify linked files and sections exist
+- Rollout stages — label architectural sequencing as stages, not delivery phases; when a delivery plan exists, map stages to its phases by plan link, number, and title without assuming a one-to-one match. Stage labels do not determine `phase-N` folder names.
 - Document state — describe proposed architecture as proposed; approval or saving the HLD does not establish implementation or validation
 - Mermaid only when it clarifies; state assumptions when info is missing
 - Open questions — use the question + recommendation format below; keep decisions and assumptions separate; if any need user input, wait for answers before asking for approval
 - Updates — revise only affected content within the stated scope; identify follow-up for another document in Next without editing that document.
 - Must not — source code edits, implementation, git mutations, high-level phased goals without architecture detail, or low-level deliverable detail (ordered steps, API contracts, per-phase tests)
-- Authoring — pick sections by relevance; justify include/skip in the doc plan. Usually include: Summary, Goals / Non-goals, Architecture and decisions (choices, rationale, tradeoffs); add when relevant: Data model / APIs (concepts and boundaries only), Workflow / Sequence, Rollout / phasing, Failure modes, Security, Observability
+- Authoring — pick sections by relevance; justify include/skip in the doc plan. Usually include: Summary, Goals / Non-goals, Architecture and decisions (choices, rationale, tradeoffs); add when relevant: Data model / APIs (concepts and boundaries only), Workflow / Sequence, Rollout stages, Failure modes, Security, Observability
 - Document header — begin the saved HLD with: `**Purpose:** Describe the architecture, components, flows, and design rationale; detailed API contracts, implementation steps, and per-phase tests are outside this document's scope.`
 - Before each gate reply: doc plan has a concrete path matching the selected scope; every included/skipped section justified; after approval, HLD matches approved doc plan; assumptions stated where info is missing; output matches the template — no extra sections
 
@@ -43,9 +44,9 @@ A goal or path to a plan doc, with optional domain scope.
 - Include: <section> — <why>
 - Skip: <section> — <why or N/A>
 
-## Phasing
-1. **<title>** — <what + why / dependency>
-2. ...
+## Rollout stages
+- **Stage A — <title>** — <what + why / dependency>; delivery: <linked plan phase(s), when defined>
+- ...
 
 ## Key decisions
 1. <settled decision and rationale>
@@ -67,7 +68,7 @@ A goal or path to a plan doc, with optional domain scope.
 ```
 ## HLD saved
 - Path: <resolved HLD path>
-- Phases: <count + titles>
+- Rollout stages: <count + titles, when applicable>
 
 ## Summary
 <2–4 bullets: main decisions and scope>
