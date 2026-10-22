@@ -8,7 +8,7 @@ Path to a plan doc (e.g. from `/plan`).
 
 **Rules**
 
-- Read the plan doc; scan the plan's topic directory (`docs/plans/<topic>/`) for topic-level `hld.md`, `lld.md`, and `tasks.md`, plus phase-scoped `phase-*/lld.md` and `phase-*/tasks.md`
+- Read the plan doc; scan its topic or selected domain directory for `hld.md`, `lld.md`, `tasks.md`, `phase-*/lld.md`, and `phase-*/tasks.md`. Include relevant domain folders for topic-wide work and topic-level architecture for domain work; preserve the existing hierarchy when recommending paths.
 - Classify each plan phase independently using these signals:
   - **Light** — single concern, no new types/APIs/contracts, test-only or mechanical change, ≤ 1 file cluster
   - **Medium** — multiple files but well-scoped, clear boundaries, no new external contracts, 2–3 concerns

@@ -29,10 +29,13 @@ planning and design documents.
 
 **Layout**
 
-- Co-locate a topic's documents under `docs/plans/<topic>/` using `research.md`,
-  `requirements.md`, `plan.md`, `hld.md`, `lld.md`, and `tasks.md` for their respective roles.
-- For an explicitly selected phase, place its LLD and tasks in `phase-N/`, keeping
-  the filenames `lld.md` and `tasks.md`.
+- Default to `docs/plans/<topic>/`; use `<topic>/<domain>/` when the domain is
+  requested or already established. Preserve existing document paths.
+- Use `research.md`, `requirements.md`, `plan.md`, `hld.md`, `lld.md`, and `tasks.md`
+  at the selected scope. For an explicitly selected phase, place its LLD and tasks
+  in `phase-N/` beneath that scope; keep shared HLDs above phase folders.
+- Read applicable topic-level requirements and architecture for domain work;
+  reference inherited content rather than duplicating or overriding it.
 - These are destinations, not a required document set; create only the requested artifacts.
 - Use a separate requirements document when scope spans phases or needs a stable
   agreement on outcomes and compatibility; for small changes, a brief Requirements

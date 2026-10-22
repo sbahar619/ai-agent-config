@@ -6,7 +6,7 @@ Break a plan into ordered, implementable tasks — one concern per task, complet
 
 | Source | Description |
 |--------|-------------|
-| Doc | Path to a plan doc (e.g. from `/plan`) + optional phase filter |
+| Doc | Path to a plan doc (e.g. from `/plan`) + optional domain and phase filter |
 | Inline | Pasted plan or brief goal description in chat |
 
 Read referenced docs from the repo; treat as the source of truth.
@@ -21,7 +21,8 @@ Read referenced docs from the repo; treat as the source of truth.
 - Order by dependency — later tasks may depend on earlier ones; never the reverse
 - Bias small — prefer more smaller tasks over fewer large ones; a task should be 1 `/implement` invocation
 - Horizontal tasks allowed — uniform mechanical changes across many files (e.g. add nil guard everywhere) may be one task when the concern is single
-- Design-doc links — after reading the plan, scan for sibling design docs (`hld.md`, `lld.md`, `phase-*/lld.md`) in the plan's topic directory (`docs/plans/<topic>/`); for each task, if a design doc section covers that task's concern, add a `Docs:` line linking to the doc with the section name (e.g. `[IB01 — Validation function](lld.md#ib01--validation-function)`); omit `Docs:` when no design doc section applies
+- Location — `<scope-dir>` is `docs/plans/<topic>`, or `docs/plans/<topic>/<domain>` when the domain is requested or already established; preserve existing document paths and show concrete paths in output
+- Design-doc links — scan the selected scope for `hld.md`, `lld.md`, and `phase-*/lld.md`, plus topic-level architecture for domain work; for topic-wide work, include relevant domain design docs. For each task, link covering sections in `Docs:` (e.g. `[IB01 — Validation function](lld.md#ib01--validation-function)`); omit when none applies.
 - Must not — produce source edits, commits, or implementation; introduce architecture or contract decisions, or repeat design rationale
 - Design gaps — if a task needs an unresolved architecture or contract decision, report the gap and wait for its resolution; do not invent the decision in the task list or require a separate design document when the supplied scope is already sufficient
 - Updates — revise only tasks affected by agreed scope or design changes; identify follow-up for another document in Next without editing that document.
@@ -78,5 +79,5 @@ Happy with these tasks? (y/n)
 - Include `Depends on:` only when a task requires a prior task's output
 - Include `Docs:` only when a relevant design doc section exists; link rather than copy design detail; use relative path from the tasks file to the doc; multiple links allowed (comma-separated)
 - Omit empty fields; keep each task 3–6 lines
-- Persist — on approval, auto-save as `docs/plans/<topic>/tasks.md`; when scoped to a single phase, save as `docs/plans/<topic>/phase-N/tasks.md`
+- Persist — on approval, auto-save as `<scope-dir>/tasks.md`; when scoped to a single phase, save as `<scope-dir>/phase-N/tasks.md`, beneath the shared HLD
 - No preamble, summary wrap-up, or filler unless asked

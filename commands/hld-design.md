@@ -1,19 +1,19 @@
 # HLD only
 
-HLD only — concise architecture doc (what/why, components, flows) co-located with the plan. No source edits, commits, or implementation.
+HLD only — concise architecture doc (what/why, components, flows) for a topic or domain. No source edits, commits, or implementation.
 
 **Input**
 
-A goal or path to a plan doc.
+A goal or path to a plan doc, with optional domain scope.
 
 **Rules**
 
 - Ask at most 1–2 questions only if scope is unclear
-- Read and inspect as needed — no source writes until approval
-- HLD only — write and edit architecture docs as `docs/plans/<topic>/hld.md` after approval
+- Read and inspect as needed, including topic-level architecture for domain work; surface conflicts instead of overriding shared decisions. No source writes until approval.
+- HLD only — write and edit architecture docs after approval
 - Short — bullets, ~1 page; what/why, components, flows
-- Co-locate with the plan — save as `docs/plans/<topic>/hld.md`
-- Requirements — read supplied or topic-level `requirements.md` when present; explain how the architecture satisfies in-scope requirements by ID and surface conflicts for resolution without changing them. A separate requirements file is not mandatory.
+- Location — save `hld.md` in `docs/plans/<topic>/`, or `docs/plans/<topic>/<domain>/` when the domain is requested or already established; keep shared architecture above phase folders, preserve existing document paths, and show concrete paths in output
+- Requirements — read supplied requirements and `requirements.md` in the selected scope and its topic root when present; explain how the architecture satisfies in-scope requirements by ID and surface conflicts for resolution without changing them. A separate requirements file is not mandatory.
 - References — link relevant existing document sections instead of repeating their contents; use relative paths in the saved file and verify linked files and sections exist
 - Document state — describe proposed architecture as proposed; approval or saving the HLD does not establish implementation or validation
 - Mermaid only when it clarifies; state assumptions when info is missing
@@ -22,7 +22,7 @@ A goal or path to a plan doc.
 - Must not — source code edits, implementation, git mutations, high-level phased goals without architecture detail, or low-level deliverable detail (ordered steps, API contracts, per-phase tests)
 - Authoring — pick sections by relevance; justify include/skip in the doc plan. Usually include: Summary, Goals / Non-goals, Architecture and decisions (choices, rationale, tradeoffs); add when relevant: Data model / APIs (concepts and boundaries only), Workflow / Sequence, Rollout / phasing, Failure modes, Security, Observability
 - Document header — begin the saved HLD with: `**Purpose:** Describe the architecture, components, flows, and design rationale; detailed API contracts, implementation steps, and per-phase tests are outside this document's scope.`
-- Before each gate reply: doc plan has path as `docs/plans/<topic>/hld.md`; every included/skipped section justified; after approval, HLD matches approved doc plan; assumptions stated where info is missing; output matches the template — no extra sections
+- Before each gate reply: doc plan has a concrete path matching the selected scope; every included/skipped section justified; after approval, HLD matches approved doc plan; assumptions stated where info is missing; output matches the template — no extra sections
 
 **Gates**
 
@@ -39,7 +39,7 @@ A goal or path to a plan doc.
 <one sentence>
 
 ## Doc plan
-- Path: docs/plans/<topic>/hld.md
+- Path: <resolved HLD path>
 - Include: <section> — <why>
 - Skip: <section> — <why or N/A>
 
@@ -66,7 +66,7 @@ A goal or path to a plan doc.
 
 ```
 ## HLD saved
-- Path: docs/plans/<topic>/hld.md
+- Path: <resolved HLD path>
 - Phases: <count + titles>
 
 ## Summary

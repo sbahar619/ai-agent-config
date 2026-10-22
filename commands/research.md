@@ -23,13 +23,14 @@ A question, idea, or problem.
 - Concise — half a screen or less; bullets over prose; stop when there's enough to recommend; omit empty sections
 - Render — output findings as rendered markdown in chat; research body matches what is written to the file (gate prompt is chat-only)
 - Open blocks save — do not prompt the Save gate while the Open section has unanswered items; wait for user responses, update findings if answers change anything, then proceed to the gate
-- Persist — after the user approves the Save gate, write to `docs/plans/<topic>/research.md`; saved file uses the same body shown in chat
+- Location — `<scope-dir>` is `docs/plans/<topic>`, or `docs/plans/<topic>/<domain>` when the domain is requested or already established; preserve existing document paths and show concrete paths in output
+- Persist — after the user approves the Save gate, write to `<scope-dir>/research.md`; saved file uses the same body shown in chat
 
 **Gates**
 
 | Step | Prompt | n |
 |------|--------|---|
-| Save | Save findings? (topic name to save, or n to skip) | Skip; no file written |
+| Save | Save findings? (topic or topic/domain to save, or n to skip) | Skip; no file written |
 
 **Output**
 
@@ -57,5 +58,5 @@ Omit empty sections except Issue and Findings.
 
 ```
 ## Research saved
-- Path: docs/plans/<topic>/research.md
+- Path: <resolved research path>
 ```
