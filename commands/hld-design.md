@@ -20,7 +20,7 @@ A goal or path to a plan doc.
 - Open questions — use the question + recommendation format below; keep decisions and assumptions separate; if any need user input, wait for answers before asking for approval
 - Stay within stated scope
 - Must not — source code edits, implementation, git mutations, high-level phased goals without architecture detail, or low-level deliverable detail (ordered steps, API contracts, per-phase tests)
-- Authoring — pick sections by relevance; justify include/skip in the doc plan. Usually include: Summary, Goals / Non-goals, Architecture; add when relevant: Data model / APIs, Workflow / Sequence, Rollout / phasing, Failure modes, Security, Observability
+- Authoring — pick sections by relevance; justify include/skip in the doc plan. Usually include: Summary, Goals / Non-goals, Architecture and decisions (choices, rationale, tradeoffs); add when relevant: Data model / APIs (concepts and boundaries only), Workflow / Sequence, Rollout / phasing, Failure modes, Security, Observability
 - Document header — begin the saved HLD with: `**Purpose:** Describe the architecture, components, flows, and design rationale; detailed API contracts, implementation steps, and per-phase tests are outside this document's scope.`
 - Before each gate reply: doc plan has path as `docs/plans/<topic>/hld.md`; every included/skipped section justified; after approval, HLD matches approved doc plan; assumptions stated where info is missing; output matches the template — no extra sections
 

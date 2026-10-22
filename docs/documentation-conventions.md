@@ -14,12 +14,12 @@ planning and design documents.
 
 | Document | Owns | Excludes |
 |----------|------|----------|
-| Research | Evidence, findings, alternatives, and one recommended next step | Architecture and implementation design |
+| Research | Evidence, relevant gaps, option tradeoffs, and one recommended next step | Requirements agreement, delivery phasing, and solution design |
 | Requirements | Required outcomes, constraints, compatibility, and success criteria | Architecture choices, delivery phasing, and implementation detail |
-| Plan | Phased outcomes and why they matter | Architecture, API contracts, and implementation detail |
-| HLD | Architecture, components, flows, and rationale | Detailed contracts, implementation steps, and per-phase tests |
-| LLD | Implementable deliverables, contracts, and tests | Revisiting architecture or implementing source code |
-| Tasks | Ordered work, files, dependencies, and completion criteria | New architecture decisions or design rationale |
+| Plan | Delivery outcomes, their order, and why they matter; brief requirements when no separate file exists | Architecture decisions, detailed contracts, tests, and task-level steps |
+| HLD | Architecture decisions, components, flows, rationale, and tradeoffs | Detailed contracts, implementation steps, and per-phase tests |
+| LLD | Technical deliverables, detailed contracts, and tests within the architecture | Resolving architecture decisions, execution tracking, or source implementation |
+| Tasks | Ordered work, files, dependencies, and completion criteria | New architecture or contract decisions, or repeated design rationale |
 
 **Layout**
 

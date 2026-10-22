@@ -10,7 +10,7 @@ User provides a goal, problem, or path to research or requirements.
 
 - Ask at most 1–2 questions only if scope is unclear
 - Read and inspect as needed — investigate silently; no source writes until approval
-- High level — what and why, not how; no architecture, APIs, or file-level detail
+- High level — own delivery outcomes, their order, and why each matters; architecture decisions, detailed contracts, tests, and task-level steps belong in design or task documents
 - Requirements — when supplied or present in the topic directory, read `requirements.md`; map phases to relevant requirement IDs, covering each in-scope requirement or explicitly proposing its deferral. Surface conflicts for resolution without rewriting requirements.
 - Small changes — a separate requirements file is optional; when absent, capture necessary obligations and constraints briefly in the plan's Requirements section
 - References — link relevant existing requirements (by ID) and research sections instead of repeating them; use relative paths in the saved file and verify linked files and sections exist

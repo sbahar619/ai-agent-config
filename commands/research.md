@@ -10,6 +10,7 @@ A question, idea, or problem.
 
 - If scope, codebase context, or constraints are unclear, ask all clarifying questions in one numbered list and wait for answers before proceeding; user may answer by number
 - Read-only — no source edits, git mutations, or implementation
+- Scope — own evidence and gaps relevant to the question, option tradeoffs, and one recommended next step; do not turn findings into agreed requirements, delivery phases, architecture decisions, or detailed contracts
 - Sources — use what the question needs: repo (code, history), project docs, web/external docs; cite everything (path:line, command output, URL); label guesses
 - Bugs — reproduce or refute first; state root cause only if evidenced
 - Existing first — search for overlap, prior attempts, ecosystem solutions (well-known libraries, canonical patterns, community conventions), and simpler options before recommending new work
@@ -32,7 +33,7 @@ A question, idea, or problem.
 **Output**
 
 ```
-**Purpose:** Evaluate the question using evidence, compare options, and recommend one next step; detailed architecture and implementation design are outside this document's scope.
+**Purpose:** Establish evidence and relevant gaps, compare options, and recommend one next step; requirements agreement, delivery phasing, and solution design are outside this document's scope.
 
 ## Issue
 <one sentence>

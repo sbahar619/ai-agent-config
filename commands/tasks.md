@@ -22,7 +22,8 @@ Read referenced docs from the repo; treat as the source of truth.
 - Bias small — prefer more smaller tasks over fewer large ones; a task should be 1 `/implement` invocation
 - Horizontal tasks allowed — uniform mechanical changes across many files (e.g. add nil guard everywhere) may be one task when the concern is single
 - Design-doc links — after reading the plan, scan for sibling design docs (`hld.md`, `lld.md`, `phase-*/lld.md`) in the plan's topic directory (`docs/plans/<topic>/`); for each task, if a design doc section covers that task's concern, add a `Docs:` line linking to the doc with the section name (e.g. `[IB01 — Validation function](lld.md#ib01--validation-function)`); omit `Docs:` when no design doc section applies
-- Must not — produce source edits, commits, or implementation; include architecture decisions or design rationale beyond what the plan states
+- Must not — produce source edits, commits, or implementation; introduce architecture or contract decisions, or repeat design rationale
+- Design gaps — if a task needs an unresolved architecture or contract decision, report the gap and wait for its resolution; do not invent the decision in the task list or require a separate design document when the supplied scope is already sufficient
 - Documentation task — if the scope adds or changes user-visible behavior (API, CLI, config, UI), scan for project docs (README, API docs, CLI docs, guides, CLAUDE.md) and include a documentation task when updates are needed; omit when the change is purely internal
 - Document state — approval or saving the task list does not complete its tasks; completion claims require implementation and validation evidence
 - Before replying: every task has concern + files + done-when; no task mixes concerns; ordering respects dependencies; design-doc links point to real sections; a documentation task is present when user-visible behavior changes; output matches template

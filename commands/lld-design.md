@@ -12,7 +12,7 @@ Path to an architecture doc and optional phase number (and title if not obvious)
 - Read and inspect as needed — no source writes until approval
 - LLD only — write and edit LLDs as `docs/plans/<topic>/lld.md` (or `phase-N/lld.md` for a single phase) after approval
 - Scope — covers all phases by default (`lld.md`); when the user explicitly targets a single phase, scope to that phase only (`phase-N/lld.md`)
-- Short — bullets, actionable; implementation detail, not architecture
+- Short — bullets, actionable; own detailed contracts, technical deliverables, and tests within the architecture; surface unresolved architecture decisions instead of settling them here
 - Co-locate with the plan — save as `docs/plans/<topic>/lld.md` or `docs/plans/<topic>/phase-N/lld.md`
 - Requirements — read supplied or topic-level `requirements.md` when present; link deliverables and acceptance criteria to relevant requirement IDs, and surface conflicts for resolution without redefining requirements. A separate requirements file is not mandatory.
 - References — link relevant architecture sections instead of repeating their rationale; use relative paths in the saved file and verify linked files and sections exist
@@ -21,7 +21,7 @@ Path to an architecture doc and optional phase number (and title if not obvious)
 - Match repo API names and reconcile patterns; state assumptions when info is missing
 - Before proposing a new function or type, check the repo for existing symbols **and** the framework/library API (cobra/pflag, gin, client-go, etc.) for built-in equivalents; prefer using what exists over reimplementing — per coding-standards; cite what was checked
 - Must not — source code edits, implementation, git mutations, architecture-only docs (components and flows without deliverable detail), or work outside the stated scope
-- Authoring — typical sections: Scope, Goals, Deliverables (ordered steps, key decisions, status/condition contracts with types/reasons/messages, resource naming/ownership/labels when relevant, tests)
+- Authoring — typical sections: Scope, Goals, Deliverables (technical behavior and choices within the architecture, status/condition contracts with types/reasons/messages, resource naming/ownership/labels when relevant, tests); task IDs, per-task file inventories, task ordering, and completion tracking belong in tasks
 - Document header — begin the saved LLD with: `**Purpose:** Specify implementable deliverables, contracts, and tests within the stated scope; revisiting the architecture or implementing source code is outside this document's scope.`
 - Before each gate reply: doc plan has path as `docs/plans/<topic>/lld.md` or `phase-N/lld.md`; scope matches user request; after approval, LLD matches approved doc plan; assumptions stated where info is missing; output matches the template — no extra sections
 
