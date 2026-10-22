@@ -15,6 +15,7 @@ planning and design documents.
 | Document | Owns | Excludes |
 |----------|------|----------|
 | Research | Evidence, findings, alternatives, and one recommended next step | Architecture and implementation design |
+| Requirements | Required outcomes, constraints, compatibility, and success criteria | Architecture choices, delivery phasing, and implementation detail |
 | Plan | Phased outcomes and why they matter | Architecture, API contracts, and implementation detail |
 | HLD | Architecture, components, flows, and rationale | Detailed contracts, implementation steps, and per-phase tests |
 | LLD | Implementable deliverables, contracts, and tests | Revisiting architecture or implementing source code |
@@ -23,16 +24,21 @@ planning and design documents.
 **Layout**
 
 - Co-locate a topic's documents under `docs/plans/<topic>/` using `research.md`,
-  `plan.md`, `hld.md`, `lld.md`, and `tasks.md` for their respective roles.
+  `requirements.md`, `plan.md`, `hld.md`, `lld.md`, and `tasks.md` for their respective roles.
 - For an explicitly selected phase, place its LLD and tasks in `phase-N/`, keeping
   the filenames `lld.md` and `tasks.md`.
 - These are destinations, not a required document set; create only the requested artifacts.
+- Use a separate requirements document when scope spans phases or needs a stable
+  agreement on outcomes and compatibility; for small changes, a brief Requirements
+  section in the plan is sufficient. Avoid maintaining both copies.
 
 **References**
 
 - Cite evidence for research findings; label assumptions explicitly.
 - Reference relevant existing documents and sections instead of duplicating their content.
 - Use relative paths from saved documents and verify that linked files and sections exist.
+- Give requirements stable IDs and observable success criteria; plans and designs
+  reference those IDs without duplicating or silently changing the requirements.
 
 **Lifecycle**
 
@@ -40,3 +46,8 @@ planning and design documents.
   user input before requesting approval.
 - Keep decisions, assumptions, and unresolved questions distinct; omit empty question sections.
 - Saving or approving a document does not establish implementation or validation of its contents.
+- Research may recommend requirements definition next; acceptance of research
+  findings does not approve requirements. Requirements can also start from a direct
+  goal and constraints without prior research or another command.
+- Review requirements for necessity, clarity, consistency, verifiability, traceability,
+  compatibility, non-goals, and accidental design decisions before planning against them.

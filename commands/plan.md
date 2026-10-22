@@ -4,14 +4,16 @@ Plan only — high-level phased plan. No source edits, commits, or implementatio
 
 **Input**
 
-User provides a goal or problem — feature, refactor, bug, CI failure, or improvement.
+User provides a goal, problem, or path to research or requirements.
 
 **Rules**
 
 - Ask at most 1–2 questions only if scope is unclear
 - Read and inspect as needed — investigate silently; no source writes until approval
 - High level — what and why, not how; no architecture, APIs, or file-level detail
-- References — link relevant existing research sections instead of repeating findings; use relative paths in the saved file and verify linked files and sections exist
+- Requirements — when supplied or present in the topic directory, read `requirements.md`; map phases to relevant requirement IDs, covering each in-scope requirement or explicitly proposing its deferral. Surface conflicts for resolution without rewriting requirements.
+- Small changes — a separate requirements file is optional; when absent, capture necessary obligations and constraints briefly in the plan's Requirements section
+- References — link relevant existing requirements (by ID) and research sections instead of repeating them; use relative paths in the saved file and verify linked files and sections exist
 - Document state — keep assumptions separate from agreed outcomes; approval or saving the plan does not mean its phases are implemented or validated
 - Short and concise — bullets over prose; skip empty sections
 - Phased — prefer 2–4 phases; 1 when the change is already small; each phase is one logical deliverable (independently reviewable and completable — bundle tightly coupled work, separate unrelated concerns); each one line: title — what + why now
@@ -38,6 +40,10 @@ User provides a goal or problem — feature, refactor, bug, CI failure, or impro
 ## Goal
 
 {one sentence}
+
+## Requirements
+
+- {brief required outcome or constraint, only when needed and no separate requirements document exists}
 
 ## Plan
 
