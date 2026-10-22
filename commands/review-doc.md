@@ -14,6 +14,9 @@ description: Review a document, design, plan, task write-up, or other non-code a
 - Correctness — are there factual, logical, or technical errors?
 - Risk — what could go wrong if this is approved or implemented as-is, and how severe?
 - Scope — does it try to cover too much or too little for its stated purpose?
+- Planning/design boundaries — research owns evidence and findings; plans own outcomes and rationale for phasing; HLDs own architecture; LLDs own contracts and tests; tasks own execution and completion criteria. Flag content that belongs in another layer or duplicates its detail.
+- Planning/design references — verify referenced files and sections exist, with paths relative to the containing document; flag copied detail that should link to an existing source
+- Planning/design state — distinguish decisions, assumptions, and unresolved questions; approval or saving a document is not evidence of implementation or validation
 - Coding-standards compliance — for design docs that propose interfaces, functions, or types: check that proposed symbols don't duplicate existing repo logic **or** framework/library built-ins (cobra/pflag, gin, client-go, etc.); prefer using what exists over reimplementing; verify naming follows repo conventions
 
 **Constraints:**

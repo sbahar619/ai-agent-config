@@ -8,12 +8,13 @@ Path to a plan doc (e.g. from `/plan`).
 
 **Rules**
 
-- Read the plan doc; scan the plan's topic directory (`docs/plans/<topic>/`) for sibling artifacts (`hld.md`, `lld.md`, `lld-phase-*.md`, `tasks.md`)
+- Read the plan doc; scan the plan's topic directory (`docs/plans/<topic>/`) for topic-level `hld.md`, `lld.md`, and `tasks.md`, plus phase-scoped `phase-*/lld.md` and `phase-*/tasks.md`
 - Classify each plan phase independently using these signals:
   - **Light** — single concern, no new types/APIs/contracts, test-only or mechanical change, ≤ 1 file cluster
   - **Medium** — multiple files but well-scoped, clear boundaries, no new external contracts, 2–3 concerns
   - **Heavy** — new APIs/types/contracts, cross-component coordination, open questions or blockers, needs design decisions not yet captured
-- Account for existing artifacts — if an HLD, LLD, or tasks file already covers a phase, factor that into the recommendation (skip what's done)
+- Account for existing artifacts — HLDs cover architecture and rationale, LLDs cover contracts and tests, and task lists cover ordered work and completion criteria; skip only the document work already covered for the selected phase
+- Document state — an existing or approved document does not establish implemented work or passing tests; require evidence before treating a delivery phase as complete
 - Read-only — no file writes, git mutations, or implementation
 - Must not — change the plan, produce implementation detail, or skip phases without justification
 - Before replying: every phase has a classification with at least one signal cited; recommended path matches the classification; existing artifacts noted; output matches the template

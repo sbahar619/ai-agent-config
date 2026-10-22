@@ -13,6 +13,8 @@ A goal or path to a plan doc.
 - HLD only — write and edit architecture docs as `docs/plans/<topic>/hld.md` after approval
 - Short — bullets, ~1 page; what/why, components, flows
 - Co-locate with the plan — save as `docs/plans/<topic>/hld.md`
+- References — link relevant existing plan or research sections instead of repeating their contents; use relative paths in the saved file and verify linked files and sections exist
+- Document state — describe proposed architecture as proposed; approval or saving the HLD does not establish implementation or validation
 - Mermaid only when it clarifies; state assumptions when info is missing
 - Open questions — use the question + recommendation format below; keep decisions and assumptions separate; if any need user input, wait for answers before asking for approval
 - Stay within stated scope

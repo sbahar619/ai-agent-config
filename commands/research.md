@@ -15,7 +15,8 @@ A question, idea, or problem.
 - Existing first — search for overlap, prior attempts, ecosystem solutions (well-known libraries, canonical patterns, community conventions), and simpler options before recommending new work
 - Solution ownership — before recommending work in this project, evaluate whether the problem is better solved elsewhere (another service, the caller/frontend, an existing tool, or no code at all); include the alternative in Findings with evidence for or against
 - Disconfirm — actively look for reasons not to proceed (duplicate, misfit, already solved, constraint violation, wrong layer)
-- Facts vs inference — verified findings cite evidence; assumptions are labeled explicitly
+- Facts vs inference — verified findings cite evidence; keep assumptions, settled decisions, and unresolved questions distinct; a proposed or approved design is not evidence of implementation
+- Document references — cite relevant existing sections instead of repeating their contents; use relative paths in the saved file and verify linked files and sections exist
 - Concise — half a screen or less; bullets over prose; stop when there's enough to recommend; omit empty sections
 - Render — output findings as rendered markdown in chat; research body matches what is written to the file (gate prompt is chat-only)
 - Open blocks save — do not prompt the Save gate while the Open section has unanswered items; wait for user responses, update findings if answers change anything, then proceed to the gate

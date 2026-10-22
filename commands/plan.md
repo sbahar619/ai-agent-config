@@ -11,14 +11,16 @@ User provides a goal or problem — feature, refactor, bug, CI failure, or impro
 - Ask at most 1–2 questions only if scope is unclear
 - Read and inspect as needed — investigate silently; no source writes until approval
 - High level — what and why, not how; no architecture, APIs, or file-level detail
+- References — link relevant existing research sections instead of repeating findings; use relative paths in the saved file and verify linked files and sections exist
+- Document state — keep assumptions separate from agreed outcomes; approval or saving the plan does not mean its phases are implemented or validated
 - Short and concise — bullets over prose; skip empty sections
 - Phased — prefer 2–4 phases; 1 when the change is already small; each phase is one logical deliverable (independently reviewable and completable — bundle tightly coupled work, separate unrelated concerns); each one line: title — what + why now
 - Bias toward the smallest useful next step
 - Open questions — use the question + recommendation format below; if any need user input, wait for answers before asking for approval
-- Must not — file paths, commands, config snippets, git/PR language, diagrams, or validation steps in the chat plan
+- Must not — implementation file paths, commands, config snippets, git/PR language, diagrams, or validation steps in the chat plan; document references are allowed
 - Persist — on approval, auto-save as `docs/plans/<topic>/plan.md`; saved file uses the same plan body shown in chat
 - Render — output the plan as rendered markdown in chat; never wrap the plan in a code fence; chat plan body matches what is written to the file (gate prompts are chat-only)
-- Before replying: plan matches the output template — no extra sections; each phase is one line; count is 1–4; strip anything implementer-shaped (paths, commands, git/PR, config)
+- Before replying: plan matches the output template — no extra sections; each phase is one line; count is 1–4; strip anything implementer-shaped (implementation paths, commands, git/PR, config), retaining relevant document references
 
 **Gates**
 

@@ -2,6 +2,9 @@
 
 Best practices for authoring rules and slash commands in this repo.
 
+For documentation command semantics, use [Documentation Command Conventions](documentation-conventions.md)
+while authoring; keep each command's applicable instructions inline so it runs independently.
+
 ## Structure
 
 - Open with a single direct description line — sets the task frame, highest model weight
