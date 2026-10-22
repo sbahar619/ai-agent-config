@@ -14,11 +14,11 @@ A goal or path to a plan doc.
 - Short — bullets, ~1 page; what/why, components, flows
 - Co-locate with the plan — save as `docs/plans/<topic>/hld.md`
 - Requirements — read supplied or topic-level `requirements.md` when present; explain how the architecture satisfies in-scope requirements by ID and surface conflicts for resolution without changing them. A separate requirements file is not mandatory.
-- References — link relevant existing requirements, plan, or research sections instead of repeating their contents; use relative paths in the saved file and verify linked files and sections exist
+- References — link relevant existing document sections instead of repeating their contents; use relative paths in the saved file and verify linked files and sections exist
 - Document state — describe proposed architecture as proposed; approval or saving the HLD does not establish implementation or validation
 - Mermaid only when it clarifies; state assumptions when info is missing
 - Open questions — use the question + recommendation format below; keep decisions and assumptions separate; if any need user input, wait for answers before asking for approval
-- Stay within stated scope
+- Updates — revise only affected content within the stated scope; identify follow-up for another document in Next without editing that document.
 - Must not — source code edits, implementation, git mutations, high-level phased goals without architecture detail, or low-level deliverable detail (ordered steps, API contracts, per-phase tests)
 - Authoring — pick sections by relevance; justify include/skip in the doc plan. Usually include: Summary, Goals / Non-goals, Architecture and decisions (choices, rationale, tradeoffs); add when relevant: Data model / APIs (concepts and boundaries only), Workflow / Sequence, Rollout / phasing, Failure modes, Security, Observability
 - Document header — begin the saved HLD with: `**Purpose:** Describe the architecture, components, flows, and design rationale; detailed API contracts, implementation steps, and per-phase tests are outside this document's scope.`
@@ -58,6 +58,7 @@ A goal or path to a plan doc.
    Recommendation: <proposed answer and brief rationale>
 
 ## Next
+{follow-up for another document, only when needed}
 {if questions need user input: request answers and stop; otherwise: Happy with this doc plan? (y/n)}
 ```
 

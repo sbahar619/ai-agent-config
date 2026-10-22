@@ -11,9 +11,10 @@ User provides a goal, problem, or path to research or requirements.
 - Ask at most 1–2 questions only if scope is unclear
 - Read and inspect as needed — investigate silently; no source writes until approval
 - High level — own delivery outcomes, their order, and why each matters; architecture decisions, detailed contracts, tests, and task-level steps belong in design or task documents
+- Updates — revise only affected content within the plan's scope; identify follow-up for another document in Next without editing that document.
 - Requirements — when supplied or present in the topic directory, read `requirements.md`; map phases to relevant requirement IDs, covering each in-scope requirement or explicitly proposing its deferral. Surface conflicts for resolution without rewriting requirements.
 - Small changes — a separate requirements file is optional; when absent, capture necessary obligations and constraints briefly in the plan's Requirements section
-- References — link relevant existing requirements (by ID) and research sections instead of repeating them; use relative paths in the saved file and verify linked files and sections exist
+- References — link relevant existing document sections, including requirements by ID, instead of repeating them; use relative paths in the saved file and verify linked files and sections exist
 - Document state — keep assumptions separate from agreed outcomes; approval or saving the plan does not mean its phases are implemented or validated
 - Short and concise — bullets over prose; skip empty sections
 - Phased — prefer 2–4 phases; 1 when the change is already small; each phase is one logical deliverable (independently reviewable and completable — bundle tightly coupled work, separate unrelated concerns); each one line: title — what + why now
@@ -57,6 +58,7 @@ User provides a goal, problem, or path to research or requirements.
 
 ## Next
 
+{follow-up for another document, only when needed}
 {if questions need user input: request answers and stop; otherwise: Happy with this plan? (y/n)}
 ```
 

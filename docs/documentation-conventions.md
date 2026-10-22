@@ -21,6 +21,12 @@ planning and design documents.
 | LLD | Technical deliverables, detailed contracts, and tests within the architecture | Resolving architecture decisions, execution tracking, or source implementation |
 | Tasks | Ordered work, files, dependencies, and completion criteria | New architecture or contract decisions, or repeated design rationale |
 
+**Updates**
+
+- Apply new information at the target document's level of responsibility; change
+  only affected content within the requested scope.
+- Identify follow-up for another document instead of expanding the target's scope.
+
 **Layout**
 
 - Co-locate a topic's documents under `docs/plans/<topic>/` using `research.md`,

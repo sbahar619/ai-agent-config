@@ -20,7 +20,7 @@ A research or requirements document path, pasted findings, or a direct goal with
 - Keep assumptions and open questions separate from requirements; each question ends in `?` with a recommendation and rationale; resolve questions requiring user input before the approval gate
 - Read-only until approval; approval of research findings is not approval of requirements, and approval of requirements does not establish implementation or validation
 - Render the full draft as Markdown in chat; on approval, save the same body to `docs/plans/<topic>/requirements.md`, keeping gate prompts outside the saved body
-- Update only the requested requirements document; do not create or modify plans, designs, tasks, or source code
+- Updates — revise only affected content in the requested requirements document; identify follow-up for another document outside the requirements body without editing that document.
 - Before replying: check necessity, clarity, consistency, verifiability, source traceability, stable IDs, compatibility, and non-goals; remove duplication and unintended design decisions
 
 **Gates**

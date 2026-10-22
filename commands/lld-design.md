@@ -12,10 +12,11 @@ Path to an architecture doc and optional phase number (and title if not obvious)
 - Read and inspect as needed — no source writes until approval
 - LLD only — write and edit LLDs as `docs/plans/<topic>/lld.md` (or `phase-N/lld.md` for a single phase) after approval
 - Scope — covers all phases by default (`lld.md`); when the user explicitly targets a single phase, scope to that phase only (`phase-N/lld.md`)
+- Updates — revise only affected content within the selected scope; identify follow-up for another document in Next without editing that document.
 - Short — bullets, actionable; own detailed contracts, technical deliverables, and tests within the architecture; surface unresolved architecture decisions instead of settling them here
 - Co-locate with the plan — save as `docs/plans/<topic>/lld.md` or `docs/plans/<topic>/phase-N/lld.md`
 - Requirements — read supplied or topic-level `requirements.md` when present; link deliverables and acceptance criteria to relevant requirement IDs, and surface conflicts for resolution without redefining requirements. A separate requirements file is not mandatory.
-- References — link relevant architecture sections instead of repeating their rationale; use relative paths in the saved file and verify linked files and sections exist
+- References — link relevant existing document sections instead of repeating their contents; use relative paths in the saved file and verify linked files and sections exist
 - Document state — distinguish planned deliverables and tests from evidenced implementation and results; approval or saving the LLD does not establish implementation or passing tests
 - Open questions — use the question + recommendation format below; keep decisions and assumptions separate; if any need user input, wait for answers before asking for approval
 - Match repo API names and reconcile patterns; state assumptions when info is missing
@@ -54,6 +55,7 @@ Path to an architecture doc and optional phase number (and title if not obvious)
    Recommendation: <proposed answer and brief rationale>
 
 ## Next
+{follow-up for another document, only when needed}
 {if questions need user input: request answers and stop; otherwise: Happy with this doc plan? (y/n)}
 ```
 
