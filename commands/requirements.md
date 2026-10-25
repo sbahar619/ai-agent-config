@@ -23,7 +23,7 @@ A research or requirements document path, pasted findings, or a direct goal with
 - Read-only until approval; approval of research findings is not approval of requirements, and approval of requirements does not establish implementation or validation
 - Work status — when describing existing behavior, distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
 - Render the full draft as Markdown in chat; on approval, save the same body to `<scope-dir>/requirements.md`, keeping gate prompts outside the saved body
-- Updates — revise only affected content in the requested requirements document; identify follow-up for another document outside the requirements body without editing that document.
+- Updates — inspect the target and relevant topic references to identify affected documents and sections before revising; change only affected content in the requested requirements document. Identify follow-up for another document outside the requirements body without editing that document.
 - Before replying: check necessity, clarity, consistency, verifiability, source traceability, stable IDs, compatibility, and non-goals; remove duplication and unintended design decisions
 
 **Gates**

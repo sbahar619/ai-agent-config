@@ -11,8 +11,9 @@ A question, idea, or problem.
 - If scope, codebase context, or constraints are unclear, ask all clarifying questions in one numbered list and wait for answers before proceeding; user may answer by number
 - Read-only — no source edits, git mutations, or implementation
 - Scope — own evidence and gaps relevant to the question, option tradeoffs, and one recommended next step; do not turn findings into agreed requirements, delivery phases, architecture decisions, or detailed contracts
-- Updates — revise only affected findings and recommendations; identify follow-up for another document in the recommended next step without editing that document.
+- Updates — inspect the target and relevant topic references to identify affected documents and sections before revising; change only affected findings and recommendations. Identify follow-up for another document in the recommended next step without editing that document.
 - Sources — use what the question needs: repo (code, history), project docs, web/external docs; cite everything (path:line, command output, URL); label guesses
+- Baseline — for code-based research, use the requested baseline; otherwise retain the existing document's stated branch/revision, or use the current checkout if none is recorded. Record the resolved revision and any relevant uncommitted changes included in the evidence. Assess unmerged changes separately from a target-branch baseline; if the baseline is unavailable, report the limitation instead of substituting another.
 - Bugs — reproduce or refute first; state root cause only if evidenced
 - Existing first — search for overlap, prior attempts, ecosystem solutions (well-known libraries, canonical patterns, community conventions), and simpler options before recommending new work
 - Solution ownership — before recommending work in this project, evaluate whether the problem is better solved elsewhere (another service, the caller/frontend, an existing tool, or no code at all); include the alternative in Findings with evidence for or against
@@ -37,6 +38,8 @@ A question, idea, or problem.
 
 ```
 **Purpose:** Establish evidence and relevant gaps, compare options, and recommend one next step; requirements agreement, delivery phasing, and solution design are outside this document's scope.
+
+**Baseline:** <inspected branch/revision and relevant working-tree changes; omit when no code baseline applies>
 
 ## Issue
 <one sentence>

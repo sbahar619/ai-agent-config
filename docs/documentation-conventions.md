@@ -23,9 +23,16 @@ planning and design documents.
 
 **Updates**
 
+- Inspect the target and relevant topic references before revising to identify
+  affected documents and sections; keep the inspection bounded to the requested change.
 - Apply new information at the target document's level of responsibility; change
   only affected content within the requested scope.
 - Identify follow-up for another document instead of expanding the target's scope.
+- Refresh code-based research against the requested baseline, otherwise retaining
+  the document's stated branch/revision or using the current checkout when none
+  is recorded. State the resolved revision and relevant included uncommitted changes.
+  Keep unmerged changes separate from target-branch findings; report unavailable
+  baselines instead of silently substituting another. Design intentions remain proposals.
 
 **Layout**
 
