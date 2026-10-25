@@ -106,6 +106,16 @@ planning and design documents.
   directory; never renumber existing tasks or reuse retired IDs. Cross-batch
   dependencies use relative links to the exact task heading.
 
+**Review**
+
+- Review against the artifact's purpose and ownership boundaries; inspect relevant
+  references and evidence without expanding into a whole-topic audit.
+- Check duplication, conflicting decisions, stale assumptions, phase mappings,
+  and whether links support their associated claims. Cite both sides of conflicts;
+  distinguish contrary evidence from unavailable or unverified information.
+- Recommend targeted corrections in the owning document; preserve explicit legacy
+  mappings and do not require missing document layers or edit artifacts during review.
+
 **Lifecycle**
 
 - Follow the invoking command's approval and save gates; resolve questions requiring
