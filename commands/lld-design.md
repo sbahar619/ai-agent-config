@@ -9,13 +9,13 @@ An architecture document path or supplied architecture description, plus optiona
 **Rules**
 
 - Ask at most 1–2 questions only if scope is unclear
-- Read the supplied architecture and applicable topic/domain HLDs when present; surface conflicts instead of overriding shared decisions. Sufficient inline architecture does not require a separate HLD file. Inspect further as needed; no source writes until approval.
-- LLD only — write and edit LLDs after approval
+- Read the supplied architecture and applicable topic/domain HLDs when present; surface conflicts instead of overriding shared decisions. Sufficient inline architecture does not require a separate HLD file. Inspect further as needed.
+- Draft for review — write the full LLD to the selected path before requesting content approval; show the file link and a brief overview in chat, marking the draft as awaiting review. Keep gate prompts and review commentary outside the file.
 - Location — `<scope-dir>` is `docs/plans/<topic>`, or `docs/plans/<topic>/<domain>` when the domain is requested or already established; preserve existing document paths and show concrete paths in output
 - Scope — covers all phases of the selected topic or domain by default (`<scope-dir>/lld.md`); for an explicitly selected phase, use `<scope-dir>/phase-N/lld.md`, with the shared HLD above phase folders
 - Phase mapping — for a single phase, identify its delivery plan, number, and title; use that number for new `phase-N` folders, never an HLD rollout-stage label. Preserve existing folder names and record their mapping explicitly; resolve missing or conflicting mappings before the gate.
-- Updates — inspect the target and relevant topic references to identify affected documents and sections before revising; change only affected content within the selected scope. Identify follow-up for another document in Next without editing that document.
-- Short — bullets, actionable; own detailed contracts, technical deliverables, and tests within the architecture; surface unresolved architecture decisions instead of settling them here
+- Updates — inspect the target and relevant topic references to identify affected documents and sections before revising; change only affected content within the selected scope. Identify follow-up for another document in the chat overview without editing that document.
+- Reviewability — keep scope, consequential contracts, and acceptance criteria easy to scan; group necessary detail by deliverable. Remove repetition before proposing independently reviewable scopes; preserve essential constraints, failure cases, rationale, and tests rather than cutting them to fit a length target.
 - Requirements — read supplied requirements and `requirements.md` in the selected scope and its topic root when present; link deliverables and acceptance criteria to relevant requirement IDs, and surface conflicts for resolution without redefining requirements. A separate requirements file is not mandatory.
 - References — include an Architecture line in the saved LLD linking source architecture sections, including applicable topic/domain HLDs; for inline input, briefly identify the supplied architecture instead of inventing a link. Retain relevant requirement links; use relative paths and verify targets without copying content or creating missing parent documents.
 - Document state — approval or saving the LLD does not establish implementation or passing tests
@@ -23,33 +23,44 @@ An architecture document path or supplied architecture description, plus optiona
 - Open questions — use the question + recommendation format below; keep decisions and assumptions separate; if any need user input, wait for answers before asking for approval
 - Match repo API names and reconcile patterns
 - Before proposing a new function or type, check the repo for existing symbols **and** the framework/library API (cobra/pflag, gin, client-go, etc.) for built-in equivalents; prefer using what exists over reimplementing — per coding-standards; cite what was checked
-- Must not — source code edits, implementation, git mutations, architecture-only docs (components and flows without deliverable detail), or work outside the stated scope
+- Must not — source code edits, implementation, git mutations, architecture-only docs (components and flows without deliverable detail), resolving architecture decisions, or work outside the stated scope
 - Authoring — typical sections: Scope, Goals, Deliverables (technical behavior and choices within the architecture, status/condition contracts with types/reasons/messages, resource naming/ownership/labels when relevant, tests); task IDs, per-task file inventories, task ordering, and completion tracking belong in tasks
-- Document header — begin the saved LLD with: `**Purpose:** Specify implementable deliverables, contracts, and tests within the stated scope; revisiting the architecture or implementing source code is outside this document's scope.`
-- Phase header — for a single phase, follow Purpose with `**Delivery phase:** [<plan title>](<relative plan path>) — <number>: <title>` in the saved LLD
-- Before each gate reply: doc plan has a concrete path matching the selected scope; after approval, LLD matches approved doc plan; assumptions stated where info is missing; output matches the template — no extra sections
+- Before replying: the linked draft is complete and matches the selected scope; assumptions are stated where info is missing; chat stays within the output template
 
 **Gates**
 
 | Step | Prompt | n |
 |------|--------|---|
-| Doc plan | Happy with this doc plan? (y/n) | Revise; stay here |
+| LLD | Happy with this LLD? (y/n) | Revise the draft per feedback; re-ask |
 
 **Output**
 
-**Doc plan:**
+**Chat:**
 
 ```
-## Phase
-<linked delivery plan — phase number and title, or all phases of the selected topic/domain>
-Architecture: <links to source architecture sections, or brief identification of supplied inline architecture>
+**Draft:** [lld.md](<resolved path>) — awaiting review
+- <consequential contract, deliverable, or verification criterion>
+```
 
-## Doc plan
-- Path: <resolved LLD path>
-- Sections: <outline>
+- At most three short overview bullets; on revisions, use them for changed contracts, obligations, or open questions instead
+- Request answers when user input is needed; otherwise show the LLD gate
+- Do not repeat the full document in chat unless asked
 
-## Key decisions
-1. <settled decision and rationale>
+**File:**
+
+```
+**Purpose:** Specify implementable deliverables, contracts, and tests within the stated scope; revisiting the architecture or implementing source code is outside this document's scope.
+
+**Delivery phase:** [<plan title>](<relative plan path>) — <number>: <title>
+**Architecture:** <relative links to source sections, or identification of supplied inline architecture>
+**Requirements:** <relative links and IDs when applicable>
+
+## Goal and scope
+<intended outcome and boundaries>
+
+## Deliverables
+### <deliverable>
+<technical behavior, contracts, rationale for non-obvious choices, and tests>
 
 ## Assumptions
 - <unverified assumption>
@@ -57,22 +68,15 @@ Architecture: <links to source architecture sections, or brief identification of
 ## Open questions
 1. <concrete unresolved question ending in ?>
    Recommendation: <proposed answer and brief rationale>
-
-## Next
-{follow-up for another document, only when needed}
-{if questions need user input: request answers and stop; otherwise: Happy with this doc plan? (y/n)}
 ```
 
-**After approval (auto-created and saved):**
+**After approval:**
 
 ```
-## LLD saved
+## LLD approved
 - Path: <resolved LLD path>
-- Phase: <linked delivery plan — phase number and title, or all phases of the selected topic/domain>
-
-## Summary
-<2–4 bullets: deliverables and contracts>
 ```
 
 - No preamble, summary wrap-up, or filler unless asked
-- Omit empty sections except Phase in doc plan
+- Include Delivery phase only for a single selected phase; omit Requirements when none apply
+- Omit empty sections except `Goal and scope` and `Deliverables`

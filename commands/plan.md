@@ -9,7 +9,7 @@ User provides a goal, problem, or path to research or requirements.
 **Rules**
 
 - Ask at most 1–2 questions only if scope is unclear
-- Read and inspect as needed — investigate silently; no source writes until approval
+- Read and inspect as needed — investigate silently
 - High level — own delivery outcomes, their order, and why each matters; architecture decisions, detailed contracts, tests, and task-level steps belong in design or task documents
 - Updates — inspect the target and relevant topic references to identify affected documents and sections before revising; change only affected content within the plan's scope. Identify follow-up for another document in Next without editing that document.
 - Location — `<scope-dir>` is `docs/plans/<topic>`, or `docs/plans/<topic>/<domain>` when the domain is requested or already established; preserve existing document paths and show concrete paths in output
@@ -19,24 +19,35 @@ User provides a goal, problem, or path to research or requirements.
 - References — include relevant existing research and requirements in the plan's References line, with requirement IDs where applicable; link sections instead of repeating them. Use relative paths from the saved plan and verify targets; omit absent sources without requiring new documents.
 - Document state — keep assumptions separate from agreed outcomes; approval or saving the plan does not mean its phases are implemented or validated
 - Work status — when reporting progress, distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
-- Short and concise — bullets over prose; skip empty sections
+- Reviewability — keep outcomes, sequencing, and deferrals easy to scan; include only context needed to judge them. Remove repetition before proposing independently reviewable scopes; preserve essential obligations and rationale rather than cutting them to fit a length target.
 - Phased — prefer 2–4 phases; 1 when the change is already small; each phase delivers a useful, reviewable outcome after its prerequisites, without relying on a later phase to make that outcome work. Bundle tightly coupled work and separate unrelated concerns; each one line: title — usable outcome + why now.
 - Phase identity — delivery phases are identified by this plan's path, phase number, and title; do not silently renumber phases referenced by other documents. Identify any required remapping in Next.
 - Bias toward the smallest useful next step
 - Open questions — use the question + recommendation format below; if any need user input, wait for answers before asking for approval
-- Must not — implementation file inventories, commands, config snippets, git/PR workflows, diagrams, or validation steps in the chat plan; document references and concise status-evidence citations are allowed
-- Render and persist — show the plan as rendered Markdown in chat, without a code fence; on approval, save the same body to `<scope-dir>/plan.md`, keeping gate prompts outside the saved body
-- Before replying: plan matches the output template — no extra sections; each phase is one line; count is 1–4; strip implementation instructions, retaining relevant document references and status-evidence citations
+- Must not — implementation file inventories, commands, config snippets, git/PR workflows, diagrams, or validation steps in the plan; document references and concise status-evidence citations are allowed
+- Draft for review — write the full plan to `<scope-dir>/plan.md` before requesting content approval; show the file link and a brief overview in chat, marking the draft as awaiting review. Keep gate prompts and review commentary outside the file.
+- Before replying: the linked draft matches the file template; each phase is one line; count is 1–4; strip implementation instructions, retaining relevant document references and status-evidence citations; chat stays within its overview template
 
 **Gates**
 
 | Step | Prompt | n |
 |------|--------|---|
-| Plan | Happy with this plan? (y/n) | List Goal + phases (number + name); user picks + comments; revise only those; re-ask |
+| Plan | Happy with this plan? (y/n) | Revise selected outcomes per feedback; re-ask |
 
 **Output**
 
-**Draft plan:**
+**Chat:**
+
+```
+**Draft:** [plan.md](<resolved path>) — awaiting review
+- <consequential outcome, sequencing choice, or deferral>
+```
+
+- At most three short overview bullets; on revisions, use them for changed outcomes, scope, sequencing, or open questions instead
+- Request answers when user input is needed; otherwise show the Plan gate
+- Do not repeat the full document in chat unless asked
+
+**File:**
 
 ```
 **Purpose:** Define phased outcomes and why they matter; architecture, API contracts, and implementation details are outside this document's scope.
@@ -70,15 +81,12 @@ User provides a goal, problem, or path to research or requirements.
 {follow-up for another document, only when needed}
 ```
 
-- After the draft, request answers when user input is needed; otherwise show the Plan gate
-
-**After approval (auto-saved):**
+**After approval:**
 
 ```
-## Plan saved
+## Plan approved
 
 - Path: <resolved plan path>
-- Phases: {count + titles}
 ```
 
 - No preamble, summary wrap-up, or filler unless asked

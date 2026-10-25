@@ -9,7 +9,7 @@ description: Review a document, design, plan, task write-up, or other non-code a
 - Read relevant linked documents and source evidence to check the artifact's claims; keep this inspection within its stated purpose and requested scope. Report unavailable evidence as a review limitation, not a confirmed defect.
 
 **Evaluate against these dimensions:**
-- Clarity — is the writing unambiguous to a reader unfamiliar with the background?
+- Clarity — is the writing unambiguous, with its purpose, consequential decisions, obligations, and open questions easy to find? Flag repetition and unnecessary detail; recommend clearer sections or independently reviewable scopes without removing essential constraints, failure cases, rationale, or acceptance criteria.
 - Completeness — are there missing sections, open questions, or unstated assumptions?
 - Correctness — are there factual, logical, or technical errors?
 - Risk — what could go wrong if this is approved or implemented as-is, and how severe?
@@ -33,6 +33,7 @@ description: Review a document, design, plan, task write-up, or other non-code a
 - Separate blocking issues from suggestions — never mix in one list
 - Review only — propose targeted edits without modifying documents, source code, or Git state; do not rewrite the artifact wholesale
 - Skip generic praise; only note strengths that are specific and actionable
+- Keep chat to the verdict and actionable findings, ordered by severity; do not recap the artifact or narrate the review
 
 **Output format:**
 

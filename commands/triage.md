@@ -21,6 +21,7 @@ Path to a plan doc (e.g. from `/plan`).
 - Read-only — no file writes, git mutations, or implementation
 - Must not — change the plan, produce implementation detail, or skip phases without justification
 - Before replying: every phase has a classification with at least one signal cited; each recommended document addresses a concrete gap; existing artifacts noted; output matches the template
+- Keep chat to the phase table, material discovery gaps, and one next step; link matching artifacts in the table instead of listing the full inventory or repeating phase explanations
 
 **Output**
 
@@ -29,13 +30,13 @@ Path to a plan doc (e.g. from `/plan`).
 Source: `{path}`
 
 ### Existing artifacts
-- {path or "None found"}
+- {ownership ambiguity, missing mapping, or discovery limitation affecting the recommendation; omit when none}
 
 ### Per-phase assessment
 
 | # | Phase | Complexity | Signals | Path |
 |---|-------|------------|---------|------|
-| 1 | {title} | Light / Medium / Heavy | {1–2 key signals} | {workflow} |
+| 1 | {title} | Light / Medium / Heavy | {1–2 key signals} | {workflow + matching artifact link, or identified gap} |
 | 2 | … | … | … | … |
 
 ### Recommended next step

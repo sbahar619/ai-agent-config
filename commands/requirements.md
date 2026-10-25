@@ -12,7 +12,7 @@ A research or requirements document path, pasted findings, or a direct goal with
 - Inspect existing topic documents first; update an existing requirements file rather than create a competing source of truth
 - Location — `<scope-dir>` is `docs/plans/<topic>`, or `docs/plans/<topic>/<domain>` when the domain is requested or already established; preserve existing document paths and show concrete paths in output
 - Domain scope — read topic-level requirements when present; reference inherited obligations by ID instead of copying or overriding them
-- Keep it short — bullets, roughly one page; define what must be achieved, preserved, and excluded, not how to build it
+- Reviewability — keep outcomes, scope, and compatibility easy to scan; include only obligations and context needed to judge them. Aim for roughly one page, preserving necessary constraints and success criteria; remove repetition before proposing independently reviewable scopes.
 - Give each requirement a stable ID (`R01`, `R02`, ...); preserve existing IDs on updates and never reuse retired IDs
 - Each requirement states one necessary, verifiable obligation with an observable success criterion; avoid vague terms and invented thresholds
 - Trace requirements to supplied goals, research findings, or explicit user constraints; label assumptions and seek agreement on inferred obligations
@@ -20,9 +20,9 @@ A research or requirements document path, pasted findings, or a direct goal with
 - Keep success criteria at the behavior or outcome level; detailed API contracts, test code, delivery phases, and implementation tasks belong elsewhere
 - Use relative links to existing source documents and sections in the saved file; verify targets and avoid repeating research findings
 - Keep assumptions and open questions separate from requirements; each question ends in `?` with a recommendation and rationale; resolve questions requiring user input before the approval gate
-- Read-only until approval; approval of research findings is not approval of requirements, and approval of requirements does not establish implementation or validation
+- Approval of research findings is not approval of requirements; writing or approving requirements does not establish implementation or validation
 - Work status — when describing existing behavior, distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
-- Render the full draft as Markdown in chat; on approval, save the same body to `<scope-dir>/requirements.md`, keeping gate prompts outside the saved body
+- Draft for review — write the full requirements to `<scope-dir>/requirements.md` before requesting content approval; show the file link and a brief overview in chat, marking the draft as awaiting review. Keep gate prompts and review commentary outside the file.
 - Updates — inspect the target and relevant topic references to identify affected documents and sections before revising; change only affected content in the requested requirements document. Identify follow-up for another document outside the requirements body without editing that document.
 - Before replying: check necessity, clarity, consistency, verifiability, source traceability, stable IDs, compatibility, and non-goals; remove duplication and unintended design decisions
 
@@ -33,6 +33,19 @@ A research or requirements document path, pasted findings, or a direct goal with
 | Requirements | Happy with these requirements? (y/n) | Revise per feedback; re-ask |
 
 **Output**
+
+**Chat:**
+
+```
+**Draft:** [requirements.md](<resolved path>) — awaiting review
+- <required outcome or consequential constraint>
+```
+
+- At most three short overview bullets; on revisions, use them for changed IDs, obligations, scope, or open questions instead
+- Request answers when user input is needed; otherwise show the Requirements gate
+- Do not repeat the full document in chat unless asked
+
+**File:**
 
 ```
 **Purpose:** Define required outcomes, constraints, and success criteria; architecture, delivery phasing, and implementation details are outside this document's scope.
@@ -66,13 +79,11 @@ A research or requirements document path, pasted findings, or a direct goal with
 ```
 
 - Omit empty sections except Goal, Scope, and Requirements; include only the requirement IDs needed
-- After the draft, request answers when user input is needed; otherwise show the Requirements gate
-- On revisions, briefly identify changed IDs and scope outside the document body before requesting approval
 - No preamble, filler, or closing summary
 
-**After approval (auto-saved):**
+**After approval:**
 
 ```
-## Requirements saved
+## Requirements approved
 - Path: <resolved requirements path>
 ```

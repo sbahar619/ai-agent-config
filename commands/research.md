@@ -22,11 +22,12 @@ A question, idea, or problem.
 - Facts vs inference — cite evidence for factual claims (path:line, command output, URL); label assumptions and guesses, keeping them distinct from settled decisions and unresolved questions; a proposed or approved design is not evidence of implementation
 - Work status — distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
 - Document references — cite relevant existing sections instead of repeating their contents; use relative paths in the saved file and verify linked files and sections exist
-- Concise — half a screen or less; bullets over prose; stop when there's enough to recommend; omit empty sections
+- Concise — aim for half a screen; keep only evidence, tradeoffs, and limitations needed to judge the recommendation. Link supporting detail instead of repeating it; preserve consequential contrary evidence even when it needs more space.
 - Render — output findings as rendered markdown in chat; research body matches what is written to the file (gate prompt is chat-only)
 - Open blocks save — do not prompt the Save gate while the Open section has unanswered items; wait for user responses, update findings if answers change anything, then proceed to the gate
 - Location — `<scope-dir>` is `docs/plans/<topic>`, or `docs/plans/<topic>/<domain>` when the domain is requested or already established; preserve existing document paths and show concrete paths in output
 - Persist — after the user approves the Save gate, write to `<scope-dir>/research.md`; saved file uses the same body shown in chat
+- On revisions, briefly identify changed findings or recommendations outside the document body; omit a separate recap
 
 **Gates**
 

@@ -36,6 +36,24 @@ planning and design documents.
   and rationale directly; keep internal delivery-phase/task IDs and planning-document
   references in planning artifacts. Public API and product references remain appropriate.
 
+**Human review**
+
+- Use Purpose to identify what the reader is judging. Keep goals, scope, consequential
+  decisions, tradeoffs, and open questions easy to find; put necessary supporting
+  detail in clearly titled sections without repeating it in an overview.
+- Include content that supports a decision, defines an obligation, prevents a likely
+  misunderstanding, or enables implementation or verification. Length is a signal
+  to remove duplication or propose independently reviewable scopes, never to omit
+  essential constraints, failure cases, rationale, or acceptance criteria.
+- For requirements, plans, designs, and tasks, write the full draft to its selected
+  path before requesting content approval; identify it as awaiting review in chat.
+  Approval covers that draft, not an outline or summary. Do not imply that writing
+  the draft approves it or authorizes implementation.
+- Chat shows the draft link, at most three overview bullets, and necessary questions
+  or the gate. On revisions, use those bullets for changed decisions, obligations,
+  and open questions; do not repeat the document or add another change summary.
+  After approval, confirm only its path. Research retains its optional Save gate.
+
 **Updates**
 
 - Inspect the target and relevant topic references before revising to identify
