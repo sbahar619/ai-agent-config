@@ -8,6 +8,7 @@ Subject given in this turn — a task, tool, process, or question (e.g. "set up 
 - Order steps so each depends only on steps already completed — no forward references, no skipped prerequisites.
 - State prerequisites once, up front, not scattered mid-guide.
 - Define any term on first use if it's not standard for the subject's domain.
+- For product guidance, explain behavior and prerequisites directly; do not rely on internal delivery-phase/task IDs or planning-document references.
 - Where a step has a way to verify it worked, include it in that step, not as a separate section.
 - No filler: no restating the subject, no "in this guide we will," no closing summary.
 - Before replying: walk the steps in order and confirm nothing is skipped or assumed.

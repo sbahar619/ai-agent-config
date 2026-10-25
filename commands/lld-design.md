@@ -4,12 +4,12 @@ LLD only — concise low-level design (deliverables, contracts, tests) for a top
 
 **Input**
 
-Path to an architecture doc and optional delivery-phase selection (plan path, number, and title when known).
+An architecture document path or supplied architecture description, plus optional delivery-phase selection (plan path, number, and title when known).
 
 **Rules**
 
 - Ask at most 1–2 questions only if scope is unclear
-- Read the supplied architecture and applicable topic/domain HLDs; surface conflicts instead of overriding shared decisions. Inspect further as needed; no source writes until approval.
+- Read the supplied architecture and applicable topic/domain HLDs when present; surface conflicts instead of overriding shared decisions. Sufficient inline architecture does not require a separate HLD file. Inspect further as needed; no source writes until approval.
 - LLD only — write and edit LLDs after approval
 - Location — `<scope-dir>` is `docs/plans/<topic>`, or `docs/plans/<topic>/<domain>` when the domain is requested or already established; preserve existing document paths and show concrete paths in output
 - Scope — covers all phases of the selected topic or domain by default (`<scope-dir>/lld.md`); for an explicitly selected phase, use `<scope-dir>/phase-N/lld.md`, with the shared HLD above phase folders
@@ -17,7 +17,7 @@ Path to an architecture doc and optional delivery-phase selection (plan path, nu
 - Updates — inspect the target and relevant topic references to identify affected documents and sections before revising; change only affected content within the selected scope. Identify follow-up for another document in Next without editing that document.
 - Short — bullets, actionable; own detailed contracts, technical deliverables, and tests within the architecture; surface unresolved architecture decisions instead of settling them here
 - Requirements — read supplied requirements and `requirements.md` in the selected scope and its topic root when present; link deliverables and acceptance criteria to relevant requirement IDs, and surface conflicts for resolution without redefining requirements. A separate requirements file is not mandatory.
-- References — include an Architecture line in the saved LLD linking the source HLD sections, including applicable topic/domain architecture; retain relevant requirement links. Use relative paths and verify targets instead of copying content; do not create missing parent documents.
+- References — include an Architecture line in the saved LLD linking source architecture sections, including applicable topic/domain HLDs; for inline input, briefly identify the supplied architecture instead of inventing a link. Retain relevant requirement links; use relative paths and verify targets without copying content or creating missing parent documents.
 - Document state — approval or saving the LLD does not establish implementation or passing tests
 - Work status — distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
 - Open questions — use the question + recommendation format below; keep decisions and assumptions separate; if any need user input, wait for answers before asking for approval
@@ -42,7 +42,7 @@ Path to an architecture doc and optional delivery-phase selection (plan path, nu
 ```
 ## Phase
 <linked delivery plan — phase number and title, or all phases of the selected topic/domain>
-Architecture: <links to source architecture sections>
+Architecture: <links to source architecture sections, or brief identification of supplied inline architecture>
 
 ## Doc plan
 - Path: <resolved LLD path>

@@ -21,6 +21,21 @@ planning and design documents.
 | LLD | Technical deliverables, detailed contracts, and tests within the architecture | Resolving architecture decisions, execution tracking, or source implementation |
 | Tasks | Ordered work, files, dependencies, and completion criteria | New architecture or contract decisions, or repeated design rationale |
 
+**Workflow size**
+
+- Use the smallest set of artifacts that resolves the actual uncertainty; reuse
+  existing documents and accept sufficient inline context without requiring a full
+  research → requirements → plan → design → tasks chain.
+- Complexity informs the needed decisions, not a mandatory document count.
+  Recommend each additional artifact for a concrete gap; clear work can proceed
+  directly to implementation. Extend existing commands rather than add workflow machinery.
+
+**Product documentation**
+
+- Source comments and user-facing guidance explain behavior, contracts, prerequisites,
+  and rationale directly; keep internal delivery-phase/task IDs and planning-document
+  references in planning artifacts. Public API and product references remain appropriate.
+
 **Updates**
 
 - Inspect the target and relevant topic references before revising to identify
@@ -47,6 +62,17 @@ planning and design documents.
 - Use a separate requirements document when scope spans phases or needs a stable
   agreement on outcomes and compatibility; for small changes, a brief Requirements
   section in the plan is sufficient. Avoid maintaining both copies.
+
+**Discovery**
+
+- Before task generation or triage recommendations, resolve scope from the supplied
+  path and references; recursively inventory its subtree for requirements, plans,
+  HLDs, LLDs, and all `tasks*.md` batches, including nested domains and phases.
+- Inspect applicable ancestor documents up to the topic root and explicitly linked
+  sources. Read candidates by stated scope and phase mapping, not basename alone;
+  discovery does not expand the requested work into sibling domains.
+- Reuse matching artifacts and their paths. Report ambiguous ownership or incomplete
+  discovery rather than assuming documents are absent and creating duplicates.
 
 **References**
 

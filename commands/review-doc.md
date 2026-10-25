@@ -15,6 +15,7 @@ description: Review a document, design, plan, task write-up, or other non-code a
 - Correctness — are there factual, logical, or technical errors?
 - Risk — what could go wrong if this is approved or implemented as-is, and how severe?
 - Scope — does it try to cover too much or too little for its stated purpose?
+- Product documentation — user-facing guidance must explain behavior without internal delivery-phase/task IDs or planning-document references; flag dependencies on that context without removing useful public API or product references
 - Planning/design boundaries — research owns evidence, relevant gaps, and option tradeoffs; requirements own required outcomes, constraints, and success criteria; plans own delivery phasing and may hold brief requirements when no separate file exists; HLDs own architecture decisions and rationale; LLDs own detailed contracts and tests within that architecture; tasks own execution and completion criteria. Flag content that belongs in another layer or duplicates its detail; do not demand another layer's detail as a completeness fix.
 - Requirements review — check necessity, unambiguous and verifiable wording, stable unique IDs, traceability to goals or evidence, compatibility and non-goals, conflicting obligations, missing constraints, and unintended design decisions; do not invent acceptance thresholds
 - Requirements coverage — when a requirements document is supplied or referenced, check that in-scope plan/design outcomes satisfy its requirements or explicitly identify deferrals; flag silent scope changes
