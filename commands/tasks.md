@@ -24,13 +24,13 @@ Read referenced docs from the repo; treat as the source of truth.
 - Location — `<scope-dir>` is `docs/plans/<topic>`, or `docs/plans/<topic>/<domain>` when the domain is requested or already established; preserve existing document paths and show concrete paths in output
 - Task batches — read existing `tasks*.md` in the selected scope or phase directory before splitting work; revise the matching batch rather than duplicate its tasks. Use a separate batch only for distinct follow-up work.
 - Phase mapping — for a single phase, identify its delivery plan, number, and title; use that number for new `phase-N` folders, never an HLD rollout-stage label. Preserve existing folder names and record their mapping explicitly; resolve missing or conflicting mappings before the gate.
-- Design-doc links — scan the selected scope for `hld.md`, `lld.md`, and `phase-*/lld.md`, plus topic-level architecture for domain work; for topic-wide work, include relevant domain design docs. For each task, link covering sections in `Docs:` (e.g. `[IB01 — Validation function](lld.md#ib01--validation-function)`); omit when none applies.
+- Source links — scan the selected scope for `hld.md`, `lld.md`, and `phase-*/lld.md`, plus topic-level architecture for domain work; for topic-wide work, include relevant domain design docs. In each task's `Docs:`, link the covering LLD sections; use relevant HLD or plan sections when no LLD covers the task. Omit when none applies; do not require a missing document layer.
 - Must not — produce source edits, commits, or implementation; introduce architecture or contract decisions, or repeat design rationale
 - Design gaps — if a task needs an unresolved architecture or contract decision, report the gap and wait for its resolution; do not invent the decision in the task list or require a separate design document when the supplied scope is already sufficient
 - Updates — revise only tasks affected by agreed scope or design changes; identify follow-up for another document in Next without editing that document.
 - Documentation task — if the scope adds or changes user-visible behavior (API, CLI, config, UI), scan for project docs (README, API docs, CLI docs, guides, CLAUDE.md) and include a documentation task when updates are needed; omit when the change is purely internal
 - Document state — approval or saving the task list does not complete its tasks; completion claims require implementation and validation evidence
-- Before replying: every task has concern + files + done-when; no task mixes concerns; ordering respects dependencies; design-doc links point to real sections; a documentation task is present when user-visible behavior changes; output matches template
+- Before replying: every task has concern + files + done-when; no task mixes concerns; ordering respects dependencies; source links point to real sections; a documentation task is present when user-visible behavior changes; output matches template
 
 **Gates**
 
@@ -86,7 +86,7 @@ Happy with these tasks? (y/n)
 - File includes full detail per task (concern, files, docs, depends on, done when)
 - Task IDs — for new tasks, continue the existing ID scheme above the highest allocated ID across batches in the same directory (`T01`, `T02`, ... for a fresh list); never renumber existing tasks or reuse retired IDs
 - Include `Depends on:` only when a task requires a prior task's output; for another batch, use a relative file-and-heading link, not a bare task ID, and verify the target exists
-- Include `Docs:` only when a relevant design doc section exists; link rather than copy design detail; use relative path from the tasks file to the doc; multiple links allowed (comma-separated)
+- Include `Docs:` only when a relevant source section exists; link rather than copy its contents; use relative paths from the tasks file and verify targets; multiple links allowed (comma-separated)
 - Omit empty fields; keep each task 3–6 lines
 - Persist — on approval, save to the displayed path in `<scope-dir>/` or, for a single phase, `<scope-dir>/phase-N/`. For a fresh list use `tasks.md`; for a new batch use the next unused number above existing batches (`tasks-02.md`, `tasks-03.md`, ...), treating `tasks.md` as batch 1. Batch numbers are independent of phase numbers.
 - No preamble, summary wrap-up, or filler unless asked

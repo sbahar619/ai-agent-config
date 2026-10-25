@@ -17,7 +17,7 @@ Path to an architecture doc and optional delivery-phase selection (plan path, nu
 - Updates — revise only affected content within the selected scope; identify follow-up for another document in Next without editing that document.
 - Short — bullets, actionable; own detailed contracts, technical deliverables, and tests within the architecture; surface unresolved architecture decisions instead of settling them here
 - Requirements — read supplied requirements and `requirements.md` in the selected scope and its topic root when present; link deliverables and acceptance criteria to relevant requirement IDs, and surface conflicts for resolution without redefining requirements. A separate requirements file is not mandatory.
-- References — link relevant existing document sections instead of repeating their contents; use relative paths in the saved file and verify linked files and sections exist
+- References — include an Architecture line in the saved LLD linking the source HLD sections, including applicable topic/domain architecture; retain relevant requirement links. Use relative paths and verify targets instead of copying content; do not create missing parent documents.
 - Document state — distinguish planned deliverables and tests from evidenced implementation and results; approval or saving the LLD does not establish implementation or passing tests
 - Open questions — use the question + recommendation format below; keep decisions and assumptions separate; if any need user input, wait for answers before asking for approval
 - Match repo API names and reconcile patterns; state assumptions when info is missing
@@ -41,7 +41,7 @@ Path to an architecture doc and optional delivery-phase selection (plan path, nu
 ```
 ## Phase
 <linked delivery plan — phase number and title, or all phases of the selected topic/domain>
-Architecture: <architecture doc path>
+Architecture: <links to source architecture sections>
 
 ## Doc plan
 - Path: <resolved LLD path>

@@ -15,7 +15,7 @@ User provides a goal, problem, or path to research or requirements.
 - Location — `<scope-dir>` is `docs/plans/<topic>`, or `docs/plans/<topic>/<domain>` when the domain is requested or already established; preserve existing document paths and show concrete paths in output
 - Requirements — read supplied requirements and `requirements.md` in the selected scope and its topic root when present; map phases to relevant requirement IDs, covering each in-scope requirement or explicitly proposing its deferral. Surface conflicts for resolution without rewriting requirements.
 - Small changes — a separate requirements file is optional; when absent, capture necessary obligations and constraints briefly in the plan's Requirements section
-- References — link relevant existing document sections, including requirements by ID, instead of repeating them; use relative paths in the saved file and verify linked files and sections exist
+- References — include relevant existing research and requirements in the plan's References line, with requirement IDs where applicable; link sections instead of repeating them. Use relative paths from the saved plan and verify targets; omit absent sources without requiring new documents.
 - Document state — keep assumptions separate from agreed outcomes; approval or saving the plan does not mean its phases are implemented or validated
 - Short and concise — bullets over prose; skip empty sections
 - Phased — prefer 2–4 phases; 1 when the change is already small; each phase is one logical deliverable (independently reviewable and completable — bundle tightly coupled work, separate unrelated concerns); each one line: title — what + why now
@@ -39,6 +39,8 @@ User provides a goal, problem, or path to research or requirements.
 
 ```
 **Purpose:** Define phased outcomes and why they matter; architecture, API contracts, and implementation details are outside this document's scope.
+
+**References:** {links to relevant research and requirements sections; omit when none exist}
 
 ## Goal
 

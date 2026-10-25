@@ -14,7 +14,7 @@ A goal or path to a plan doc, with optional domain scope.
 - Short — bullets, ~1 page; what/why, components, flows
 - Location — save `hld.md` in `docs/plans/<topic>/`, or `docs/plans/<topic>/<domain>/` when the domain is requested or already established; keep shared architecture above phase folders, preserve existing document paths, and show concrete paths in output
 - Requirements — read supplied requirements and `requirements.md` in the selected scope and its topic root when present; explain how the architecture satisfies in-scope requirements by ID and surface conflicts for resolution without changing them. A separate requirements file is not mandatory.
-- References — link relevant existing document sections instead of repeating their contents; use relative paths in the saved file and verify linked files and sections exist
+- References — include a References line in the saved HLD linking its delivery plan and, for domain work, applicable topic-level HLD sections; retain relevant requirement links. Use relative paths and verify targets instead of copying content; omit absent sources without requiring new documents.
 - Rollout stages — label architectural sequencing as stages, not delivery phases; when a delivery plan exists, map stages to its phases by plan link, number, and title without assuming a one-to-one match. Stage labels do not determine `phase-N` folder names.
 - Document state — describe proposed architecture as proposed; approval or saving the HLD does not establish implementation or validation
 - Mermaid only when it clarifies; state assumptions when info is missing
@@ -41,6 +41,7 @@ A goal or path to a plan doc, with optional domain scope.
 
 ## Doc plan
 - Path: <resolved HLD path>
+- References: <links to relevant existing parent documents and sections; omit when none exist>
 - Include: <section> — <why>
 - Skip: <section> — <why or N/A>
 

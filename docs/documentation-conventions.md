@@ -45,6 +45,12 @@ planning and design documents.
 
 - Cite evidence for research findings; label assumptions explicitly.
 - Reference relevant existing documents and sections instead of duplicating their content.
+- Persist upward links: tasks to covering LLD sections, LLDs to source HLDs,
+  HLDs to delivery plans, and plans to research and requirements. Domain HLDs
+  also link applicable topic-level architecture; requirements cite their sources.
+- Link the nearest relevant existing source when a layer is absent; do not create
+  documents just to complete the chain. These links belong in saved artifacts,
+  not only chat summaries.
 - Use relative paths from saved documents and verify that linked files and sections exist.
 - Give requirements stable IDs and observable success criteria; plans and designs
   reference those IDs without duplicating or silently changing the requirements.
