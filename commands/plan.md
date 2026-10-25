@@ -13,7 +13,8 @@ User provides a goal, problem, or path to research or requirements.
 - High level — own delivery outcomes, their order, and why each matters; architecture decisions, detailed contracts, tests, and task-level steps belong in design or task documents
 - Updates — revise only affected content within the plan's scope; identify follow-up for another document in Next without editing that document.
 - Location — `<scope-dir>` is `docs/plans/<topic>`, or `docs/plans/<topic>/<domain>` when the domain is requested or already established; preserve existing document paths and show concrete paths in output
-- Requirements — read supplied requirements and `requirements.md` in the selected scope and its topic root when present; map phases to relevant requirement IDs, covering each in-scope requirement or explicitly proposing its deferral. Surface conflicts for resolution without rewriting requirements.
+- Requirements — read supplied requirements and `requirements.md` in the selected scope and its topic root when present; surface conflicts for resolution without rewriting requirements
+- Coverage — map every in-scope requirement and research gap to a phase outcome using source links, requirement IDs, or brief labels for inline input; otherwise propose its deferral with a reason in Deferred. Research findings outside the agreed scope do not automatically become obligations.
 - Small changes — a separate requirements file is optional; when absent, capture necessary obligations and constraints briefly in the plan's Requirements section
 - References — include relevant existing research and requirements in the plan's References line, with requirement IDs where applicable; link sections instead of repeating them. Use relative paths from the saved plan and verify targets; omit absent sources without requiring new documents.
 - Document state — keep assumptions separate from agreed outcomes; approval or saving the plan does not mean its phases are implemented or validated
@@ -54,6 +55,10 @@ User provides a goal, problem, or path to research or requirements.
 
 1. **{title}** — {what + why now}
 2. ...
+
+## Deferred
+
+- {source gap or requirement reference} — {reason for proposed or previously agreed deferral}
 
 ## Open questions
 

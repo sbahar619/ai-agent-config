@@ -25,6 +25,7 @@ Read referenced docs from the repo; treat as the source of truth.
 - Task batches — read existing `tasks*.md` in the selected scope or phase directory before splitting work; revise the matching batch rather than duplicate its tasks. Use a separate batch only for distinct follow-up work.
 - Phase mapping — for a single phase, identify its delivery plan, number, and title; use that number for new `phase-N` folders, never an HLD rollout-stage label. Preserve existing folder names and record their mapping explicitly; resolve missing or conflicting mappings before the gate.
 - Source links — scan the selected scope for `hld.md`, `lld.md`, and `phase-*/lld.md`, plus topic-level architecture for domain work; for topic-wide work, include relevant domain design docs. In each task's `Docs:`, link the covering LLD sections; use relevant HLD or plan sections when no LLD covers the task. Omit when none applies; do not require a missing document layer.
+- Coverage — account for every required deliverable in the selected scope, including specified tests and integration work, through new tasks, existing coverage, or a proposed deferral with a reason. Use task concerns and `Docs:` links for new-task mappings; record existing task links or implementation evidence and deferrals in Coverage notes. Do not expand a selected batch to the whole phase or silently waive upstream requirements; resolve scope conflicts before approval.
 - Must not — produce source edits, commits, or implementation; introduce architecture or contract decisions, or repeat design rationale
 - Design gaps — if a task needs an unresolved architecture or contract decision, report the gap and wait for its resolution; do not invent the decision in the task list or require a separate design document when the supplied scope is already sufficient
 - Updates — revise only tasks affected by agreed scope or design changes; identify follow-up for another document in Next without editing that document.
@@ -50,6 +51,9 @@ Path: {resolved task file path}
 1. **{title}** — {one-line concern}
 2. **{title}** — {one-line concern}
 …
+
+## Coverage notes
+- {deliverable reference} — {existing coverage link or reason for proposed/approved deferral}
 
 ## Next
 {follow-up for another document, only when needed}
@@ -79,11 +83,15 @@ Happy with these tasks? (y/n)
 - Done when: …
 
 …
+
+## Coverage notes
+- {deliverable reference} — {existing task link, implementation evidence, or reason for proposed/approved deferral}
 ```
 
 - Include Delivery phase in chat and file only for a single selected phase; use the same mapping in both
-- Chat shows the destination path, phase mapping when applicable, numbered titles, and one-line concerns; no implementation file lists or done-when
+- Chat shows the destination path, phase mapping when applicable, numbered titles, one-line concerns, and coverage notes; no implementation file lists or done-when
 - File includes full detail per task (concern, files, docs, depends on, done when)
+- Omit Coverage notes when all deliverables map to new tasks; otherwise keep the same existing-coverage and deferral notes in chat and file
 - Task IDs — for new tasks, continue the existing ID scheme above the highest allocated ID across batches in the same directory (`T01`, `T02`, ... for a fresh list); never renumber existing tasks or reuse retired IDs
 - Include `Depends on:` only when a task requires a prior task's output; for another batch, use a relative file-and-heading link, not a bare task ID, and verify the target exists
 - Include `Docs:` only when a relevant source section exists; link rather than copy its contents; use relative paths from the tasks file and verify targets; multiple links allowed (comma-separated)

@@ -55,6 +55,17 @@ planning and design documents.
 - Give requirements stable IDs and observable success criteria; plans and designs
   reference those IDs without duplicating or silently changing the requirements.
 
+**Coverage**
+
+- Map each in-scope research gap and requirement to a plan outcome or an explicit
+  deferral with a reason; unrelated findings do not expand the agreed scope.
+- Account for every required deliverable in the selected task scope, including
+  specified tests and integration work, across new and existing batches. Link
+  existing coverage instead of duplicating tasks; record proposed deferrals and
+  resolve conflicts with upstream scope before approval.
+- Use source links for covered work and concise notes for exceptions; do not
+  require a separate coverage document or repeat the source detail.
+
 **Phase identity**
 
 - Identify delivery phases by plan path, number, and title; do not silently
