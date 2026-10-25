@@ -15,11 +15,11 @@ Read referenced docs from the repo; treat as the source of truth.
 
 - Ask at most 1 question if scope or ordering is unclear; resolve questions requiring user input before requesting approval
 - Read relevant source files to understand current state — identify symbols, call sites, and boundaries before splitting
-- One concern per task — a task should answer one review question; never mix rename + wiring, removal + addition, or structural + mechanical changes
-- Complete wiring — if a task adds, moves, renames, or changes a symbol's signature, it must update every in-scope call site in the same task
+- One concern per task — a task should answer one review question; keep the supporting edits needed for that outcome together, including caller updates for a rename, and separate unrelated cleanup
+- Complete wiring — include all callers, registration, configuration, and integration needed for the task's stated behavior, plus appropriate tests; a task must not leave that behavior broken or unreachable until a later task. If required wiring falls outside the authorized scope, report the scope conflict before approval.
 - Consumer inventory — each task lists the files/patterns it touches; within a batch, no file appears in two tasks for the same symbol
 - Order by dependency — later tasks may depend on earlier ones; never the reverse
-- Bias small — prefer more smaller tasks over fewer large ones; a task should be 1 `/implement` invocation
+- Bias small — choose the smallest complete, reviewable change that fits one `/implement` invocation; split only where each task leaves a coherent, verifiable result after its declared dependencies
 - Horizontal tasks allowed — uniform mechanical changes across many files (e.g. add nil guard everywhere) may be one task when the concern is single
 - Location — `<scope-dir>` is `docs/plans/<topic>`, or `docs/plans/<topic>/<domain>` when the domain is requested or already established; preserve existing document paths and show concrete paths in output
 - Task batches — read existing `tasks*.md` in the selected scope or phase directory before splitting work; revise the matching batch rather than duplicate its tasks. Use a separate batch only for distinct follow-up work.
@@ -73,7 +73,7 @@ Happy with these tasks? (y/n)
 - Concern: {what this task does — one sentence}
 - Files: {paths or glob patterns}
 - Docs: [{section name}]({relative path to doc}#{anchor})
-- Done when: {observable condition — tests green, no old pattern remains, etc.}
+- Done when: {observable outcome and relevant verification, including required wiring; not merely files or symbols added}
 
 ### {next task ID} — {title}
 - Concern: …

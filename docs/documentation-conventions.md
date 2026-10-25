@@ -66,6 +66,16 @@ planning and design documents.
 - Use source links for covered work and concise notes for exceptions; do not
   require a separate coverage document or repeat the source detail.
 
+**Complete deliverables**
+
+- Each phase delivers a useful outcome after its prerequisites; it must not need
+  a later phase to make its stated outcome work.
+- Each task is the smallest complete, reviewable change, including supporting
+  callers, registration, configuration, integration, and appropriate tests.
+  Separate unrelated cleanup; do not separate wiring needed for the same outcome.
+- Completion criteria describe observable results and relevant verification;
+  report required work outside the authorized scope instead of silently omitting it.
+
 **Phase identity**
 
 - Identify delivery phases by plan path, number, and title; do not silently

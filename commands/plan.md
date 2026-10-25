@@ -19,7 +19,7 @@ User provides a goal, problem, or path to research or requirements.
 - References — include relevant existing research and requirements in the plan's References line, with requirement IDs where applicable; link sections instead of repeating them. Use relative paths from the saved plan and verify targets; omit absent sources without requiring new documents.
 - Document state — keep assumptions separate from agreed outcomes; approval or saving the plan does not mean its phases are implemented or validated
 - Short and concise — bullets over prose; skip empty sections
-- Phased — prefer 2–4 phases; 1 when the change is already small; each phase is one logical deliverable (independently reviewable and completable — bundle tightly coupled work, separate unrelated concerns); each one line: title — what + why now
+- Phased — prefer 2–4 phases; 1 when the change is already small; each phase delivers a useful, reviewable outcome after its prerequisites, without relying on a later phase to make that outcome work. Bundle tightly coupled work and separate unrelated concerns; each one line: title — usable outcome + why now.
 - Phase identity — delivery phases are identified by this plan's path, phase number, and title; do not silently renumber phases referenced by other documents. Identify any required remapping in Next.
 - Bias toward the smallest useful next step
 - Open questions — use the question + recommendation format below; if any need user input, wait for answers before asking for approval
@@ -53,7 +53,7 @@ User provides a goal, problem, or path to research or requirements.
 
 ## Plan
 
-1. **{title}** — {what + why now}
+1. **{title}** — {usable outcome + why now}
 2. ...
 
 ## Deferred
