@@ -22,11 +22,11 @@ A question, idea, or problem.
 - Facts vs inference — cite evidence for factual claims (path:line, command output, URL); label assumptions and guesses, keeping them distinct from settled decisions and unresolved questions; a proposed or approved design is not evidence of implementation
 - Work status — distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
 - Document references — cite relevant existing sections instead of repeating their contents; use relative paths in the saved file and verify linked files and sections exist
-- Concise — aim for half a screen; keep only evidence, tradeoffs, and limitations needed to judge the recommendation. Link supporting detail instead of repeating it; preserve consequential contrary evidence even when it needs more space.
-- Render — output findings as rendered markdown in chat; research body matches what is written to the file (gate prompt is chat-only)
+- Concise — aim for 100–150 words for routine answers; use fewer when sufficient. Keep evidence, tradeoffs, and limitations needed to judge the recommendation; preserve consequential contrary evidence even when it needs more space.
+- Render — lead with the answer in rendered markdown; omit generic command-purpose boilerplate from chat. The saved body matches the reviewed chat body, with a file-only Purpose line; the gate prompt is chat-only.
 - Open blocks save — do not prompt the Save gate while the Open section has unanswered items; wait for user responses, update findings if answers change anything, then proceed to the gate
 - Location — `<scope-dir>` is `docs/plans/<topic>`, or `docs/plans/<topic>/<domain>` when the domain is requested or already established; preserve existing document paths and show concrete paths in output
-- Persist — after the user approves the Save gate, write to `<scope-dir>/research.md`; saved file uses the same body shown in chat
+- Persist — after the user approves the Save gate, write to `<scope-dir>/research.md`; prepend `**Purpose:** Research <the specific question and scope>.` to the reviewed body
 - On revisions, briefly identify changed findings or recommendations outside the document body; omit a separate recap
 
 **Gates**
@@ -38,26 +38,25 @@ A question, idea, or problem.
 **Output**
 
 ```
-**Purpose:** Establish evidence and relevant gaps, compare options, and recommend one next step; requirements agreement, delivery phasing, and solution design are outside this document's scope.
+**Answer:** <one-sentence conclusion, or what remains uncertain>
 
 **Baseline:** <inspected branch/revision and relevant working-tree changes; omit when no code baseline applies>
 
-## Issue
-<one sentence>
+**Findings:**
 
-## Findings
 - <fact> — <evidence>
-- (2–5 bullets; include negatives and alternatives)
 
-## Recommendation
-<one next step, such as requirements definition or planning when warranted, or "no action: <why>">
+**Next:** <one concrete next step, or "no action" with a reason not already stated>
 
-## Open
-1. <blocking unknown — omit section if none>
+**Open:**
+
+1. <concrete blocking question ending in ?>
+   Recommendation: <proposed answer and brief rationale>
 ```
 
-No preamble, filler, or closing summary.
-Omit empty sections except Issue and Findings.
+- Findings: usually 1–3 bullets; retain material contrary evidence and alternatives even when more are needed
+- Omit Baseline when no code baseline applies and Open when nothing remains unresolved
+- No preamble, filler, or closing summary; do not repeat the answer in Next
 
 **After user approves the Save gate:**
 

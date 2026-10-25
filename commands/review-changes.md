@@ -7,7 +7,7 @@ Review diff only — full git diff review (staged, branch, or named paths). GitH
 - Ask at most 1 question if the diff scope is unclear — do not proceed blindly
 - Read and inspect as needed — no writes, no git mutations
 - Changed lines only — comment on diff hunks, not untouched code
-- Concise findings — one concern per finding; state issue and fix, skip background the reader already has
+- Concise findings — one concern per finding; state issue, impact, and fix with inline evidence. Aim for 100–150 words total for routine reviews; use fewer when sufficient and exceed when needed to report all material findings or limitations.
 - Apply applicable user/project rules on changed lines when they indicate real risk; also flag deviations from language, framework, and ecosystem conventions (idiomatic patterns, well-known libraries, canonical APIs)
 - Do not guess — say when context is missing
 - Skip style nits unless they hide a real bug
@@ -18,43 +18,17 @@ Review diff only — full git diff review (staged, branch, or named paths). GitH
 **Output**
 
 ```
-## Review · `<scope>`
-`branch-name` | staged | `path/...`
+**Verdict:** Approve | Request changes | Block — <reviewed branch, staged changes, or paths>
 
-## Verdict · Approve | Request changes | Block
-<one-line rationale>
+**Findings:**
 
-**Findings:** <n> blocking · <n> major · <n> minor · <n> nit
+1. [Blocking|Major|Minor|Nit] `path#Lstart-Lend` — <issue and impact → fix>
 
----
-
-### Blocking
-(none — omit section when empty)
-
-**1.** `path/to/file.go#L123-L130`
-<issue → fix>
-
-### Major
-...
-
-### Minor
-...
-
-### Nit
-...
-
----
-
-### Strengths
-- <2–4 bullets; omit when nothing notable>
-
-### Before merge
-- [ ] <action items; omit section when empty>
+**Limitations:** <missing context or checks affecting confidence>
 ```
 
 - Verdict — Block: security/correctness/data-loss; Request changes: missing tests or real regressions; Approve: only minor/nit
-- Findings — group by severity (Blocking → Major → Minor → Nit); omit empty sections
-- Numbering — one global sequence (1…n) in severity order; prefix **N.**
-- Comment block — **N.** + location(s), blank line, body (1–2 lines: issue → fix); multi-location: join with ·
-- Clean diff — Approve, all counts zero: omit Findings and Before merge; one line under Verdict: "No issues found on the diff."
+- Findings — number in severity order (Blocking → Major → Minor → Nit); one or two sentences each; join multiple locations with ·
+- Clean diff — omit Findings; append "No issues found on the diff." to the verdict
+- Omit Limitations when none; do not add counts, strengths, a diff recap, or a checklist repeating the fixes
 - No preamble, summary wrap-up, or filler unless asked
