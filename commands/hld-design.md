@@ -18,7 +18,7 @@ A goal or path to a plan doc, with optional domain scope.
 - Rollout stages — label architectural sequencing as stages, not delivery phases; when a delivery plan exists, map stages to its phases by plan link, number, and title without assuming a one-to-one match. Stage labels do not determine `phase-N` folder names.
 - Document state — approval or saving the HLD does not establish implementation or validation
 - Work status — distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
-- Mermaid only when it clarifies; state assumptions when info is missing
+- Mermaid only when it clarifies
 - Open questions — use the question + recommendation format below; keep decisions and assumptions separate; if any need user input, wait for answers before asking for approval
 - Updates — inspect the target and relevant topic references to identify affected documents and sections before revising; change only affected content within the stated scope. Identify follow-up for another document in Next without editing that document.
 - Must not — source code edits, implementation, git mutations, high-level phased goals without architecture detail, or low-level deliverable detail (ordered steps, API contracts, per-phase tests)

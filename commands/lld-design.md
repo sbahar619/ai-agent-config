@@ -21,7 +21,7 @@ An architecture document path or supplied architecture description, plus optiona
 - Document state — approval or saving the LLD does not establish implementation or passing tests
 - Work status — distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
 - Open questions — use the question + recommendation format below; keep decisions and assumptions separate; if any need user input, wait for answers before asking for approval
-- Match repo API names and reconcile patterns; state assumptions when info is missing
+- Match repo API names and reconcile patterns
 - Before proposing a new function or type, check the repo for existing symbols **and** the framework/library API (cobra/pflag, gin, client-go, etc.) for built-in equivalents; prefer using what exists over reimplementing — per coding-standards; cite what was checked
 - Must not — source code edits, implementation, git mutations, architecture-only docs (components and flows without deliverable detail), or work outside the stated scope
 - Authoring — typical sections: Scope, Goals, Deliverables (technical behavior and choices within the architecture, status/condition contracts with types/reasons/messages, resource naming/ownership/labels when relevant, tests); task IDs, per-task file inventories, task ordering, and completion tracking belong in tasks

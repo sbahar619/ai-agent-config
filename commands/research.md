@@ -12,14 +12,14 @@ A question, idea, or problem.
 - Read-only — no source edits, git mutations, or implementation
 - Scope — own evidence and gaps relevant to the question, option tradeoffs, and one recommended next step; do not turn findings into agreed requirements, delivery phases, architecture decisions, or detailed contracts
 - Updates — inspect the target and relevant topic references to identify affected documents and sections before revising; change only affected findings and recommendations. Identify follow-up for another document in the recommended next step without editing that document.
-- Sources — use what the question needs: repo (code, history), project docs, web/external docs; cite everything (path:line, command output, URL); label guesses
+- Sources — use what the question needs: repo (code, history), project docs, web/external docs
 - Baseline — for code-based research, use the requested baseline; otherwise retain the existing document's stated branch/revision, or use the current checkout if none is recorded. Record the resolved revision and any relevant uncommitted changes included in the evidence. Assess unmerged changes separately from a target-branch baseline; if the baseline is unavailable, report the limitation instead of substituting another.
 - Bugs — reproduce or refute first; state root cause only if evidenced
 - Existing first — search for overlap, prior attempts, ecosystem solutions (well-known libraries, canonical patterns, community conventions), and simpler options before recommending new work
 - Solution ownership — before recommending work in this project, evaluate whether the problem is better solved elsewhere (another service, the caller/frontend, an existing tool, or no code at all); include the alternative in Findings with evidence for or against
 - Disconfirm — actively look for reasons not to proceed (duplicate, misfit, already solved, constraint violation, wrong layer)
 - Next step — recommend requirements definition before planning when multiple phases, compatibility constraints, or unresolved outcomes warrant a separate agreement; for small clear changes, keep requirements with the plan. Do not generate or approve requirements as part of research.
-- Facts vs inference — verified findings cite evidence; keep assumptions, settled decisions, and unresolved questions distinct; a proposed or approved design is not evidence of implementation
+- Facts vs inference — cite evidence for factual claims (path:line, command output, URL); label assumptions and guesses, keeping them distinct from settled decisions and unresolved questions; a proposed or approved design is not evidence of implementation
 - Work status — distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
 - Document references — cite relevant existing sections instead of repeating their contents; use relative paths in the saved file and verify linked files and sections exist
 - Concise — half a screen or less; bullets over prose; stop when there's enough to recommend; omit empty sections

@@ -34,7 +34,7 @@ Read referenced docs from the repo; treat as the source of truth.
 - Documentation task — if the scope adds or changes user-visible behavior (API, CLI, config, UI), scan for project docs (README, API docs, CLI docs, guides, CLAUDE.md) and include a documentation task when updates are needed; omit when the change is purely internal. User-facing content and source comments must explain behavior without internal delivery-phase/task IDs or planning-document references.
 - Document state — approval or saving the task list does not complete its tasks; completion claims require implementation and validation evidence
 - Work status — when reporting progress, distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
-- Before replying: every task has concern + files + done-when; no task mixes concerns; ordering respects dependencies; source links point to real sections; a documentation task is present when user-visible behavior changes; output matches template
+- Before replying: no task mixes concerns; ordering respects dependencies; source links point to real sections; documentation tasks cover needed updates for user-visible changes; output matches template
 
 **Gates**
 
@@ -92,8 +92,7 @@ Happy with these tasks? (y/n)
 ```
 
 - Include Delivery phase in chat and file only for a single selected phase; use the same mapping in both
-- Chat shows the destination path, phase mapping when applicable, numbered titles, one-line concerns, and coverage notes; no implementation file lists or done-when
-- File includes full detail per task (concern, files, docs, depends on, done when)
+- Keep implementation file lists and done-when criteria out of chat
 - Omit Coverage notes when all deliverables map to new tasks; otherwise keep the same existing-coverage and deferral notes in chat and file
 - Task IDs — for new tasks, continue the existing ID scheme above the highest allocated ID across batches in the same directory (`T01`, `T02`, ... for a fresh list); never renumber existing tasks or reuse retired IDs
 - Include `Depends on:` only when a task requires a prior task's output; for another batch, use a relative file-and-heading link, not a bare task ID, and verify the target exists

@@ -25,8 +25,7 @@ User provides a goal, problem, or path to research or requirements.
 - Bias toward the smallest useful next step
 - Open questions — use the question + recommendation format below; if any need user input, wait for answers before asking for approval
 - Must not — implementation file inventories, commands, config snippets, git/PR workflows, diagrams, or validation steps in the chat plan; document references and concise status-evidence citations are allowed
-- Persist — on approval, auto-save as `<scope-dir>/plan.md`; saved file uses the same plan body shown in chat
-- Render — output the plan as rendered markdown in chat; never wrap the plan in a code fence; chat plan body matches what is written to the file (gate prompts are chat-only)
+- Render and persist — show the plan as rendered Markdown in chat, without a code fence; on approval, save the same body to `<scope-dir>/plan.md`, keeping gate prompts outside the saved body
 - Before replying: plan matches the output template — no extra sections; each phase is one line; count is 1–4; strip implementation instructions, retaining relevant document references and status-evidence citations
 
 **Gates**
@@ -37,7 +36,7 @@ User provides a goal, problem, or path to research or requirements.
 
 **Output**
 
-**Draft plan** — reproduce as rendered markdown (not a code block); plan body is identical to the persisted file:
+**Draft plan:**
 
 ```
 **Purpose:** Define phased outcomes and why they matter; architecture, API contracts, and implementation details are outside this document's scope.
@@ -69,15 +68,18 @@ User provides a goal, problem, or path to research or requirements.
 ## Next
 
 {follow-up for another document, only when needed}
-{if questions need user input: request answers and stop; otherwise: Happy with this plan? (y/n)}
 ```
+
+- After the draft, request answers when user input is needed; otherwise show the Plan gate
 
 **After approval (auto-saved):**
 
+```
 ## Plan saved
 
 - Path: <resolved plan path>
 - Phases: {count + titles}
+```
 
 - No preamble, summary wrap-up, or filler unless asked
 - Omit empty sections except Goal and Plan

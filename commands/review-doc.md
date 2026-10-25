@@ -4,8 +4,7 @@ description: Review a document, design, plan, task write-up, or other non-code a
 
 **Review the provided artifact end-to-end before giving any feedback.** Identify what kind of artifact it is (document, design, plan, task write-up, proposal, or other) and adapt the lens accordingly, but ground every comment in what's actually written — never assume intent that isn't on the page.
 
-**Read fully first.**
-- Read the entire artifact before writing any feedback; do not comment section-by-section as you go.
+**Review context:**
 - Note the artifact's stated goal and audience if given; if absent, state the gap rather than guessing.
 - Read relevant linked documents and source evidence to check the artifact's claims; keep this inspection within its stated purpose and requested scope. Report unavailable evidence as a review limitation, not a confirmed defect.
 
