@@ -18,15 +18,16 @@ User provides a goal, problem, or path to research or requirements.
 - Small changes — a separate requirements file is optional; when absent, capture necessary obligations and constraints briefly in the plan's Requirements section
 - References — include relevant existing research and requirements in the plan's References line, with requirement IDs where applicable; link sections instead of repeating them. Use relative paths from the saved plan and verify targets; omit absent sources without requiring new documents.
 - Document state — keep assumptions separate from agreed outcomes; approval or saving the plan does not mean its phases are implemented or validated
+- Work status — when reporting progress, distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
 - Short and concise — bullets over prose; skip empty sections
 - Phased — prefer 2–4 phases; 1 when the change is already small; each phase delivers a useful, reviewable outcome after its prerequisites, without relying on a later phase to make that outcome work. Bundle tightly coupled work and separate unrelated concerns; each one line: title — usable outcome + why now.
 - Phase identity — delivery phases are identified by this plan's path, phase number, and title; do not silently renumber phases referenced by other documents. Identify any required remapping in Next.
 - Bias toward the smallest useful next step
 - Open questions — use the question + recommendation format below; if any need user input, wait for answers before asking for approval
-- Must not — implementation file paths, commands, config snippets, git/PR language, diagrams, or validation steps in the chat plan; document references are allowed
+- Must not — implementation file inventories, commands, config snippets, git/PR workflows, diagrams, or validation steps in the chat plan; document references and concise status-evidence citations are allowed
 - Persist — on approval, auto-save as `<scope-dir>/plan.md`; saved file uses the same plan body shown in chat
 - Render — output the plan as rendered markdown in chat; never wrap the plan in a code fence; chat plan body matches what is written to the file (gate prompts are chat-only)
-- Before replying: plan matches the output template — no extra sections; each phase is one line; count is 1–4; strip anything implementer-shaped (implementation paths, commands, git/PR, config), retaining relevant document references
+- Before replying: plan matches the output template — no extra sections; each phase is one line; count is 1–4; strip implementation instructions, retaining relevant document references and status-evidence citations
 
 **Gates**
 

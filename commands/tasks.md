@@ -31,6 +31,7 @@ Read referenced docs from the repo; treat as the source of truth.
 - Updates — revise only tasks affected by agreed scope or design changes; identify follow-up for another document in Next without editing that document.
 - Documentation task — if the scope adds or changes user-visible behavior (API, CLI, config, UI), scan for project docs (README, API docs, CLI docs, guides, CLAUDE.md) and include a documentation task when updates are needed; omit when the change is purely internal
 - Document state — approval or saving the task list does not complete its tasks; completion claims require implementation and validation evidence
+- Work status — when reporting progress, distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
 - Before replying: every task has concern + files + done-when; no task mixes concerns; ordering respects dependencies; source links point to real sections; a documentation task is present when user-visible behavior changes; output matches template
 
 **Gates**

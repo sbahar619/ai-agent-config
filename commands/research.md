@@ -19,6 +19,7 @@ A question, idea, or problem.
 - Disconfirm — actively look for reasons not to proceed (duplicate, misfit, already solved, constraint violation, wrong layer)
 - Next step — recommend requirements definition before planning when multiple phases, compatibility constraints, or unresolved outcomes warrant a separate agreement; for small clear changes, keep requirements with the plan. Do not generate or approve requirements as part of research.
 - Facts vs inference — verified findings cite evidence; keep assumptions, settled decisions, and unresolved questions distinct; a proposed or approved design is not evidence of implementation
+- Work status — distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
 - Document references — cite relevant existing sections instead of repeating their contents; use relative paths in the saved file and verify linked files and sections exist
 - Concise — half a screen or less; bullets over prose; stop when there's enough to recommend; omit empty sections
 - Render — output findings as rendered markdown in chat; research body matches what is written to the file (gate prompt is chat-only)

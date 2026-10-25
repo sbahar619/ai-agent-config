@@ -19,6 +19,7 @@ description: Review a document, design, plan, task write-up, or other non-code a
 - Requirements coverage — when a requirements document is supplied or referenced, check that in-scope plan/design outcomes satisfy its requirements or explicitly identify deferrals; flag silent scope changes
 - Planning/design references — verify referenced files and sections exist, with paths relative to the containing document; flag copied detail that should link to an existing source
 - Planning/design state — distinguish decisions, assumptions, and unresolved questions; approval or saving a document is not evidence of implementation or validation
+- Work-status evidence — proposed work must not read as completed behavior; implemented claims need code evidence at a stated revision or working-tree state, validated claims need relevant passing checks with scope and tested state, and merged claims need confirmed inclusion in a named target branch. Flag unsupported claims and validation evidence for a different state; merge evidence does not establish validation.
 - Coding-standards compliance — for design docs that propose interfaces, functions, or types: check that proposed symbols don't duplicate existing repo logic **or** framework/library built-ins (cobra/pflag, gin, client-go, etc.); prefer using what exists over reimplementing; verify naming follows repo conventions
 
 **Constraints:**

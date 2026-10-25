@@ -105,6 +105,17 @@ planning and design documents.
   user input before requesting approval.
 - Keep decisions, assumptions, and unresolved questions distinct; omit empty question sections.
 - Saving or approving a document does not establish implementation or validation of its contents.
+- When reporting work status, distinguish proposed (intended work), implemented
+  (code evidence at an identified revision or working-tree state), validated
+  (relevant passing checks with scope and tested state), and merged (confirmed
+  inclusion in a named target branch). Cite evidence beside each claim before
+  advancing it; mark unsupported claims unverified.
+- These claims are independent: merged does not imply validated, and checks on
+  an earlier state do not validate later changes. Keep evidence scoped to the
+  covered work; a partial result does not establish whole-phase completion.
+- Include status only when reporting progress or describing existing behavior;
+  do not add tracking sections to every document or perform implementation,
+  validation runs, or Git mutations merely to fill a status field.
 - Research may recommend requirements definition next; acceptance of research
   findings does not approve requirements. Requirements can also start from a direct
   goal and constraints without prior research or another command.
