@@ -61,6 +61,17 @@ planning and design documents.
 - Label architectural rollout sequencing as stages and map them to delivery
   phases when defined; stages and phases need not correspond one-to-one.
 
+**Task batches**
+
+- Read existing `tasks*.md` in the selected scope or phase directory; revise the
+  matching batch and create another only for distinct follow-up work.
+- Start with `tasks.md` (batch 1); number new batches above the existing maximum
+  as `tasks-02.md`, `tasks-03.md`, etc. Preserve existing filenames; batch numbers
+  are independent of delivery-phase numbers. Show the destination before approval.
+- Preserve task IDs and continue the existing scheme across batches in the same
+  directory; never renumber existing tasks or reuse retired IDs. Cross-batch
+  dependencies use relative links to the exact task heading.
+
 **Lifecycle**
 
 - Follow the invoking command's approval and save gates; resolve questions requiring
