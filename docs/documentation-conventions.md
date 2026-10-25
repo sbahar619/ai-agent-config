@@ -49,10 +49,11 @@ planning and design documents.
   path before requesting content approval; identify it as awaiting review in chat.
   Approval covers that draft, not an outline or summary. Do not imply that writing
   the draft approves it or authorizes implementation.
-- Chat shows the draft link, at most three overview bullets, and necessary questions
+- Chat shows every draft link, at most three overview bullets, and necessary questions
   or the gate. On revisions, use those bullets for changed decisions, obligations,
   and open questions; do not repeat the document or add another change summary.
-  After approval, confirm only its path. Research retains its optional Save gate.
+  After approval, confirm only the approved paths. Research retains its optional
+  Save gate.
 
 **Updates**
 
@@ -70,7 +71,8 @@ planning and design documents.
 **Layout**
 
 - Default to `docs/plans/<topic>/`; use `<topic>/<domain>/` when the domain is
-  requested or already established. Preserve existing document paths.
+  requested or already established. Preserve existing document paths unless
+  splitting task files as described below.
 - Use `research.md`, `requirements.md`, `plan.md`, `hld.md`, `lld.md`, and `tasks.md`
   at the selected scope. For an explicitly selected phase, place its LLD and tasks
   in `phase-N/` beneath that scope; keep shared HLDs above phase folders.
@@ -85,7 +87,8 @@ planning and design documents.
 
 - Before task generation or triage recommendations, resolve scope from the supplied
   path and references; recursively inventory its subtree for requirements, plans,
-  HLDs, LLDs, and all `tasks*.md` batches, including nested domains and phases.
+  HLDs, LLDs, and all `tasks*.md` and `*-tasks.md` files, including nested domains
+  and phases.
 - Inspect applicable ancestor documents up to the topic root and explicitly linked
   sources. Read candidates by stated scope and phase mapping, not basename alone;
   discovery does not expand the requested work into sibling domains.
@@ -105,6 +108,10 @@ planning and design documents.
 - Use relative paths from saved documents and verify that linked files and sections exist.
 - Give requirements stable IDs and observable success criteria; plans and designs
   reference those IDs without duplicating or silently changing the requirements.
+- Tasks use `Satisfies:` to link applicable requirement IDs or sections in existing
+  requirements or plans; `Docs:` links the design. Omit `Satisfies:` when no
+  applicable link exists; do not invent IDs or require a new document. Preserve
+  requirement links when splitting task files.
 
 **Coverage**
 
@@ -114,6 +121,9 @@ planning and design documents.
   specified tests and integration work, across new and existing batches. Link
   existing coverage instead of duplicating tasks; record proposed deferrals and
   resolve conflicts with upstream scope before approval.
+- Multiple tasks may contribute to one requirement; claim full planned coverage
+  only when their combined completion criteria cover it. Links alone do not
+  establish implementation or validation.
 - Use source links for covered work and concise notes for exceptions; do not
   require a separate coverage document or repeat the source detail.
 
@@ -141,13 +151,23 @@ planning and design documents.
 
 **Task batches**
 
-- Read existing `tasks*.md` in the selected scope or phase directory; revise the
-  matching batch and create another only for distinct follow-up work.
-- Start with `tasks.md` (batch 1); number new batches above the existing maximum
-  as `tasks-02.md`, `tasks-03.md`, etc. Preserve existing filenames; batch numbers
-  are independent of delivery-phase numbers. Show the destination before approval.
+- Read existing `tasks*.md` and `*-tasks.md` in the selected scope or phase
+  directory; revise the matching batch and create another only for distinct
+  follow-up work.
+- For a single file, start with `tasks.md` (batch 1); number new batches above the existing maximum
+  as `tasks-02.md`, `tasks-03.md`, etc. Preserve existing filenames unless splitting
+  is needed or requested; batch numbers are independent of delivery-phase numbers.
+- Use multiple files when distinct delivery outcomes improve review and execution;
+  each file groups complete tasks and may contain several PR-sized changes. Use
+  ordered, descriptive names such as `01-policy-engine-tasks.md`; for a split
+  follow-up batch use `tasks-02-01-<outcome>.md`, etc. A file split does not create
+  new batches or phases; treat the initial set as batch 1.
+- When splitting existing documents, preserve task content, IDs, status, and
+  dependencies unless task changes are also requested. Keep each task in exactly
+  one file, update task-file links, and report affected references in other docs.
+  Write and link every draft file before one approval gate for the full set.
 - Preserve task IDs and continue the existing scheme across batches in the same
-  directory; never renumber existing tasks or reuse retired IDs. Cross-batch
+  directory; never renumber existing tasks or reuse retired IDs. Cross-file
   dependencies use relative links to the exact task heading.
 
 **Review**
