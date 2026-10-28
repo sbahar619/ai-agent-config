@@ -19,7 +19,7 @@ planning and design documents.
 | Plan | Delivery outcomes, their order, and why they matter; brief requirements when no separate file exists | Architecture decisions, detailed contracts, tests, and task-level steps |
 | HLD | Architecture decisions, components, flows, rationale, and tradeoffs | Detailed contracts, implementation steps, and per-phase tests |
 | LLD | Technical deliverables, detailed contracts, and tests within the architecture | Resolving architecture decisions, execution tracking, or source implementation |
-| Tasks | Ordered work, files, dependencies, and completion criteria | New architecture or contract decisions, or repeated design rationale |
+| Tasks | Brief problem and outcome per task, ordered work, files, dependencies, and completion criteria | New architecture or contract decisions, or duplicated detailed design rationale |
 
 **Workflow size**
 
@@ -38,9 +38,13 @@ planning and design documents.
 
 **Human review**
 
-- Use Purpose to identify what the reader is judging. Keep goals, scope, consequential
+- Use the opening purpose or goal to identify what the reader is judging. Keep goals, scope, consequential
   decisions, tradeoffs, and open questions easy to find; put necessary supporting
   detail in clearly titled sections without repeating it in an overview.
+- Task files lead with the concrete goal; each task explains its problem and outcome
+  before execution detail. A brief reason for the work belongs in the task; detailed
+  design rationale stays linked. Identify benefits that require later tasks and break
+  long implementation or acceptance lists into focused bullets.
 - Include content that supports a decision, defines an obligation, prevents a likely
   misunderstanding, or enables implementation or verification. Length is a signal
   to remove duplication or propose independently reviewable scopes, never to omit
