@@ -19,6 +19,7 @@ planning and design documents.
 | Plan | Delivery outcomes, their order, and why they matter; brief requirements when no separate file exists | Architecture decisions, detailed contracts, tests, and task-level steps |
 | HLD | Architecture decisions, components, flows, rationale, and tradeoffs | Detailed contracts, implementation steps, and per-phase tests |
 | LLD | Technical deliverables, detailed contracts, and tests within the architecture | Resolving architecture decisions, execution tracking, or source implementation |
+| Implementation notes | Private APIs, algorithms, and detailed verification for one matching task file; shared constraints only when reused | New contracts, repeated design/task content, or completion tracking |
 | Tasks | Brief problem and outcome per task, ordered work, files, dependencies, and completion criteria | New architecture or contract decisions, or duplicated detailed design rationale |
 
 **Workflow size**
@@ -29,6 +30,30 @@ planning and design documents.
 - Complexity informs the needed decisions, not a mandatory document count.
   Recommend each additional artifact for a concrete gap; clear work can proceed
   directly to implementation. Extend existing commands rather than add workflow machinery.
+
+**Implementation notes**
+
+- Keep behavior, API/storage schemas, compatibility, failures, security risks, and
+  acceptance criteria in the LLD; keep problem/outcome, brief file scope, dependencies,
+  phase mapping, and observable completion criteria in tasks.
+- When mechanics or detailed verification obscure review, move them into an optional
+  companion per task file: `tasks/04-discovery-tasks.md` → `implementation/04-discovery-implementation.md`,
+  `tasks/tasks.md` → `implementation/implementation.md`,
+  `tasks/tasks-02.md` → `implementation/implementation-02.md`.
+  Preserve established paths; do not create a file per task or require this layer.
+- Companions use matching task IDs and verified links back to tasks and design.
+  Tasks link to their exact companion sections. Use a short `implementation/README.md`
+  for the index and reused constraints, linked from relevant companions; use
+  `implementation/history.md` for archived instructions when retention is needed.
+- Without task groups, keep necessary mechanics in supporting LLD sections; do not
+  invent tasks or a phase-wide implementation document just to move detail.
+- Task authoring may write matching companions with the task draft; show all paths
+  before one approval gate. Other commands update companions only within requested scope.
+- Move rather than copy detail; verify preserved obligations as well as links, IDs,
+  dependencies, and status. Keep superseded instructions in a labeled archive when
+  retention is needed, linked from historical status, separate from current guidance.
+- Implementation consumes relevant task, design, companion, and shared-note sections;
+  surface conflicts instead of silently overriding contracts or reopening historical work.
 
 **Product documentation**
 
@@ -77,9 +102,13 @@ planning and design documents.
 - Default to `docs/plans/<topic>/`; use `<topic>/<domain>/` when the domain is
   requested or already established. Preserve existing document paths unless
   splitting task files as described below.
-- Use `research.md`, `requirements.md`, `plan.md`, `hld.md`, `lld.md`, and `tasks.md`
-  at the selected scope. For an explicitly selected phase, place its LLD and tasks
-  in `phase-N/` beneath that scope; keep shared HLDs above phase folders.
+- Keep `research.md`, `requirements.md`, `plan.md`, `hld.md`, and `lld.md` at the
+  selected scope. For new task layouts, put task files in `tasks/` and optional
+  companions in `implementation/`. For an explicitly selected phase, keep `lld.md`
+  at the `phase-N/` root with those folders beside it; keep shared HLDs above phases.
+- Preserve legacy paths unless a split or folder migration is requested. When moving
+  files, update relative design/source links and inspect incoming references; update
+  references within authorized scope and report remaining follow-up.
 - Read applicable topic-level requirements and architecture for domain work;
   reference inherited content rather than duplicating or overriding it.
 - These are destinations, not a required document set; create only the requested artifacts.
@@ -91,8 +120,9 @@ planning and design documents.
 
 - Before task generation or triage recommendations, resolve scope from the supplied
   path and references; recursively inventory its subtree for requirements, plans,
-  HLDs, LLDs, and all `tasks*.md` and `*-tasks.md` files, including nested domains
-  and phases.
+  HLDs, LLDs, all `tasks*.md` and `*-tasks.md` files, and implementation companions
+  (`implementation*.md`, `*-implementation.md`), plus all Markdown in `tasks/` and
+  `implementation/`, including indexes/history, nested domains, and phases.
 - Inspect applicable ancestor documents up to the topic root and explicitly linked
   sources. Read candidates by stated scope and phase mapping, not basename alone;
   discovery does not expand the requested work into sibling domains.
@@ -156,9 +186,9 @@ planning and design documents.
 **Task batches**
 
 - Read existing `tasks*.md` and `*-tasks.md` in the selected scope or phase
-  directory; revise the matching batch and create another only for distinct
+  directory and its `tasks/` folder; revise the matching batch and create another only for distinct
   follow-up work.
-- For a single file, start with `tasks.md` (batch 1); number new batches above the existing maximum
+- For a new single file, start with `tasks/tasks.md` (batch 1); number new batches above the existing maximum
   as `tasks-02.md`, `tasks-03.md`, etc. Preserve existing filenames unless splitting
   is needed or requested; batch numbers are independent of delivery-phase numbers.
 - Use multiple files when distinct delivery outcomes improve review and execution;
@@ -171,7 +201,7 @@ planning and design documents.
   one file, update task-file links, and report affected references in other docs.
   Write and link every draft file before one approval gate for the full set.
 - Preserve task IDs and continue the existing scheme across batches in the same
-  directory; never renumber existing tasks or reuse retired IDs. Cross-file
+  scope/phase, across legacy root files and `tasks/`; never renumber existing tasks or reuse retired IDs. Cross-file
   dependencies use relative links to the exact task heading.
 
 **Review**

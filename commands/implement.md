@@ -14,6 +14,8 @@ Read referenced docs from the repo; treat as the spec.
 **Rules**
 
 - Ask at most one clarifying question if scope is unclear; otherwise state your assumption and proceed
+- Implementation context — read the selected task, linked design sections, matching implementation companion, and referenced shared constraints in `implementation/README.md`. Resolve task links across sibling `tasks/` and `implementation/` folders, preserving legacy layouts; `implementation/history.md` is archival. Load only relevant sections; companions are optional when the supplied spec is sufficient. Archived instructions are historical evidence, not current work.
+- Document conflicts — stop and surface conflicts between task criteria, design contracts, and implementation notes; notes must not silently override agreed behavior or reopen historical work
 - Scoped work — only what the doc or task specifies; stop and explain if the spec is insufficient
 - Explain the purpose — opening update and completion lead with the concrete problem and intended or achieved behavior in plain language; task IDs, symbols, and file lists are supporting detail. Use a brief before/after example when it makes the change clearer.
 - Report only achieved benefits — distinguish this task's result from benefits requiring later work; name the remaining dependency when needed to understand the result. Do not imply a defect existed or performance improved without evidence.
