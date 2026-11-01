@@ -28,29 +28,18 @@ description: Review a document, design, plan, task write-up, or other non-code a
 - Coding-standards compliance — for design docs that propose interfaces, functions, or types: check that proposed symbols don't duplicate existing repo logic **or** framework/library built-ins (cobra/pflag, gin, client-go, etc.); prefer using what exists over reimplementing; verify naming follows repo conventions
 
 **Constraints:**
-- One finding per bullet — one concern, one line; add context only when the fix is ambiguous without it
-- Reference the specific section or heading for every finding
-- Every finding ends with a concrete action (`→ <what to change>`)
-- Separate blocking issues from suggestions — never mix in one list
+- Give one numbered recommendation per suggested change, ordered by severity; mark blocking changes with `Blocking:`
+- Reference the specific section or heading and state the concrete edit; add a brief reason only when needed to understand it
 - Review only — propose targeted edits without modifying documents, source code, or Git state; do not rewrite the artifact wholesale
-- Skip generic praise; only note strengths that are specific and actionable
-- Keep chat to the verdict and actionable findings, ordered by severity; do not recap the artifact or narrate the review
+- Keep the output as short and simple as possible; omit praise, summaries, recaps, and review narration
+- Mention material review limitations in one short sentence; do not present unverified concerns as confirmed defects
 
 **Output format:**
 
 ```
-## Summary
-<1 sentence verdict: ready / ready with changes / needs rework; note material review limitations>
-
-## Blocking
-- [Section] Issue → <action to fix>
-
-## Suggestions
-- [Section] Suggestion → <action to fix>
-
-## Open Questions
-1. <concrete unresolved question the artifact should answer, ending in ?>
-   Recommendation: <proposed answer and brief rationale>
+1. Blocking: [Section] <specific required change; brief reason if needed>
+2. [Section] <specific suggested change; brief reason if needed>
 ```
 
-- Omit Open Questions when nothing remains unresolved; settled decisions and assumptions are not questions
+- Number recommendations consecutively, with blocking changes first; omit headings and empty items
+- If no changes are needed, say `No changes recommended.`
