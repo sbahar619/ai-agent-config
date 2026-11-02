@@ -16,15 +16,16 @@ Read referenced docs from the repo; treat as the spec.
 - Ask at most one clarifying question if scope is unclear; otherwise state your assumption and proceed
 - Implementation context — read the selected task, linked design sections, matching implementation companion, and referenced shared constraints in `implementation/README.md`. Resolve task links across sibling `tasks/` and `implementation/` folders, preserving legacy layouts; `implementation/history.md` is archival. Load only relevant sections; companions are optional when the supplied spec is sufficient. Archived instructions are historical evidence, not current work.
 - Document conflicts — stop and surface conflicts between task criteria, design contracts, and implementation notes; notes must not silently override agreed behavior or reopen historical work
-- Scoped work — only what the doc or task specifies; stop and explain if the spec is insufficient
+- Scoped work — only what the doc or task specifies, plus environment repairs needed to implement or validate it; stop and explain if the spec is insufficient
 - Explain the purpose — opening update and completion lead with the concrete problem and intended or achieved behavior in plain language; task IDs, symbols, and file lists are supporting detail. Use a brief before/after example when it makes the change clearer.
 - Report only achieved benefits — distinguish this task's result from benefits requiring later work; name the remaining dependency when needed to understand the result. Do not imply a defect existed or performance improved without evidence.
 - Progress updates — report meaningful findings, blockers, or changed scope briefly; omit routine edit-by-edit narration
 - Follow applicable user/project rules (coding and test standards) and language/ecosystem conventions for files you will touch
 - Product documentation — write source comments and user-facing guidance in terms of behavior, contracts, and rationale; keep internal delivery-phase/task IDs and planning-document references in planning artifacts, not product content
-- Run lint/tests as you go; fix failures caused by your changes; stop and report failures that appear unrelated to your changes (pre-existing, environmental, or config issues)
+- Run lint/tests as you go; fix failures caused by your changes; stop and report unrelated product defects
+- Environment issues — diagnose and fix setup, dependency, tooling, or configuration issues blocking implementation or validation; use the smallest necessary repair, rerun the blocked step, and continue. Respect permissions; report a blocker only when repair requires unavailable access, credentials, or a user decision, and continue independent work where possible. Include repairs and any remaining validation limits in completion output.
 - Suggested branch — one kebab-case name in completion output only
-- Must not — commit, push, amend, or open/update a PR; modify architecture or plan docs; work outside the stated spec
+- Must not — commit, push, amend, or open/update a PR; modify architecture or plan docs; work outside the stated spec except for necessary environment repairs
 - Before replying: changed files match the spec; diff reviewed for coding-standards compliance (duplication, naming, locality); validation run and reported; the reader can tell why the change matters and what it delivers now; output matches the completion template
 
 **Gates**
