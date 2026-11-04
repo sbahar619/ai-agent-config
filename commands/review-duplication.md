@@ -17,15 +17,11 @@ Review only — identify repeated implementation of the same rule that is worth 
 **Output**
 
 ```text
-Recommendation: <one short next step>
-
 1. <path:line; counterpart path:line> — <shared rule and maintenance cost> → <suggested reuse>.
-
-Limitations: <missing context affecting confidence>
 ```
 
-- Number findings by importance; state each reason and action once
+- Output only numbered recommended changes, ordered by importance; state each reason and action once. Omit Keep recommendations, verdicts, and summaries
 - Aim for at most 100 words for routine reviews; preserve material findings and limitations
-- Omit Limitations when empty; when clean, output only "No worthwhile changes found in <scope>."
-- If inspection is incomplete, state the limitation instead of claiming a clean review
+- When no changes are recommended, output exactly "No changes recommended."
+- If inspection is incomplete, state the material limitation in one short sentence instead of claiming a completed review
 - No preamble, code rewrites, approval gates, or closing recap
