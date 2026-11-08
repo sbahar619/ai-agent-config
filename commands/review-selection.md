@@ -22,11 +22,12 @@ Verdict: Pass | Minor issues | Needs change — <path:lines and symbol>
 
 Findings:
 
-- [must|should|nit] <location; issue and impact> → <action to fix>
+- [must|should|nit] <location; concrete input/action → actual vs expected outcome> → <action to fix>
 
 Limitations: <missing context affecting confidence>
 ```
 
 - No preamble, summary wrap-up, or filler unless asked
+- Use a source-grounded scenario, or exact before → after for non-behavioral findings; label illustrative values and do not imply an unrun example was reproduced
 - Order findings by severity; include rationale and the fix once, within each finding
 - Omit Findings and Limitations when empty; a clean review needs only the verdict

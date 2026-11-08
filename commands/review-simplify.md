@@ -17,7 +17,7 @@ Review only — identify ways to make code easier to follow while preserving beh
 **Output**
 
 ```text
-1. <path:line> — <finding and why it matters> → <suggested action>.
+1. <path:line> — <current flow> → <specific simpler flow; brief input/outcome example showing preserved behavior>.
 ```
 
 - Output only numbered recommended changes, ordered by importance; state each reason and action once. Omit Keep recommendations, verdicts, and summaries

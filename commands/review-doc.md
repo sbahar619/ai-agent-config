@@ -37,8 +37,8 @@ description: Review a document, design, plan, task write-up, or other non-code a
 **Output format:**
 
 ```
-1. Blocking: [Section] <specific required change; brief reason if needed>
-2. [Section] <specific suggested change; brief reason if needed>
+1. Blocking: [Section] <specific edit with a short example of the ambiguous wording, conflicting requirement, or missing scenario>
+2. [Section] <specific edit and concrete example showing why it matters>
 ```
 
 - Number recommendations consecutively, with blocking changes first; omit headings and empty items

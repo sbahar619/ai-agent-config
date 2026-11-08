@@ -27,7 +27,7 @@ Render as formatted markdown — do not wrap in a code fence.
 **Issue:** <one line>
 
 **Root cause:** <one line>
-<2-4 line mechanism, not narrative>
+<minimal triggering input/state → observed failure vs expected result; 1–2 sentences explaining the cause>
 
 **Evidence:**
 - <file:line / log / commit ref>
@@ -39,4 +39,5 @@ Render as formatted markdown — do not wrap in a code fence.
 2. <option> — <tradeoff>
 ```
 - Omit Evidence bullets with no traceable source.
+- Aim for 100–150 words; use the concrete scenario as the explanation, cite its evidence, and distinguish reproduced results from illustrative examples
 - Number solutions in ranked order; cap at 3.

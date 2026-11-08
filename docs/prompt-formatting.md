@@ -31,6 +31,7 @@ while authoring; keep each command's applicable instructions inline so it runs i
 - Trailing format rules (omit empty sections, numbering logic) go as plain bullets after the code block, not inside it
 - For routine chat replies, aim for 100–150 words, using fewer when sufficient; this is not a minimum or a hard cap. Preserve all material findings, evidence, limitations, and explicitly requested detail.
 - Lead with the answer or verdict; state each finding, its evidence, and its action once. Omit empty sections, generic praise, repeated rationale, and closing recaps.
+- Make explanations concrete: use the smallest source-grounded example (input/configuration/action → actual result vs expected result, or before → after). Let it carry the rationale rather than adding a second explanation; label illustrative values and never imply an unrun example was reproduced. Include applicable guidance inline in each command.
 - Keep full guides, copy-ready text, and saved artifacts as detailed as their purpose requires; use links and short overviews for document commands. Include applicable brevity rules in each command so it works independently.
 
 ## Open questions

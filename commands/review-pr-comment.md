@@ -12,7 +12,9 @@ Review a single GitHub PR review comment for correctness against the current cod
 - Do not guess — say when the referenced code or context can't be found
 - Judge correctness on evidence: valid, partially valid, invalid, or needs clarification
 - Must not — post the reply (`gh api .../replies`, `gh pr comment`), edit code, or commit unless the user explicitly asks
-- Before replying: recommendation matches the verdict; reply is high-level, short, and doesn't restate the reviewer's own comment back to them
+- Explain the verdict with one minimal concrete example: input/configuration/action → actual result vs expected result; for non-behavioral comments, show the exact before → proposed after. Ground it in inspected code; label illustrative values and do not claim reproduction unless run
+- Aim for 100–150 words total, including the reply draft; preserve material evidence and limitations. Use the example as the explanation, not an extra walkthrough
+- Before replying: recommendation matches the verdict; the example makes the consequence clear; reply is concrete, short, and doesn't restate the reviewer's own comment back to them
 
 **Output**
 
@@ -24,7 +26,7 @@ Review a single GitHub PR review comment for correctness against the current cod
 
 **Verdict:** Valid | Partially valid | Invalid | Needs clarification
 
-<2-4 sentences, evidence from the current code>
+**Example:** <specific scenario → actual vs expected outcome; 1–2 sentences with source evidence>
 
 **Recommendation:** Code fix | No changes | Clarify with reviewer
 
@@ -35,10 +37,11 @@ Review a single GitHub PR review comment for correctness against the current cod
 **Reply draft**
 
 ```
-<short, high-level, clear reply — 1-3 sentences>
+<plain-language conclusion and proposed action — 1–2 sentences; do not imply a proposed fix is already done>
 ```
 ````
 
+- If evidence is insufficient for an example, state what is missing instead of inventing behavior
 - Reply draft is its own fenced code block, plain text, ready to copy-paste — no quoting of the original comment back; use one sentence per line so the block stays readable without horizontal scrolling
 - Blank line after every bold label (`**Verdict:**`, `**Recommendation:**`) before its body text — a single newline collapses to a space in rendered markdown
 - If the user asks to post: reply to a discussion comment with `gh api repos/<owner>/<repo>/pulls/<pr>/comments/<id>/replies -f body='<text>'`; reply to an issue comment with `gh pr comment <pr> -b '<text>'`

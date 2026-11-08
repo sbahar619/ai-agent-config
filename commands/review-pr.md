@@ -26,12 +26,13 @@ Review PR only — GitHub pull request via gh; inline comments on changed lines.
 
 **Findings:**
 
-1. [Blocking|Major|Minor|Nit] `path#Lstart-Lend` — <issue and impact → fix>
+1. [Blocking|Major|Minor|Nit] `path#Lstart-Lend` — <concrete trigger/input → actual vs expected outcome; fix>
 
 **Limitations:** <missing context or checks affecting confidence>
 ```
 
 - Verdict — Block: security/correctness/data-loss; Request changes: missing tests or real regressions; Approve: only minor/nit
+- Ground each scenario in inspected code; label illustrative values and do not claim reproduction unless run. Use the scenario to explain impact instead of adding a separate abstract explanation
 - Findings — number in severity order (Blocking → Major → Minor → Nit); one or two sentences each; join multiple locations with ·
 - Clean diff — omit Findings; append "No issues found on the diff." to the verdict
 - Omit Limitations when none; do not add counts, strengths, a PR recap, or a checklist repeating the fixes

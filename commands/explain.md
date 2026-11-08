@@ -14,7 +14,7 @@ Whatever the user names in this turn: path, symbol, error, selection, or concept
 - Cite repo code with `path:line` when referencing it; say when guessing
 - Include a Trace only when a walkthrough clarifies (multi-step flow, call chain, pipeline, state machine, async job, error path) — omit for simple or single-location targets
 - Trace: replace How with a high-level sequence, usually 3–5 steps — entry → key steps → outcome; real symbols/paths, not line-by-line narration
-- Include an Example when a concrete illustration clarifies (sample call, request body, config snippet, or values) — omit when obvious
+- Include one minimal source-grounded example for behavior or flow: sample input/request/config → actual output or effect, not just a snippet. Label illustrative values; omit a separate Example when How or Trace already demonstrates it
 - Do not recommend next steps unless the user explicitly asks what to do
 - Before replying: re-read every cited `path:line` — symbols, behavior, and flow match; for Trace, spot-check entry and at least one middle step; when uncertain, run a targeted read or search — do not guess; fix output if a check fails; note corrections only when material
 

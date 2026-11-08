@@ -21,7 +21,7 @@ Review only — assess whether each feature and subfeature is worth its complexi
 **Output**
 
 ```text
-1. <Simplify | Defer | Drop> <plain-language feature> — <recommended change and why>. Gain: <benefit>; cost: <downside or accepted limitation>. <source location>
+1. <Simplify | Defer | Drop> <plain-language feature> — <recommended change with one concrete usage scenario showing what happens without the feature>. Gain: <benefit>; cost: <downside or accepted limitation>. <source location>
 ```
 
 - Output only numbered recommended changes, ordered by importance; omit Keep recommendations, verdicts, inventories, and summaries

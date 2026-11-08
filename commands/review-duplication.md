@@ -17,7 +17,7 @@ Review only — identify repeated implementation of the same rule that is worth 
 **Output**
 
 ```text
-1. <path:line; counterpart path:line> — <shared rule and maintenance cost> → <suggested reuse>.
+1. <path:line; counterpart path:line> — <same rule illustrated by one input/result at both locations> → <specific shared implementation to reuse; maintenance benefit>.
 ```
 
 - Output only numbered recommended changes, ordered by importance; state each reason and action once. Omit Keep recommendations, verdicts, and summaries

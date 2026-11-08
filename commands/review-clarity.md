@@ -16,7 +16,7 @@ Review only — identify unclear names, misleading or redundant comments, and de
 **Output**
 
 ```text
-1. <path:line> — <finding and why it matters> → <suggested action>.
+1. <path:line> — <current name/comment/placement and specific misunderstanding> → <exact suggested name, wording, or placement>.
 ```
 
 - Output only numbered recommended changes, ordered by importance; state each reason and action once. Omit Keep recommendations, verdicts, and summaries

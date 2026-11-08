@@ -29,6 +29,8 @@ A question, idea, or problem.
 - Persist — after the user approves the Save gate, write to `<scope-dir>/research.md`; prepend `**Purpose:** Research <the specific question and scope>.` to the reviewed body
 - On revisions, briefly identify changed findings or recommendations outside the document body; omit a separate recap
 
+- Explain consequential findings or tradeoffs through one source-grounded example (specific input/action → outcome, or before → after), within the existing bullets; label illustrative values and avoid repeating the abstract explanation
+
 **Gates**
 
 | Step | Prompt | n |

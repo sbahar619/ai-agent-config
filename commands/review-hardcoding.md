@@ -16,7 +16,7 @@ Review only — identify hardcoded values and field names with safer existing co
 **Output**
 
 ```text
-1. <path:line> — <finding and why it matters> → <suggested action>.
+1. <path:line> — <actual literal or field name> → <verified constant or typed replacement; concrete benefit>.
 ```
 
 - Output only numbered recommended changes, ordered by importance; state each reason and action once. Omit Keep recommendations, verdicts, and summaries
