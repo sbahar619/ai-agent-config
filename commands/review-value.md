@@ -20,13 +20,23 @@ Review only — assess whether each feature and subfeature is worth its complexi
 
 **Output**
 
-```text
-1. <Simplify | Defer | Drop> <plain-language feature> — <recommended change with one concrete usage scenario showing what happens without the feature>. Gain: <benefit>; cost: <downside or accepted limitation>. <source location>
+```markdown
+1. **<Simplify | Defer | Drop>: <plain-language feature>**
+
+   1. **Change:** <recommended action>
+   2. **Why:** <evidence and one concrete usage scenario showing what happens without the feature>
+   3. **Gain:** <benefit>
+   4. **Cost:** <downside or accepted limitation; affected requirements or dependent behavior>
+   5. **Revisit when:** <concrete trigger for Defer>
+   6. **Sources:** <source links>
 ```
 
 - Output only numbered recommended changes, ordered by importance; omit Keep recommendations, verdicts, inventories, and summaries
+- Render the template as Markdown, not a code block; keep a blank line after each title and between recommendations, with separate indented numbered items for the details; do not use bullets
+- Keep titles short and each detail item to one or two short sentences; never compress a recommendation into one long sentence or paragraph
+- Omit Revisit when unless the recommendation is Defer; renumber the remaining detail items consecutively
 - Use everyday language and concrete consequences; state each reason and tradeoff once
-- Aim for 150 words or fewer for routine reviews; remove repetition before exceeding this to preserve material changes or limitations
+- Aim for 150 words or fewer for routine reviews; readability and material evidence take priority over this target. Cut repetition, not structure
 - Include any assumption requiring confirmation within the affected recommendation; requirement changes remain proposals, not accepted requirements
 - When no changes are recommended, output exactly "No changes recommended."
 - If inspection is incomplete, state the material limitation in one short sentence instead of claiming a completed review

@@ -22,14 +22,18 @@ Review diff only — full git diff review (staged, branch, or named paths). GitH
 
 **Findings:**
 
-1. [Blocking|Major|Minor|Nit] `path#Lstart-Lend` — <concrete trigger/input → actual vs expected outcome; fix>
+1. **[Blocking|Major|Minor|Nit] <short finding title>** — `path#Lstart-Lend`
+
+   1. **Example:** <concrete trigger/input → actual vs expected outcome>
+   2. **Fix:** <specific action>
 
 **Limitations:** <missing context or checks affecting confidence>
 ```
 
+- Render findings as Markdown, not a code block; use short titles and separate numbered detail items, with a blank line after each title and between findings. Keep each detail to one or two short sentences; readability takes priority over word targets
 - Verdict — Block: security/correctness/data-loss; Request changes: missing tests or real regressions; Approve: only minor/nit
 - Ground each scenario in inspected code; label illustrative values and do not claim reproduction unless run. Use the scenario to explain impact instead of adding a separate abstract explanation
-- Findings — number in severity order (Blocking → Major → Minor → Nit); one or two sentences each; join multiple locations with ·
+- Findings — number in severity order (Blocking → Major → Minor → Nit); keep examples and fixes in separate numbered detail items; join multiple locations with ·
 - Clean diff — omit Findings; append "No issues found on the diff." to the verdict
 - Omit Limitations when none; do not add counts, strengths, a diff recap, or a checklist repeating the fixes
 - No preamble, summary wrap-up, or filler unless asked

@@ -22,11 +22,15 @@ Verdict: Pass | Minor issues | Needs change — <path:lines and symbol>
 
 Findings:
 
-- [must|should|nit] <location; concrete input/action → actual vs expected outcome> → <action to fix>
+1. **[must|should|nit] <short finding title>** — <location>
+
+   1. **Example:** <concrete input/action → actual vs expected outcome>
+   2. **Fix:** <action to fix>
 
 Limitations: <missing context affecting confidence>
 ```
 
+- Render findings as Markdown, not a code block; use short titles and separate numbered detail items, with a blank line after each title and between findings. Keep each detail to one or two short sentences; readability takes priority over word targets
 - No preamble, summary wrap-up, or filler unless asked
 - Use a source-grounded scenario, or exact before → after for non-behavioral findings; label illustrative values and do not imply an unrun example was reproduced
 - Order findings by severity; include rationale and the fix once, within each finding

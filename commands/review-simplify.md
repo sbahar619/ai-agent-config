@@ -17,9 +17,13 @@ Review only — identify ways to make code easier to follow while preserving beh
 **Output**
 
 ```text
-1. <path:line> — <current flow> → <specific simpler flow; brief input/outcome example showing preserved behavior>.
+1. **<short finding title>** — <path:line>
+
+   1. **Change:** <current flow → specific simpler flow>
+   2. **Example:** <brief input/outcome showing preserved behavior and simplification benefit>
 ```
 
+- Render findings as Markdown, not a code block; use short titles and separate numbered detail items, with a blank line after each title and between findings. Keep each detail to one or two short sentences; readability takes priority over word targets
 - Output only numbered recommended changes, ordered by importance; state each reason and action once. Omit Keep recommendations, verdicts, and summaries
 - Aim for at most 100 words for routine reviews; preserve material findings and limitations
 - When no changes are recommended, output exactly "No changes recommended."

@@ -16,9 +16,13 @@ Review only — identify unclear names, misleading or redundant comments, and de
 **Output**
 
 ```text
-1. <path:line> — <current name/comment/placement and specific misunderstanding> → <exact suggested name, wording, or placement>.
+1. **<short finding title>** — <path:line>
+
+   1. **Issue:** <current name/comment/placement and specific misunderstanding>
+   2. **Change:** <exact suggested name, wording, or placement>
 ```
 
+- Render findings as Markdown, not a code block; use short titles and separate numbered detail items, with a blank line after each title and between findings. Keep each detail to one or two short sentences; readability takes priority over word targets
 - Output only numbered recommended changes, ordered by importance; state each reason and action once. Omit Keep recommendations, verdicts, and summaries
 - Aim for at most 100 words for routine reviews; preserve material findings and limitations
 - When no changes are recommended, output exactly "No changes recommended."

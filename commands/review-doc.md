@@ -37,9 +37,12 @@ description: Review a document, design, plan, task write-up, or other non-code a
 **Output format:**
 
 ```
-1. Blocking: [Section] <specific edit with a short example of the ambiguous wording, conflicting requirement, or missing scenario>
-2. [Section] <specific edit and concrete example showing why it matters>
+1. **Blocking: <short finding title>** — <section reference>
+
+   1. **Change:** <specific edit>
+   2. **Example:** <ambiguous wording, conflicting requirement, or missing scenario showing why it matters>
 ```
 
-- Number recommendations consecutively, with blocking changes first; omit headings and empty items
+- Render findings as Markdown, not a code block; use short titles and separate numbered detail items, with a blank line after each title and between findings. Keep each detail to one or two short sentences; readability takes priority over word targets
+- Number recommendations consecutively, with blocking changes first; omit the Blocking label for non-blocking changes and omit empty items
 - If no changes are needed, say `No changes recommended.`

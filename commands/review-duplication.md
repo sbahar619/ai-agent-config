@@ -17,9 +17,14 @@ Review only — identify repeated implementation of the same rule that is worth 
 **Output**
 
 ```text
-1. <path:line; counterpart path:line> — <same rule illustrated by one input/result at both locations> → <specific shared implementation to reuse; maintenance benefit>.
+1. **<short finding title>** — <path:line; counterpart path:line>
+
+   1. **Evidence:** <same rule illustrated by one input/result at both locations>
+   2. **Change:** <specific shared implementation to reuse>
+   3. **Gain:** <concrete maintenance benefit>
 ```
 
+- Render findings as Markdown, not a code block; use short titles and separate numbered detail items, with a blank line after each title and between findings. Keep each detail to one or two short sentences; readability takes priority over word targets
 - Output only numbered recommended changes, ordered by importance; state each reason and action once. Omit Keep recommendations, verdicts, and summaries
 - Aim for at most 100 words for routine reviews; preserve material findings and limitations
 - When no changes are recommended, output exactly "No changes recommended."

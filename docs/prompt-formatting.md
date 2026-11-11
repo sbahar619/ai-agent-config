@@ -29,6 +29,7 @@ while authoring; keep each command's applicable instructions inline so it runs i
 
 - Always wrap in a code block — without it the model may treat the template as instructions rather than a format to reproduce
 - Trailing format rules (omit empty sections, numbering logic) go as plain bullets after the code block, not inside it
+- Prefer numbered items over bullets in generated chat output. For findings with multiple details, use a short title followed by separate numbered details for evidence, action, or tradeoff; keep sentences short and blank lines between items. Do not pack these into one sentence or paragraph to meet a word target. Include applicable guidance inline in each command.
 - For routine chat replies, aim for 100–150 words, using fewer when sufficient; this is not a minimum or a hard cap. Preserve all material findings, evidence, limitations, and explicitly requested detail.
 - Lead with the answer or verdict; state each finding, its evidence, and its action once. Omit empty sections, generic praise, repeated rationale, and closing recaps.
 - Make explanations concrete: use the smallest source-grounded example (input/configuration/action → actual result vs expected result, or before → after). Let it carry the rationale rather than adding a second explanation; label illustrative values and never imply an unrun example was reproduced. Include applicable guidance inline in each command.

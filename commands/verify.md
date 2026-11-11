@@ -32,10 +32,14 @@ Derive what was claimed complete and success criteria from the source above, ref
 
 **Findings:**
 
-- <unmet criterion or rule violation> — <expected vs observed; evidence>
+1. **<unmet criterion or rule violation>**
+
+   1. **Result:** <expected vs observed>
+   2. **Evidence:** <source or check result>
 
 **Limitations:** <unverified scope, unavailable checks, or missing evidence>
 ```
 
+- Render findings as Markdown, not a code block; use short titles and separate numbered detail items, with a blank line after each title and between findings. Keep each detail to one or two short sentences; readability takes priority over word targets
 - No preamble, summary wrap-up, or filler unless asked
 - Omit Findings and Limitations when empty; do not print "None" or repeat findings in the verdict
