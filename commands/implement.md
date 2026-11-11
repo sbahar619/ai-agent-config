@@ -24,7 +24,7 @@ Read referenced docs from the repo; treat as the spec.
 - Product documentation — write source comments and user-facing guidance in terms of behavior, contracts, and rationale; keep internal delivery-phase/task IDs and planning-document references in planning artifacts, not product content
 - Run lint/tests as you go; fix failures caused by your changes; stop and report unrelated product defects
 - Environment issues — diagnose and fix setup, dependency, tooling, or configuration issues blocking implementation or validation; use the smallest necessary repair, rerun the blocked step, and continue. Respect permissions; report a blocker only when repair requires unavailable access, credentials, or a user decision, and continue independent work where possible. Include repairs and any remaining validation limits in completion output.
-- Suggested branch — one kebab-case name in completion output only
+- Suggested branch — provide one kebab-case name only when requested
 - Must not — commit, push, amend, or open/update a PR; modify architecture or plan docs; work outside the stated spec except for necessary environment repairs
 - Before replying: changed files match the spec; diff reviewed for coding-standards compliance (duplication, naming, locality); validation run and reported; the reader can tell why the change matters and what it delivers now; output matches the completion template
 
@@ -38,21 +38,15 @@ One gate only. Done gate always runs.
 
 **Output**
 
-```
-**<Implemented | Partially implemented | Blocked> — <task ID if supplied>: <plain-language outcome>**
-
-<One or two sentences: what problem prompted the change, what happens now, and why that helps.>
-
-- Remaining: <material limitation or benefit awaiting a named later task>
-- Validation: <commands> → <pass | fail — exit code N>
-- Suggested branch: `<kebab-case-name>`
+```text
+<Implemented | Partially implemented | Blocked>: <plain-language outcome.>
+<Checks run and result; material remaining work or validation limit, if any.>
 
 Happy with implementation? (y/n)
 ```
 
-- Aim for at most 120 words; preserve material failures, limitations, and requested detail
-- Link the main changed code where it supports the explanation; omit exhaustive file inventories and symbol lists
-- Omit Remaining when the scoped outcome is complete and no deferred benefit needs clarification; omit the task ID and its separator for direct requests
-- Validation — group passing checks on one line; state failed, blocked, or unrun checks explicitly, with the relevant reason
-- No preamble, summary wrap-up, or filler unless asked
-- Omit empty sections
+- Default to 2–4 short sentences, usually under 60 words; no headings, nested lists, or repeated explanation of the original problem
+- Link the main changed code when useful; omit file inventories and branch suggestions unless requested
+- Report failed, blocked, or unrun checks and decision-changing limitations immediately; never imply unverified success
+- Follow-ups answer the latest request directly; provide explanations or check details when requested, without repeating the completion report
+- Use the existing Done gate; do not add a separate explanation question

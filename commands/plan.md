@@ -39,11 +39,13 @@ User provides a goal, problem, or path to research or requirements.
 **Chat:**
 
 ```
-**Draft:** [plan.md](<resolved path>) — awaiting review
-- <consequential outcome, sequencing choice, or deferral>
+Draft ready for review: [plan.md](<resolved path>)
+<One short sentence about the outcome or decision needing attention.>
 ```
 
-- At most three short overview bullets; on revisions, use them for changed outcomes, scope, sequencing, or open questions instead
+- Keep chat to the draft links, one short outcome sentence, and the necessary question or existing gate; usually under 60 words. No sectioned recap or rationale unless requested
+- Surface blockers and decision-changing risks immediately; the length target must not hide them
+- Follow-ups answer only the latest request; offer explanation only when no question or gate is already pending
 - Request answers when user input is needed; otherwise show the Plan gate
 - Do not repeat the full document in chat unless asked
 

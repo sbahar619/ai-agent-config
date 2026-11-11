@@ -37,11 +37,13 @@ A research or requirements document path, pasted findings, or a direct goal with
 **Chat:**
 
 ```
-**Draft:** [requirements.md](<resolved path>) — awaiting review
-- <required outcome or consequential constraint>
+Draft ready for review: [requirements.md](<resolved path>)
+<One short sentence about the outcome or decision needing attention.>
 ```
 
-- At most three short overview bullets; on revisions, use them for changed IDs, obligations, scope, or open questions instead
+- Keep chat to the draft links, one short outcome sentence, and the necessary question or existing gate; usually under 60 words. No sectioned recap or rationale unless requested
+- Surface blockers and decision-changing risks immediately; the length target must not hide them
+- Follow-ups answer only the latest request; offer explanation only when no question or gate is already pending
 - Request answers when user input is needed; otherwise show the Requirements gate
 - Do not repeat the full document in chat unless asked
 

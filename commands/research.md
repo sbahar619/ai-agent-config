@@ -16,20 +16,20 @@ A question, idea, or problem.
 - Baseline — for code-based research, use the requested baseline; otherwise retain the existing document's stated branch/revision, or use the current checkout if none is recorded. Record the resolved revision and any relevant uncommitted changes included in the evidence. Assess unmerged changes separately from a target-branch baseline; if the baseline is unavailable, report the limitation instead of substituting another.
 - Bugs — reproduce or refute first; state root cause only if evidenced
 - Existing first — search for overlap, prior attempts, ecosystem solutions (well-known libraries, canonical patterns, community conventions), and simpler options before recommending new work
-- Solution ownership — before recommending work in this project, evaluate whether the problem is better solved elsewhere (another service, the caller/frontend, an existing tool, or no code at all); include the alternative in Findings with evidence for or against
+- Solution ownership — before recommending work in this project, evaluate whether the problem is better solved elsewhere (another service, the caller/frontend, an existing tool, or no code at all); record evidence for or against the alternative; surface it in chat only when it changes the recommendation
 - Disconfirm — actively look for reasons not to proceed (duplicate, misfit, already solved, constraint violation, wrong layer)
 - Next step — recommend requirements definition before planning when multiple phases, compatibility constraints, or unresolved outcomes warrant a separate agreement; for small clear changes, keep requirements with the plan. Do not generate or approve requirements as part of research.
 - Facts vs inference — cite evidence for factual claims (path:line, command output, URL); label assumptions and guesses, keeping them distinct from settled decisions and unresolved questions; a proposed or approved design is not evidence of implementation
 - Work status — distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
 - Document references — cite relevant existing sections instead of repeating their contents; use relative paths in the saved file and verify linked files and sections exist
-- Concise — aim for 100–150 words for routine answers; use fewer when sufficient. Keep evidence, tradeoffs, and limitations needed to judge the recommendation; preserve consequential contrary evidence even when it needs more space.
-- Render — lead with the answer in rendered markdown; omit generic command-purpose boilerplate from chat. The saved body matches the reviewed chat body, with a file-only Purpose line; the gate prompt is chat-only.
-- Open blocks save — do not prompt the Save gate while the Open section has unanswered items; wait for user responses, update findings if answers change anything, then proceed to the gate
+- Chat — answer in 2–4 short sentences, usually under 60 words: conclusion, next step, and one question. Surface decision-changing risks, contrary evidence, or uncertainty immediately; keep supporting analysis for requested details or the saved artifact.
+- Render — chat leads with the answer, without headings or nested lists. A saved report retains the reviewed conclusions and adds their supporting evidence; do not introduce new decisions while saving. Gate prompts are chat-only.
+- Open blocks save — do not prompt the Save gate while blocking questions remain unanswered; wait for user responses, update findings if answers change anything, then proceed to the gate
 - Location — `<scope-dir>` is `docs/plans/<topic>`, or `docs/plans/<topic>/<domain>` when the domain is requested or already established; preserve existing document paths and show concrete paths in output
-- Persist — after the user approves the Save gate, write to `<scope-dir>/research.md`; prepend `**Purpose:** Research <the specific question and scope>.` to the reviewed body
+- Persist — after the user approves the Save gate, write to `<scope-dir>/research.md`; use the report template below, retaining evidence, baseline, alternatives, and limitations behind the reviewed conclusion
 - On revisions, briefly identify changed findings or recommendations outside the document body; omit a separate recap
 
-- Explain consequential findings or tradeoffs through one source-grounded example (specific input/action → outcome, or before → after), within the existing bullets; label illustrative values and avoid repeating the abstract explanation
+- Explain with a source-grounded example only when requested or needed in the saved report; label illustrative values and never imply an unrun reproduction
 
 **Gates**
 
@@ -37,32 +37,41 @@ A question, idea, or problem.
 |------|--------|---|
 | Save | Save findings? (topic or topic/domain to save, or n to skip) | Skip; no file written |
 
-**Output**
+**Output — chat**
 
+```text
+<Direct conclusion or what remains uncertain.>
+<One recommended next step; include a decisive limitation if needed.>
+
+Want the evidence, or save these findings?
 ```
-**Answer:** <one-sentence conclusion, or what remains uncertain>
 
-**Baseline:** <inspected branch/revision and relevant working-tree changes; omit when no code baseline applies>
+- Ask a blocking question instead of offering details or saving when input is required; otherwise the combined offer uses the existing Save gate
+- Follow-ups answer the latest request without restarting the report. Use flat numbered items for independent questions or findings; no nested lists
+- Show supporting evidence, options, and examples only when requested; preserve decision-changing risks in the short answer
+- A request for evidence alone does not authorize saving; an explicit save request authorizes the Save gate
+
+**Output — requested detail or saved report**
+
+```markdown
+**Purpose:** Research <question and scope>.
+
+**Answer:** <conclusion>
+
+**Baseline:** <inspected branch/revision and relevant working-tree changes>
 
 **Findings:**
 
-- <fact> — <evidence>
+1. <fact or relevant alternative, with evidence and tradeoff>
 
-**Next:** <one concrete next step, or "no action" with a reason not already stated>
+**Next:** <one recommended next step>
 
 **Open:**
 
-1. <concrete blocking question ending in ?>
+1. <unresolved question ending in ?>
    Recommendation: <proposed answer and brief rationale>
 ```
 
-- Findings: usually 1–3 bullets; retain material contrary evidence and alternatives even when more are needed
-- Omit Baseline when no code baseline applies and Open when nothing remains unresolved
-- No preamble, filler, or closing summary; do not repeat the answer in Next
-
-**After user approves the Save gate:**
-
-```
-## Research saved
-- Path: <resolved research path>
-```
+- Saved reports retain material evidence, contrary findings, and limitations; omit Baseline when no code applies and Open when empty
+- Requested explanations cover only the point asked about; do not print the full report unless requested
+- After saving, confirm with one linked path, without repeating the findings

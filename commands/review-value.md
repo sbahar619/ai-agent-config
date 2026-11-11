@@ -16,28 +16,23 @@ Review only — assess whether each feature and subfeature is worth its complexi
 - Assess whether to keep, simplify, defer, or drop each item internally; report only supported recommendations to change. Do not invent changes or present unresolved assumptions as decisions
 - For Defer, identify a concrete condition that would justify revisiting it; for Simplify or Drop, identify affected requirements and dependent behavior so the saving is not overstated
 - Keep this review about necessity and tradeoffs; do not substitute naming, formatting, or behavior-preserving refactoring advice
-- Before replying: ensure every in-scope feature and subfeature was assessed, recommendations trace to evidence and real needs, and every proposed reduction states its downside; disclose any coverage gaps
+- Before replying: ensure every in-scope feature and subfeature was assessed, recommendations trace to evidence and real needs, and every proposed reduction accounts for its downside; surface it immediately when it changes the decision; disclose any coverage gaps
 
 **Output**
 
-```markdown
-1. **<Simplify | Defer | Drop>: <plain-language feature>**
+```text
+<Whether a change is needed, in plain language.>
+<Recommended next step; include any consequence that changes the decision.>
 
-   1. **Change:** <recommended action>
-   2. **Why:** <evidence and one concrete usage scenario showing what happens without the feature>
-   3. **Gain:** <benefit>
-   4. **Cost:** <downside or accepted limitation; affected requirements or dependent behavior>
-   5. **Revisit when:** <concrete trigger for Defer>
-   6. **Sources:** <source links>
+Want the explanation?
 ```
 
-- Output only numbered recommended changes, ordered by importance; omit Keep recommendations, verdicts, inventories, and summaries
-- Render the template as Markdown, not a code block; keep a blank line after each title and between recommendations, with separate indented numbered items for the details; do not use bullets
-- Keep titles short and each detail item to one or two short sentences; never compress a recommendation into one long sentence or paragraph
-- Omit Revisit when unless the recommendation is Defer; renumber the remaining detail items consecutively
-- Use everyday language and concrete consequences; state each reason and tradeoff once
-- Aim for 150 words or fewer for routine reviews; readability and material evidence take priority over this target. Cut repetition, not structure
-- Include any assumption requiring confirmation within the affected recommendation; requirement changes remain proposals, not accepted requirements
-- When no changes are recommended, output exactly "No changes recommended."
-- If inspection is incomplete, state the material limitation in one short sentence instead of claiming a completed review
-- No preamble, code rewrites, approval gates, or closing recap
+- Default to 2–4 short sentences, usually under 60 words; answer the latest request directly. Follow-ups do not restart the report
+- Render as ordinary Markdown, not a code block. No headings, nested lists, or mandatory explanation fields; use a flat numbered list only for multiple independent issues or choices
+- Do the full analysis internally. Include all decision-changing risks, uncertainty, and blockers immediately, even if this exceeds the length target; offer supporting evidence, examples, and alternatives on request
+- End with one useful question: ask for missing input when blocked, otherwise offer explanation. Omit the offer when nothing needs explaining or the user already requested detail
+- When detail is requested, expand only the requested point; use short sentences and flat numbered items, not the full template again
+- For multiple changes, number them by importance; keep each to the issue and recommended action in short sentences. Include a concise source location when needed to identify the target
+- If no changes are needed, say "No changes recommended." without a follow-up offer
+- If review is incomplete, state the limitation and how to resolve it; do not claim a clean review
+- No edits or implementation are authorized by a request for explanation

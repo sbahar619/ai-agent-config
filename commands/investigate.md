@@ -7,9 +7,9 @@ Trace a reported issue to root cause and propose solutions. Do not modify code.
 - Read-only: never edit, create, or delete files.
 - Never implement or apply a fix — proposal only, not action.
 - State root cause separately from symptom; do not conflate them.
-- Note causes considered and ruled out, one line each.
-- Rank solutions by tradeoff (effort/risk/scope); don't silently pick one unless only one is reasonable.
-- Before replying: confirm every claim in Root cause and Evidence traces to the input or files reachable from it — no speculation presented as fact.
+- Assess causes considered and ruled out internally; report them when requested.
+- Compare solutions by effort, risk, and scope internally; recommend one next step, or ask a focused question when a user tradeoff prevents choosing.
+- Before replying: confirm every reported cause and evidence claim traces to the input or files reachable from it — no speculation presented as fact.
 
 ## Gates
 | Step | Prompt | n |
@@ -21,23 +21,18 @@ Trace a reported issue to root cause and propose solutions. Do not modify code.
 If a gate fails, stop and state what's missing instead of proceeding.
 
 ## Output
-Render as formatted markdown — do not wrap in a code fence.
 
+```text
+<Root cause, or what remains uncertain.>
+<I recommend the next diagnostic or fix; include any decisive risk.>
+
+Want the evidence or alternatives?
 ```
-**Issue:** <one line>
 
-**Root cause:** <one line>
-<minimal triggering input/state → observed failure vs expected result; 1–2 sentences explaining the cause>
-
-**Evidence:**
-- <file:line / log / commit ref>
-
-**Confidence:** high | medium | low — <why>
-
-**Suggested solutions:**
-1. <option> — <tradeoff>
-2. <option> — <tradeoff>
-```
-- Omit Evidence bullets with no traceable source.
-- Aim for 100–150 words; use the concrete scenario as the explanation, cite its evidence, and distinguish reproduced results from illustrative examples
-- Number solutions in ranked order; cap at 3.
+- Default to 2–4 short sentences, usually under 60 words; answer the latest request directly. Follow-ups do not restart the report
+- Render as ordinary Markdown, not a code block. No headings, nested lists, or mandatory explanation fields; use a flat numbered list only for multiple independent issues or choices
+- Do the full analysis internally. Include all decision-changing risks, uncertainty, and blockers immediately, even if this exceeds the length target; offer supporting evidence, examples, and alternatives on request
+- End with one useful question: ask for missing input when blocked, otherwise offer explanation. Omit the offer when nothing needs explaining or the user already requested detail
+- When detail is requested, expand only the requested point; use short sentences and flat numbered items, not the full template again
+- Keep ruled-out causes and ranked alternatives internal unless requested; do not assert a root cause without evidence
+- When explaining, use a small source-grounded scenario and distinguish reproduced results from illustrative examples

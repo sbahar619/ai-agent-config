@@ -29,11 +29,13 @@ while authoring; keep each command's applicable instructions inline so it runs i
 
 - Always wrap in a code block — without it the model may treat the template as instructions rather than a format to reproduce
 - Trailing format rules (omit empty sections, numbering logic) go as plain bullets after the code block, not inside it
-- Prefer numbered items over bullets in generated chat output. For findings with multiple details, use a short title followed by separate numbered details for evidence, action, or tradeoff; keep sentences short and blank lines between items. Do not pack these into one sentence or paragraph to meet a word target. Include applicable guidance inline in each command.
-- For routine chat replies, aim for 100–150 words, using fewer when sufficient; this is not a minimum or a hard cap. Preserve all material findings, evidence, limitations, and explicitly requested detail.
-- Lead with the answer or verdict; state each finding, its evidence, and its action once. Omit empty sections, generic praise, repeated rationale, and closing recaps.
-- Make explanations concrete: use the smallest source-grounded example (input/configuration/action → actual result vs expected result, or before → after). Let it carry the rationale rather than adding a second explanation; label illustrative values and never imply an unrun example was reproduced. Include applicable guidance inline in each command.
-- Keep full guides, copy-ready text, and saved artifacts as detailed as their purpose requires; use links and short overviews for document commands. Include applicable brevity rules in each command so it works independently.
+- Default chat replies lead with the answer or issue, then one recommended next step or a focused question. Usually 2–4 short sentences and under 60 words; use everyday language, not compressed clauses.
+- Analyze thoroughly internally; do not print mandatory rationale, examples, benefits, costs, or source inventories. Surface decision-changing risks, uncertainty, and blockers immediately; offer supporting explanation on request.
+- Use a flat numbered list only for independent issues or choices; avoid headings and nested lists in routine chat. Do not hide blocking findings to meet the length target.
+- End with at most one useful question: missing input or an existing gate takes priority; otherwise offer explanation when useful. Do not add an offer to a clean result, copy-ready artifact, or already detailed answer.
+- Follow-ups answer the latest request directly rather than restarting the command's report. When detail is requested, expand only that point; use a concrete source-grounded example when helpful, labeling illustrative or unrun scenarios.
+- Keep requested guides, examples, copy-ready text, and saved artifacts as detailed as their purpose requires. Chat previews should link the artifact and identify the decision needed; do not repeat its contents.
+- Include applicable output guidance inline in each command so it remains independent; align Rules and pre-reply checks with the short default instead of retaining mandatory explanation requirements.
 
 ## Open questions
 

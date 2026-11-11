@@ -10,28 +10,23 @@ Whatever the user names in this turn: path, symbol, error, selection, or concept
 
 - Ask at most 1–2 questions only if the target is unclear
 - Read and inspect as needed — no writes, no git mutations
-- Be concise — aim for 100–150 words for routine explanations; use fewer when sufficient and expand only for necessary detail or a requested walkthrough
 - Cite repo code with `path:line` when referencing it; say when guessing
-- Include a Trace only when a walkthrough clarifies (multi-step flow, call chain, pipeline, state machine, async job, error path) — omit for simple or single-location targets
-- Trace: replace How with a high-level sequence, usually 3–5 steps — entry → key steps → outcome; real symbols/paths, not line-by-line narration
-- Include one minimal source-grounded example for behavior or flow: sample input/request/config → actual output or effect, not just a snippet. Label illustrative values; omit a separate Example when How or Trace already demonstrates it
 - Do not recommend next steps unless the user explicitly asks what to do
-- Before replying: re-read every cited `path:line` — symbols, behavior, and flow match; for Trace, spot-check entry and at least one middle step; when uncertain, run a targeted read or search — do not guess; fix output if a check fails; note corrections only when material
+- Before replying: re-read every cited `path:line` — symbols, behavior, and flow match; for a requested walkthrough, spot-check entry and at least one middle step; when uncertain, run a targeted read or search — do not guess; fix output if a check fails; note corrections only when material
 
 **Output**
 
-```
-Objective: <one sentence — what it does and why it exists>
+```text
+<Direct plain-language answer in 2–4 short sentences.>
 
-How:
-
-- <core mechanism>
-
-Example:
-<short sample call, request, config, or values>
+Want an example or walkthrough?
 ```
 
-- No preamble, summary wrap-up, or filler unless asked
-- How: 1–3 bullets, or replace with Trace and numbered steps when a walkthrough helps; never include both
-- Cite relevant files inline instead of adding a Touches inventory; omit Example when it adds no clarity
-- Omit empty sections except Objective
+- Default to 2–4 short sentences, usually under 60 words; answer the latest request directly. Follow-ups do not restart the report
+- Render as ordinary Markdown, not a code block. No headings, nested lists, or mandatory explanation fields; use a flat numbered list only for multiple independent issues or choices
+- Do the full analysis internally. Include all decision-changing risks, uncertainty, and blockers immediately, even if this exceeds the length target; offer supporting evidence, examples, and alternatives on request
+- End with one useful question: ask for missing input when blocked, otherwise offer explanation. Omit the offer when nothing needs explaining or the user already requested detail
+- When detail is requested, expand only the requested point; use short sentences and flat numbered items, not the full template again
+- The explanation is the requested result; do not add an unsolicited action recommendation
+- If an example or walkthrough was requested, provide it immediately; use numbered steps for a flow and omit the expansion offer. Label illustrative values and never imply an unrun example was reproduced
+- Cite relevant code inline when needed; omit file inventories

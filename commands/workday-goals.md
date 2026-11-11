@@ -28,12 +28,11 @@ For updates, paste the existing goal text or name it from workspace exports.
 **Output**
 
 ```
-## Assessment
-<active goals, recent QC priorities, gaps — bullets>
+<Whether a new or revised goal is needed, and the best next step.>
 
-## Suggested goals
-1. **<title>** — <why, tied to a specific report or note>
-2. ...
+1. <Suggested goal, only when warranted>
+
+<One question: which goal to draft, or whether to explain the recommendation.>
 
 ## Goal
 <title line>
@@ -54,6 +53,8 @@ Progress note:
 <optional: goals to retire, facts still needed>
 ```
 
-- Include Assessment and Suggested goals unless the user asked for a single goal update only
+- For assessment or suggestions, default to 2–4 short sentences, usually under 60 words; no assessment section or evidence inventory. Use a flat numbered list only for multiple suggestions
+- Provide the full Goal or Goal update directly when requested; omit assessment, suggestions, and expansion offers from a paste-ready draft
+- Follow-ups address only the latest request; offer supporting reasoning when useful, and surface missing facts or consequential uncertainty immediately
 - Expand a suggestion into Goal when the user picks one or names it in Request
 - No preamble, summary wrap-up, or filler unless asked

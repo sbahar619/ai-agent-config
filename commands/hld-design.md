@@ -36,11 +36,13 @@ A goal or path to a plan doc, with optional domain scope.
 **Chat:**
 
 ```
-**Draft:** [hld.md](<resolved path>) — awaiting review
-- <consequential architecture choice, tradeoff, or risk>
+Draft ready for review: [hld.md](<resolved path>)
+<One short sentence about the outcome or decision needing attention.>
 ```
 
-- At most three short overview bullets; on revisions, use them for changed decisions, constraints, or open questions instead
+- Keep chat to the draft links, one short outcome sentence, and the necessary question or existing gate; usually under 60 words. No sectioned recap or rationale unless requested
+- Surface blockers and decision-changing risks immediately; the length target must not hide them
+- Follow-ups answer only the latest request; offer explanation only when no question or gate is already pending
 - Request answers when user input is needed; otherwise show the HLD gate
 - Do not repeat the full document in chat unless asked
 

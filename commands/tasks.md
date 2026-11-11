@@ -52,12 +52,14 @@ Read referenced docs from the repo; treat as the source of truth.
 **Output — chat**
 
 ```
-**Draft:** [<task filename>](<resolved path>) — awaiting review
-- <problem addressed and intended result, or consequential dependency/coverage exception>
+Draft ready for review: [<task filename>](<resolved path>)
+<One short sentence about the outcome or decision needing attention.>
 ```
 
-- At most three short overview bullets; on revisions, use them for changed task IDs, obligations, dependencies, or open questions instead
-- Repeat the Draft line for every task file, implementation companion, and shared/history file written, including its grouped outcome when split; one Tasks gate covers the full set
+- Keep chat to the draft links, one short outcome sentence, and the necessary question or existing gate; usually under 60 words. No sectioned recap or rationale unless requested
+- Surface blockers and decision-changing risks immediately; the length target must not hide them
+- Follow-ups answer only the latest request; offer explanation only when no question or gate is already pending
+- Repeat the draft link for every task file, implementation companion, and shared/history file written, including its grouped outcome when split; one Tasks gate covers the full set
 - Request answers when user input is needed; otherwise show the Tasks gate
 - Do not enumerate every task or repeat the full document in chat unless asked
 

@@ -28,6 +28,7 @@ Show the table report? (y/n)
 ```
 
 - At most 60 words across the verdict and gate; no tables, case lists, or detailed findings before approval
+- Include the recommended next step briefly when duplicates exist; follow-ups answer the latest request without repeating the report
 - Complete the review before summarizing; if inspection is incomplete, state that limitation instead of claiming no duplicates
 - Wait for the answer; approval authorizes the detailed report only, not edits
 
@@ -44,7 +45,7 @@ Show the table report? (y/n)
 | 2 | ... | ... | ... |
 
 ### Duplicates
-- **<case A>** ↔ **<case B>** — both exercise `<branch>` for `<concern>`
+1. **<case A>** ↔ **<case B>** — both exercise `<branch>` for `<concern>`
 
 ```
 

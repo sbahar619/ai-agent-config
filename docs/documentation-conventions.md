@@ -78,11 +78,13 @@ planning and design documents.
   path before requesting content approval; identify it as awaiting review in chat.
   Approval covers that draft, not an outline or summary. Do not imply that writing
   the draft approves it or authorizes implementation.
-- Chat shows every draft link, at most three overview bullets, and necessary questions
-  or the gate. On revisions, use those bullets for changed decisions, obligations,
-  and open questions; do not repeat the document or add another change summary.
+- Chat shows every draft link, one short outcome or decision sentence, and necessary
+  questions or the existing gate; usually under 60 words. On revisions, mention only
+  consequential changes. Keep rationale and detailed findings in the artifact or
+  provide them when requested; follow-ups answer the latest request directly.
   After approval, confirm only the approved paths. Research retains its optional
-  Save gate.
+  Save gate and can offer details before saving.
+
 
 **Updates**
 

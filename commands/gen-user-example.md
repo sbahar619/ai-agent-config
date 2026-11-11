@@ -31,10 +31,11 @@ Determine scope from the input:
 **Example:**
 <manifest snippet, CLI command + output, config block, or API call — the artifact the user would write or see>
 
-**Code trace:** <file#lines — the code path that produces this result, and why>
+<Optional short source link when needed to ground the example.>
 ```
 
 - No preamble or filler
 - Do not repeat the scenario's outcome in separate Result or Why it matters sections
 - Example block uses a fenced code block with the appropriate language (yaml, bash, json, etc.)
-- Omit **Code trace** when scope is general
+- Show a code trace only when requested; the default is the brief scenario and runnable or illustrative example
+- Follow-ups answer only the latest request without repeating the example; label illustrative values and do not imply unrun examples were executed

@@ -8,7 +8,6 @@ Review only — focused evaluation of a code block, line range, or symbol. No ed
 - Scope — review only the named block; read minimal surrounding context (types, callers, imports) when needed to judge it
 - Standards — apply workspace rules whose globs match the file; apply user rules (coding-standards, test-standards, language-specific test rules, etc.)
 - Domain — apply language, framework, and ecosystem conventions (idiomatic patterns, well-known libraries, canonical APIs); cite the practice or rule when a finding depends on it
-- Be concise — aim for 100–150 words for routine reviews; use fewer when sufficient and exceed when needed to report all material findings or limitations
 - Report only meaningful issues — skip style nits unless a matching rule requires them
 - Before each finding, confirm it maps to a standard, rule, or domain practice — drop it if speculative or unsupported by the scoped code or its immediate context
 - Before replying, re-read every cited `path:line` to confirm the block matches what you reviewed
@@ -17,21 +16,19 @@ Review only — focused evaluation of a code block, line range, or symbol. No ed
 
 **Output**
 
-```
-Verdict: Pass | Minor issues | Needs change — <path:lines and symbol>
+```text
+<Pass | Minor issues | Needs change: short conclusion about the reviewed scope.>
+<Most important issue and recommended next step, if any; source location.>
 
-Findings:
-
-1. **[must|should|nit] <short finding title>** — <location>
-
-   1. **Example:** <concrete input/action → actual vs expected outcome>
-   2. **Fix:** <action to fix>
-
-Limitations: <missing context affecting confidence>
+Want the review details?
 ```
 
-- Render findings as Markdown, not a code block; use short titles and separate numbered detail items, with a blank line after each title and between findings. Keep each detail to one or two short sentences; readability takes priority over word targets
-- No preamble, summary wrap-up, or filler unless asked
-- Use a source-grounded scenario, or exact before → after for non-behavioral findings; label illustrative values and do not imply an unrun example was reproduced
-- Order findings by severity; include rationale and the fix once, within each finding
-- Omit Findings and Limitations when empty; a clean review needs only the verdict
+- Default to 2–4 short sentences, usually under 60 words; answer the latest request directly. Follow-ups do not restart the report
+- Render as ordinary Markdown, not a code block. No headings, nested lists, or mandatory explanation fields; use a flat numbered list only for multiple independent issues or choices
+- Do the full analysis internally. Include all decision-changing risks, uncertainty, and blockers immediately, even if this exceeds the length target; offer supporting evidence, examples, and alternatives on request
+- End with one useful question: ask for missing input when blocked, otherwise offer explanation. Omit the offer when nothing needs explaining or the user already requested detail
+- When detail is requested, expand only the requested point; use short sentences and flat numbered items, not the full template again
+- Briefly surface every blocking or decision-changing issue; number independent issues by severity. Do not hide blockers behind the detail offer
+- Cite each finding's verified location; for diff reviews, cite a changed hunk. Keep detailed evidence and reproduction examples for requested explanations
+- A clean review needs only the verdict and scope; omit the offer. State material inspection limits immediately
+- For requested details, explain the concrete trigger, consequence, and fix without repeating the initial answer; label illustrative examples and never claim an unrun reproduction

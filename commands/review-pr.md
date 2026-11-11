@@ -8,7 +8,6 @@ Review PR only — GitHub pull request via gh; inline comments on changed lines.
 - Read and inspect as needed — no writes, no git mutations
 - PR scope only — ignore local staged/uncommitted changes unless part of the PR diff
 - Changed lines only — comment on diff hunks, not untouched code
-- Concise findings — one concern per finding; state issue, impact, and fix with inline evidence. Aim for 100–150 words total for routine reviews; use fewer when sufficient and exceed when needed to report all material findings or limitations.
 - Resolve with `gh pr view <ref> --json baseRefName,headRefName,title,url,body`; fetch diff with `gh pr diff <ref>`
 - Recover transient read failures (connection/DNS errors, timeouts, HTTP 5xx) — retry the failed command up to twice after 2s then 5s; continue the review on success
 - If network access is sandbox-restricted, use the tool's supported permission/escalation flow for the failed read; never bypass a denial. Do not change credentials, network settings, or repository state to recover access
@@ -25,24 +24,21 @@ Review PR only — GitHub pull request via gh; inline comments on changed lines.
 
 **Output**
 
-```
-**Verdict:** Approve | Request changes | Block | Unable to review — [<pr-title>](<pr-url>)
+```text
+<Approve | Request changes | Block: short conclusion about the reviewed scope.>
+<Most important issue and recommended next step, if any; source location.>
 
-**Findings:**
-
-1. **[Blocking|Major|Minor|Nit] <short finding title>** — `path#Lstart-Lend`
-
-   1. **Example:** <concrete trigger/input → actual vs expected outcome>
-   2. **Fix:** <specific action>
-
-**Limitations:** <missing context or checks affecting confidence>
+Want the review details?
 ```
 
-- Render findings as Markdown, not a code block; use short titles and separate numbered detail items, with a blank line after each title and between findings. Keep each detail to one or two short sentences; readability takes priority over word targets
-- Verdict — Block: security/correctness/data-loss; Request changes: missing tests or real regressions; Approve: only minor/nit
-- Unable to review — access failure prevented review; include Limitations, omit Findings and the clean-diff statement, and use `PR #<number>` as the link label if the title is unavailable
-- Ground each scenario in inspected code; label illustrative values and do not claim reproduction unless run. Use the scenario to explain impact instead of adding a separate abstract explanation
-- Findings — number in severity order (Blocking → Major → Minor → Nit); keep examples and fixes in separate numbered detail items; join multiple locations with ·
-- Clean diff — omit Findings; append "No issues found on the diff." to the verdict
-- Omit Limitations when none; do not add counts, strengths, a PR recap, or a checklist repeating the fixes
-- No preamble, summary wrap-up, or filler unless asked
+- Default to 2–4 short sentences, usually under 60 words; answer the latest request directly. Follow-ups do not restart the report
+- Render as ordinary Markdown, not a code block. No headings, nested lists, or mandatory explanation fields; use a flat numbered list only for multiple independent issues or choices
+- Do the full analysis internally. Include all decision-changing risks, uncertainty, and blockers immediately, even if this exceeds the length target; offer supporting evidence, examples, and alternatives on request
+- End with one useful question: ask for missing input when blocked, otherwise offer explanation. Omit the offer when nothing needs explaining or the user already requested detail
+- When detail is requested, expand only the requested point; use short sentences and flat numbered items, not the full template again
+- Briefly surface every blocking or decision-changing issue; number independent issues by severity. Do not hide blockers behind the detail offer
+- Cite each finding's verified location; for diff reviews, cite a changed hunk. Keep detailed evidence and reproduction examples for requested explanations
+- A clean review needs only the verdict and scope; omit the offer. State material inspection limits immediately
+- For requested details, explain the concrete trigger, consequence, and fix without repeating the initial answer; label illustrative examples and never claim an unrun reproduction
+- Block means security/correctness/data-loss; Request changes means missing tests or real regressions; Approve means only minor/nit findings
+- If access prevents review, say "Unable to review", the failed operation and recovery attempted, and the next step to restore access; do not issue an approval

@@ -16,15 +16,18 @@ Review only — identify unclear names, misleading or redundant comments, and de
 **Output**
 
 ```text
-1. **<short finding title>** — <path:line>
+<Whether a change is needed, in plain language.>
+<Recommended next step; include any consequence that changes the decision.>
 
-   1. **Issue:** <current name/comment/placement and specific misunderstanding>
-   2. **Change:** <exact suggested name, wording, or placement>
+Want the explanation?
 ```
 
-- Render findings as Markdown, not a code block; use short titles and separate numbered detail items, with a blank line after each title and between findings. Keep each detail to one or two short sentences; readability takes priority over word targets
-- Output only numbered recommended changes, ordered by importance; state each reason and action once. Omit Keep recommendations, verdicts, and summaries
-- Aim for at most 100 words for routine reviews; preserve material findings and limitations
-- When no changes are recommended, output exactly "No changes recommended."
-- If inspection is incomplete, state the material limitation in one short sentence instead of claiming a completed review
-- No preamble, code rewrites, approval gates, or closing recap
+- Default to 2–4 short sentences, usually under 60 words; answer the latest request directly. Follow-ups do not restart the report
+- Render as ordinary Markdown, not a code block. No headings, nested lists, or mandatory explanation fields; use a flat numbered list only for multiple independent issues or choices
+- Do the full analysis internally. Include all decision-changing risks, uncertainty, and blockers immediately, even if this exceeds the length target; offer supporting evidence, examples, and alternatives on request
+- End with one useful question: ask for missing input when blocked, otherwise offer explanation. Omit the offer when nothing needs explaining or the user already requested detail
+- When detail is requested, expand only the requested point; use short sentences and flat numbered items, not the full template again
+- For multiple changes, number them by importance; keep each to the issue and recommended action in short sentences. Include a concise source location when needed to identify the target
+- If no changes are needed, say "No changes recommended." without a follow-up offer
+- If review is incomplete, state the limitation and how to resolve it; do not claim a clean review
+- No edits or implementation are authorized by a request for explanation
