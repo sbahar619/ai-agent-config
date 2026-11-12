@@ -8,18 +8,20 @@ Generate a short GitHub PR/issue comment from a discussion thread or code review
 - When a URL is given, fetch the thread with `gh` (e.g. `gh pr view <ref> --comments`, `gh issue view <ref> --comments`, or the relevant review thread via API)
 - Read the full conversation — understand positions, decisions made, open questions, and who said what
 - Infer the user's stance from their prior comments in the thread and any notes they provide
-- Generate a reply that is: direct, concise (1–4 sentences), on-topic, and moves the discussion forward
+- Explain the issue and its concrete consequence in 1–2 short, plain-language sentences; stay on the latest point in the discussion
+- Do not instruct the author how to fix it or add a proposed solution unless the user explicitly asks
+- Include one brief example only when it makes the consequence clearer; ground it in the supplied or inspected context, label hypothetical outcomes, and do not imply an unrun reproduction
 - Match the tone of the thread — casual for casual, technical for technical; default to friendly-professional
 - No filler, pleasantries, or "thanks for the feedback" openers unless the user's own style uses them
-- Include code snippets or suggestions only when the user asks or the reply clearly needs one
+- Include fix snippets or code suggestions only when the user explicitly asks
 - Must not — post the comment (`gh pr comment`, `gh issue comment`) unless the user explicitly asks to post it
-- Before replying: verify the generated comment addresses the latest message in the thread; drop anything that restates what was already agreed upon
+- Before replying: verify the comment addresses the latest point, makes the issue understandable, and contains no unsolicited fix instructions; drop repetition and routine process summaries
 
 **Output**
 
 `<path>:<line>` (omit for general/issue comments)
 
-> <the comment text, rendered markdown>
+> <Issue and consequence in plain language; optional brief example.>
 
 - When the thread references a specific file and line, show the code reference (`path:line`) above the blockquote
 - Output only the reference (when applicable) and blockquote — no explanation, preamble, or alternatives
