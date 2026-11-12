@@ -26,7 +26,7 @@ Read referenced docs from the repo; treat as the spec.
 - Environment issues — diagnose and fix setup, dependency, tooling, or configuration issues blocking implementation or validation; use the smallest necessary repair, rerun the blocked step, and continue. Respect permissions; report a blocker only when repair requires unavailable access, credentials, or a user decision, and continue independent work where possible. Include repairs and any remaining validation limits in completion output.
 - Suggested branch — provide one kebab-case name only when requested
 - Must not — commit, push, amend, or open/update a PR; modify architecture or plan docs; work outside the stated spec except for necessary environment repairs
-- Before replying: changed files match the spec; diff reviewed for coding-standards compliance (duplication, naming, locality); validation run and reported; the reader can tell why the change matters and what it delivers now; output matches the completion template
+- Before replying: changed files match the spec; diff reviewed for coding-standards compliance (duplication, naming, locality); validation completed and decision-changing failures disclosed; the reader can tell why the change matters and what it delivers now; output matches the completion template
 
 **Gates**
 
@@ -40,13 +40,13 @@ One gate only. Done gate always runs.
 
 ```text
 <Implemented | Partially implemented | Blocked>: <plain-language outcome.>
-<Checks run and result; material remaining work or validation limit, if any.>
+<Material remaining work or decision-changing validation limit, if any.>
 
 Happy with implementation? (y/n)
 ```
 
 - Default to 2–4 short sentences, usually under 60 words; no headings, nested lists, or repeated explanation of the original problem
 - Link the main changed code when useful; omit file inventories and branch suggestions unless requested
-- Report failed, blocked, or unrun checks and decision-changing limitations immediately; never imply unverified success
+- Omit routine passing-check summaries; provide check details when requested. Report failed, blocked, or unrun checks when they affect completion or the next step; never imply unverified success
 - Follow-ups answer the latest request directly; provide explanations or check details when requested, without repeating the completion report
 - Use the existing Done gate; do not add a separate explanation question

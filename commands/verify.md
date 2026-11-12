@@ -36,6 +36,6 @@ Want the check details?
 - Do the full analysis internally. Include all decision-changing risks, uncertainty, and blockers immediately, even if this exceeds the length target; offer supporting evidence, examples, and alternatives on request
 - End with one useful question: ask for missing input when blocked, otherwise offer explanation. Omit the offer when nothing needs explaining or the user already requested detail
 - When detail is requested, expand only the requested point; use short sentences and flat numbered items, not the full template again
-- Summarize checks actually run in one short sentence; never imply unrun checks passed
+- Give the verification verdict, not a check-status recap; list checks and passing results only when requested. Never imply unrun checks passed
 - Surface all blocking failures briefly; give command output and detailed evidence when requested
 - On a clean pass, omit the next step and detail offer unless useful
