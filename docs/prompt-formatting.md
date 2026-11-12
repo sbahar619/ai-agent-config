@@ -30,6 +30,7 @@ while authoring; keep each command's applicable instructions inline so it runs i
 - Always wrap in a code block — without it the model may treat the template as instructions rather than a format to reproduce
 - Trailing format rules (omit empty sections, numbering logic) go as plain bullets after the code block, not inside it
 - Default chat replies lead with the answer or issue, then one recommended next step or a focused question. Usually 2–4 short sentences and under 60 words; use everyday language, not compressed clauses.
+- Omit routine process summaries and compliance statements such as tools used or "no writes." In reviews, report verification gaps only when they change the verdict or next step, tied to the concrete risk. Commands whose result is validation or implementation still report the relevant check outcome.
 - Analyze thoroughly internally; do not print mandatory rationale, examples, benefits, costs, or source inventories. Surface decision-changing risks, uncertainty, and blockers immediately; offer supporting explanation on request.
 - Use a flat numbered list only for independent issues or choices; avoid headings and nested lists in routine chat. Do not hide blocking findings to meet the length target.
 - End with at most one useful question: missing input or an existing gate takes priority; otherwise offer explanation when useful. Do not add an offer to a clean result, copy-ready artifact, or already detailed answer.

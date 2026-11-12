@@ -14,7 +14,7 @@ Review PR only — GitHub pull request via gh; inline comments on changed lines.
 - Do not blindly retry authentication, permission, or invalid-PR errors; inspect read-only diagnostics such as `gh auth status` when relevant, without exposing secrets. Honor rate-limit retry timing; if waiting is impractical, report when to retry
 - If PR metadata or diff remains unavailable after applicable recovery, report Unable to review with the failed operation, recovery attempted, and actionable next step; do not infer code findings or approval from unavailable data
 - Derive the user-facing problem from the PR body, linked issues, or the diff when the description is sparse
-- Read changed files in workspace when paths exist; if workspace is not the PR repo, review from the diff and note missing local context
+- Read changed files in workspace when paths exist; if workspace is not the PR repo, review from the diff; report missing context only if it prevents judging a specific risk
 - Apply applicable user/project rules on changed lines when they indicate real risk; also flag deviations from language, framework, and ecosystem conventions (idiomatic patterns, well-known libraries, canonical APIs)
 - Do not guess — say when context is missing
 - Skip style nits unless they hide a real bug
@@ -31,6 +31,7 @@ Review PR only — GitHub pull request via gh; inline comments on changed lines.
 Want the review details?
 ```
 
+- Omit routine process summaries (tools used, checks passing, no writes, or tests not run). Mention a verification gap only when it changes the verdict or next step, and connect it to the specific risk; do not append generic disclaimers
 - Default to 2–4 short sentences, usually under 60 words; answer the latest request directly. Follow-ups do not restart the report
 - Render as ordinary Markdown, not a code block. No headings, nested lists, or mandatory explanation fields; use a flat numbered list only for multiple independent issues or choices
 - Do the full analysis internally. Include all decision-changing risks, uncertainty, and blockers immediately, even if this exceeds the length target; offer supporting evidence, examples, and alternatives on request

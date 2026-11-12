@@ -22,6 +22,7 @@ Review only — identify unclear names, misleading or redundant comments, and de
 Want the explanation?
 ```
 
+- Omit routine process summaries (tools used, checks passing, no writes, or tests not run). Mention a verification gap only when it changes the verdict or next step, and connect it to the specific risk; do not append generic disclaimers
 - Default to 2–4 short sentences, usually under 60 words; answer the latest request directly. Follow-ups do not restart the report
 - Render as ordinary Markdown, not a code block. No headings, nested lists, or mandatory explanation fields; use a flat numbered list only for multiple independent issues or choices
 - Do the full analysis internally. Include all decision-changing risks, uncertainty, and blockers immediately, even if this exceeds the length target; offer supporting evidence, examples, and alternatives on request
