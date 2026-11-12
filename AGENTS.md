@@ -1,12 +1,14 @@
 # ai-agent-config
 
-Configuration for AI coding agents: **rules** and **commands**.
+Configuration for AI coding agents: **rules**, **commands**, and **skills**.
 Edit config only — not application code.
 
 ## Layout
 
 - `rules/` — persistent constraints (`.mdc` + frontmatter)
 - `commands/` — slash-command prompts (one role per command; parent session only)
+- `skills/` — generated workflows; embedded review instructions may run in subagents
+- `scripts/review-and-fix.template.md` — workflow source; regenerate with `python3 scripts/generate-review-skill.py`
 
 Browse each directory for what exists today; do not duplicate inventories here.
 
@@ -14,7 +16,7 @@ Command scope boundaries live in `docs/plans/agents-to-commands/plan.md` when ne
 
 ## Adding or editing config
 
-Every rule and command should be:
+Every rule, command, and skill should be:
 
 - **Short and concise** — bullets over prose; one clear job; cut filler
 - **Best practice** — grounded in ecosystem and community conventions (language idioms, well-known libraries, canonical patterns), not just internal rules; actionable, scoped, concrete output when the role needs it
@@ -25,6 +27,9 @@ Every rule and command should be:
 
 State explicitly what the artifact does and must not do. Put shared conventions
 in one place (this file or a parent rule), not repeated across files.
+
+Edit generated skills through their template or source commands. Run the generator
+with `--check` to detect stale output; command files are not runtime dependencies.
 
 ### Prompt formatting
 

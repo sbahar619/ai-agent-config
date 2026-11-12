@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Sync commands (and rules where applicable) to Codex and Cursor locally.
+# Generate and sync skills, commands, and applicable rules to Codex and Cursor.
 # Usage: ./scripts/sync.sh [--remote user@host]
 # --remote also syncs to the supplied SSH destination.
 # Command destinations mirror commands/; destination-only files are deleted.
+# Skill destinations preserve unrelated installed skills and files.
 
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 repo_dir="$(cd -- "$script_dir/.." && pwd)"
@@ -40,6 +41,10 @@ sync_commands() {
         done
 }
 
+sync_skills() {
+    rsync -a -- "$repo_dir/skills/" "$1"
+}
+
 # --- Codex: commands go to prompts/, rules flatten to AGENTS.md -------------
 
 codex_dir="${CODEX_HOME:-$HOME/.codex}"
@@ -48,6 +53,7 @@ codex_prompts="$codex_dir/prompts"
 generated_agents="$(mktemp)"
 trap 'rm -f -- "$generated_agents"' EXIT
 python3 "$script_dir/generate-agents.py" > "$generated_agents"
+python3 "$script_dir/generate-review-skill.py"
 
 # Only replace files owned by this generator; preserve handwritten instructions.
 check_agents_guard() {
@@ -62,21 +68,23 @@ check_agents_guard() {
 
 check_agents_guard "$codex_dir"
 
-mkdir -p -- "$codex_prompts"
+mkdir -p -- "$codex_prompts" "$codex_dir/skills"
 sync_commands "$codex_prompts/"
+sync_skills "$codex_dir/skills/"
 cp -- "$generated_agents" "$codex_dir/AGENTS.md"
 
-printf 'Synced commands + rules to %s.\n' "$codex_dir"
+printf 'Synced commands + skills + rules to %s.\n' "$codex_dir"
 
 # --- Cursor: commands go to commands/ (no AGENTS.md) ------------------------
 
 cursor_dir="${CURSOR_HOME:-$HOME/.cursor}"
 cursor_commands="$cursor_dir/commands"
 
-mkdir -p -- "$cursor_commands"
+mkdir -p -- "$cursor_commands" "$cursor_dir/skills"
 sync_commands "$cursor_commands/"
+sync_skills "$cursor_dir/skills/"
 
-printf 'Synced commands to %s.\n' "$cursor_dir"
+printf 'Synced commands + skills to %s.\n' "$cursor_dir"
 
 # --- Remote -----------------------------------------------------------------
 
@@ -89,13 +97,15 @@ if [[ -n "$remote" ]]; then
             exit 1
         fi
     fi
-    mkdir -p -- ~/.codex/prompts ~/.cursor/commands
+    mkdir -p -- ~/.codex/prompts ~/.codex/skills ~/.cursor/commands ~/.cursor/skills
 REMOTE_GUARD
 )"
 
     sync_commands "$remote:~/.codex/prompts/"
+    sync_skills "$remote:~/.codex/skills/"
     rsync -a -- "$generated_agents"          "$remote:~/.codex/AGENTS.md"
     sync_commands "$remote:~/.cursor/commands/"
+    sync_skills "$remote:~/.cursor/skills/"
 
     printf 'Synced to %s.\n' "$remote"
 fi
