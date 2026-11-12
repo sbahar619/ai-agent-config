@@ -21,7 +21,7 @@ Read referenced docs from the repo; treat as the source of truth.
 - Order by dependency — later tasks may depend on earlier ones; never the reverse
 - Bias small — choose the smallest complete, reviewable change that fits one `/implement` invocation; split only where each task leaves a coherent, verifiable result after its declared dependencies
 - Explain the purpose — each file opens with the concrete problem and intended result; each task names the problem or prerequisite it addresses and the behavior it delivers. Derive these from the supplied scope and inspected code; do not invent defects or performance claims.
-- Reviewability — use plain-language outcome titles; put Problem and Outcome before files and design references. Keep each field brief and split long execution or verification lists into focused bullets; preserve required wiring and edge cases, and link detailed design explanations.
+- Reviewability — use plain-language outcome titles; keep Problem and Outcome to one sentence each where possible, explaining the issue and useful result without opening another document. Brief context may repeat; detailed contracts and rationale stay in their owning design. Omit a separate Why field when Problem already explains the value.
 - Scope of benefit — when a task prepares later work, state its useful result now and which benefit still depends on named later tasks; do not attribute the whole phase's outcome to a prerequisite
 - Horizontal tasks allowed — uniform mechanical changes across many files (e.g. add nil guard everywhere) may be one task when the concern is single
 - Location — `<scope-dir>` is `docs/plans/<topic>`, or `docs/plans/<topic>/<domain>` when the domain is requested or already established; for new layouts, place task files in `<scope-dir>/tasks/` and companions in `<scope-dir>/implementation/`, or beneath `<scope-dir>/phase-N/` for a selected phase. Keep the LLD at the scope/phase root. Preserve existing paths unless a split or folder migration is requested; show concrete paths in output
@@ -34,6 +34,7 @@ Read referenced docs from the repo; treat as the source of truth.
 - Document splits — when splitting an existing task document, preserve each task's content, ID, status, and dependencies unless task changes are also requested. Preserve obligations across task/companion splits, checking relocated details as well as links; retain historical status without making new completion claims. Grouping files does not create new tasks, batches, or delivery phases; link cross-file dependencies and update relative links within every moved task/companion, including design and source paths. Inspect incoming references; update them within authorized scope and report any remaining follow-up. Folder moves do not reset task IDs or batch numbering.
 - Phase mapping — for a single phase, identify its delivery plan, number, and title; use that number for new `phase-N` folders, never an HLD rollout-stage label. Preserve existing folder names and record their mapping explicitly; resolve missing or conflicting mappings before the gate.
 - Source links — in each task's `Docs:`, link the covering LLD sections discovered for its scope; use relevant HLD or plan sections when no LLD covers the task. Omit when none applies; do not require a missing document layer.
+- Completion — state a short, observable result for this task, then link only its relevant acceptance cases. Avoid a blanket "all LLD tests pass" when the LLD covers other tasks. Keep detailed checks in the design or optional companion; when no design covers the task, include the necessary criteria directly.
 - Coverage — account for every required deliverable in the selected scope, including specified tests and integration work, through new tasks, existing coverage, or a proposed deferral with a reason. Use task concerns, `Satisfies:`, and `Docs:` links for new-task mappings; record existing task links or implementation evidence and deferrals in Coverage notes. Multiple tasks may contribute to one requirement; claim full planned coverage only when their combined completion criteria cover it. Do not expand a selected batch to the whole phase or silently waive upstream requirements; resolve scope conflicts before approval.
 - Must not — produce source edits, commits, or implementation; introduce architecture or contract decisions, or duplicate detailed design rationale
 - Design gaps — if a task needs an unresolved architecture or contract decision, report the gap and wait for its resolution; do not invent the decision in the task list or require a separate design document when the supplied scope is already sufficient
@@ -41,7 +42,7 @@ Read referenced docs from the repo; treat as the source of truth.
 - Documentation task — if the scope adds or changes user-visible behavior (API, CLI, config, UI), scan for project docs (README, API docs, CLI docs, guides, CLAUDE.md) and include a documentation task when updates are needed; omit when the change is purely internal. User-facing content and source comments must explain behavior without internal delivery-phase/task IDs or planning-document references.
 - Document state — approval or saving the task list does not complete its tasks; completion claims require implementation and validation evidence
 - Work status — when reporting progress, distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
-- Before replying: each task explains why it is needed and what it delivers without opening linked docs; no task mixes concerns; ordering respects dependencies across files; every in-scope task appears exactly once; source and dependency links point to real sections; documentation tasks cover needed updates for user-visible changes; output matches template
+- Before replying: each task explains its issue, useful result, and observable completion without opening linked docs; acceptance links cover only that task's cases; no task mixes concerns; dependencies are ordered; every in-scope task appears once; links resolve; user-visible changes include needed documentation; output matches template
 
 **Gates**
 
@@ -82,7 +83,7 @@ Draft ready for review: [<task filename>](<resolved path>)
 - Details: [{task ID} implementation and verification]({relative companion path}#{task-anchor})
 - Done when:
   - {observable acceptance criterion, including required wiring}
-  - {relevant verification and distinct failure or compatibility cases}
+  - {verification of this task's relevant acceptance cases, linked to exact sections when available}
 
 …
 

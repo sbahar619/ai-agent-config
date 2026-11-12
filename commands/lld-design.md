@@ -15,17 +15,17 @@ An architecture document path or supplied architecture description, plus optiona
 - Scope — covers all phases of the selected topic or domain by default (`<scope-dir>/lld.md`); for an explicitly selected phase, use `<scope-dir>/phase-N/lld.md`, with the shared HLD above phase folders
 - Phase mapping — for a single phase, identify its delivery plan, number, and title; use that number for new `phase-N` folders, never an HLD rollout-stage label. Preserve existing folder names and record their mapping explicitly; resolve missing or conflicting mappings before the gate.
 - Updates — inspect the target and relevant topic references to identify affected documents and sections before revising; change only affected content within the selected scope. Identify follow-up for another document in the chat overview without editing that document.
-- Reviewability — keep scope, consequential contracts, and acceptance criteria easy to scan; group necessary detail by deliverable. Remove repetition before proposing independently reviewable scopes; preserve essential constraints, failure cases, rationale, and tests rather than cutting them to fit a length target.
+- Reviewability — group exact behavior, consequential contracts, and acceptance cases by deliverable. Use concise bullets or tables for comparable cases; include only detail needed to review or implement correctly. Preserve constraints, failure cases, rationale, and uncertainty; no repeated summary or routine coding instructions.
 - Detail ownership — keep observable behavior, API/storage schemas, compatibility, failure cases, security risks, and acceptance criteria in the LLD. Put private APIs, algorithms, and detailed verification in optional implementation notes linked to the owning deliverable; move detail instead of copying it. When task groups exist, use matching companions in the sibling `implementation/` folder, with task files in `tasks/` and the LLD at the scope/phase root; preserve established paths unless migration is requested. Avoid one growing phase-wide file. Without task groups, keep necessary mechanics in clearly titled supporting sections; do not invent tasks to split the LLD. Report companion updates outside the requested scope as follow-up.
 - Requirements — read supplied requirements and `requirements.md` in the selected scope and its topic root when present; link deliverables and acceptance criteria to relevant requirement IDs, and surface conflicts for resolution without redefining requirements. A separate requirements file is not mandatory.
-- References — include an Architecture line in the saved LLD linking source architecture sections, including applicable topic/domain HLDs; for inline input, briefly identify the supplied architecture instead of inventing a link. Retain relevant requirement links; use relative paths and verify targets without copying content or creating missing parent documents.
+- References — include an Architecture line linking source sections, including applicable topic/domain HLDs; identify inline architecture instead of inventing a link. Retain requirement links and IDs. Keep brief context for independent understanding, but link architectural rationale and upstream obligations instead of restating them; verify relative links without requiring missing parent documents.
 - Document state — approval or saving the LLD does not establish implementation or passing tests
 - Work status — distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
 - Open questions — use the question + recommendation format below; keep decisions and assumptions separate; if any need user input, wait for answers before asking for approval
 - Match repo API names and reconcile patterns
-- Before proposing a new function or type, check the repo for existing symbols **and** the framework/library API (cobra/pflag, gin, client-go, etc.) for built-in equivalents; prefer using what exists over reimplementing — per coding-standards; cite what was checked
+- Before proposing a new function or type, check the repo and framework/library APIs for existing equivalents; prefer reuse per coding-standards. Cite the relevant existing API or consequential limitation, not an inventory of everything inspected.
 - Must not — source code edits, implementation, git mutations, architecture-only docs (components and flows without deliverable detail), resolving architecture decisions, or work outside the stated scope
-- Authoring — typical sections: Scope, Goals, Deliverables (technical behavior and choices within the architecture, status/condition contracts with types/reasons/messages, resource naming/ownership/labels when relevant, tests); task IDs, per-task file inventories, task ordering, and completion tracking belong in tasks
+- Authoring — each deliverable owns its contracts and acceptance cases under a linkable heading; use exact types, reasons, messages, resource ownership, and compatibility rules only where they constrain behavior. Task IDs, file inventories, ordering, and completion tracking belong in tasks.
 - Before replying: the linked draft is complete and matches the selected scope; assumptions are stated where info is missing; chat stays within the output template
 
 **Gates**
@@ -52,7 +52,7 @@ Draft ready for review: [lld.md](<resolved path>)
 **File:**
 
 ```
-**Purpose:** Specify implementable deliverables, contracts, and tests within the stated scope; revisiting the architecture or implementing source code is outside this document's scope.
+# <topic> contracts
 
 **Delivery phase:** [<plan title>](<relative plan path>) — <number>: <title>
 **Architecture:** <relative links to source sections, or identification of supplied inline architecture>
@@ -63,7 +63,10 @@ Draft ready for review: [lld.md](<resolved path>)
 
 ## Deliverables
 ### <deliverable>
-<technical behavior, contracts, rationale for non-obvious choices, and tests>
+<observable behavior and exact contracts; brief rationale only for non-obvious choices made here>
+
+#### <deliverable> acceptance cases
+- <verifiable behavior, failure, or compatibility case for this deliverable>
 
 ## Assumptions
 - <unverified assumption>

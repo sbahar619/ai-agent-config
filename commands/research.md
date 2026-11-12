@@ -11,6 +11,7 @@ A question, idea, or problem.
 - If scope, codebase context, or constraints are unclear, ask all clarifying questions in one numbered list and wait for answers before proceeding; user may answer by number
 - Read-only — no source edits, git mutations, or implementation
 - Scope — own evidence and gaps relevant to the question, option tradeoffs, and one recommended next step; do not turn findings into agreed requirements, delivery phases, architecture decisions, or detailed contracts
+- Reviewability — lead with the answer and retain only findings that support or challenge it, with concise source links. Compare alternatives only when they affect the recommendation; omit investigation narration and repeated summaries. Preserve contrary evidence, assumptions, limitations, and unresolved questions.
 - Updates — inspect the target and relevant topic references to identify affected documents and sections before revising; change only affected findings and recommendations. Identify follow-up for another document in the recommended next step without editing that document.
 - Sources — use what the question needs: repo (code, history), project docs, web/external docs
 - Baseline — for code-based research, use the requested baseline; otherwise retain the existing document's stated branch/revision, or use the current checkout if none is recorded. Record the resolved revision and any relevant uncommitted changes included in the evidence. Assess unmerged changes separately from a target-branch baseline; if the baseline is unavailable, report the limitation instead of substituting another.
@@ -54,7 +55,7 @@ Want the evidence, or save these findings?
 **Output — requested detail or saved report**
 
 ```markdown
-**Purpose:** Research <question and scope>.
+# <research question>
 
 **Answer:** <conclusion>
 
@@ -62,7 +63,11 @@ Want the evidence, or save these findings?
 
 **Findings:**
 
-1. <fact or relevant alternative, with evidence and tradeoff>
+1. <decision-relevant finding or alternative, with concise evidence and tradeoff>
+
+**Assumptions and limitations:**
+
+- <unverified premise or evidence gap that affects the conclusion>
 
 **Next:** <one recommended next step>
 
@@ -72,6 +77,6 @@ Want the evidence, or save these findings?
    Recommendation: <proposed answer and brief rationale>
 ```
 
-- Saved reports retain material evidence, contrary findings, and limitations; omit Baseline when no code applies and Open when empty
+- Saved reports retain material evidence and contrary findings; assumptions do not substitute for researched facts. Omit Baseline when no code applies and other empty sections; keep the answer and next step.
 - Requested explanations cover only the point asked about; do not print the full report unless requested
 - After saving, confirm with one linked path, without repeating the findings

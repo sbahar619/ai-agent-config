@@ -15,7 +15,7 @@ planning and design documents.
 | Document | Owns | Excludes |
 |----------|------|----------|
 | Research | Evidence, relevant gaps, option tradeoffs, and one recommended next step | Requirements agreement, delivery phasing, and solution design |
-| Requirements | Required outcomes, constraints, compatibility, and success criteria | Architecture choices, delivery phasing, and implementation detail |
+| Requirements | Functional behavior, non-functional constraints, compatibility, and observable success | Architecture choices, delivery phasing, and implementation detail |
 | Plan | Delivery outcomes, their order, and why they matter; brief requirements when no separate file exists | Architecture decisions, detailed contracts, tests, and task-level steps |
 | HLD | Architecture decisions, components, flows, rationale, and tradeoffs | Detailed contracts, implementation steps, and per-phase tests |
 | LLD | Technical deliverables, detailed contracts, and tests within the architecture | Resolving architecture decisions, execution tracking, or source implementation |
@@ -63,17 +63,22 @@ planning and design documents.
 
 **Human review**
 
-- Use the opening purpose or goal to identify what the reader is judging. Keep goals, scope, consequential
-  decisions, tradeoffs, and open questions easy to find; put necessary supporting
-  detail in clearly titled sections without repeating it in an overview.
+- Make saved documents clear to humans and precise enough for agents to use the
+  same specifications. Lead with the outcome and consequential decisions in plain
+  language; keep risks and open questions visible. Avoid separate human/agent copies
+  or a mandatory overview that repeats the body.
+- Keep each detailed contract, requirement, or rationale in one authoritative place.
+  Link it from consumers; allow brief context needed to understand each document on
+  its own. Use concise bullets and tables for comparable cases, not dense paragraphs.
 - Task files lead with the concrete goal; each task explains its problem and outcome
-  before execution detail. A brief reason for the work belongs in the task; detailed
-  design rationale stays linked. Identify benefits that require later tasks and break
-  long implementation or acceptance lists into focused bullets.
+  before execution detail, ideally one sentence each. Do not add a separate Why field
+  when Problem already explains the value. Identify benefits requiring later tasks;
+  keep observable completion here and link only the task's relevant acceptance cases.
 - Include content that supports a decision, defines an obligation, prevents a likely
-  misunderstanding, or enables implementation or verification. Length is a signal
-  to remove duplication or propose independently reviewable scopes, never to omit
-  essential constraints, failure cases, rationale, or acceptance criteria.
+  misunderstanding, or constrains correct implementation. Omit routine coding
+  instructions, repeated summaries, and empty optional sections. Length signals a
+  need to remove duplication or split independently reviewable scopes; never cut
+  essential constraints, failure cases, rationale, evidence, or uncertainty to fit.
 - For requirements, plans, designs, and tasks, write the full draft to its selected
   path before requesting content approval; identify it as awaiting review in chat.
   Approval covers that draft, not an outline or summary. Do not imply that writing
@@ -85,6 +90,22 @@ planning and design documents.
   After approval, confirm only the approved paths. Research retains its optional
   Save gate and can offer details before saving.
 
+
+**Requirements**
+
+- Separate Functional requirements (observable behavior) and Non-functional
+  requirements (quality attributes or cross-cutting constraints). Classify the
+  obligation, not its topic alone; security can involve either kind.
+- Use `FR01`, `FR02`, ... and `NFR01`, `NFR02`, ... for new requirements, numbered
+  independently. Preserve existing IDs and linked anchors unless migration is
+  explicitly requested; update affected references and never reuse retired IDs.
+- State one verifiable obligation per bullet. Add a separate success criterion only
+  when the wording is insufficient; put unresolved criteria in Open questions.
+- Keep both category sections; state briefly when no requirements are identified in
+  one. Do not invent NFRs or thresholds to populate it. Record each fixed constraint
+  or compatibility obligation once, in its applicable requirement.
+- Link shared sources once; add a per-requirement source only when needed to clarify
+  provenance. Do not replace necessary evidence with assumptions or generic claims.
 
 **Updates**
 
@@ -170,8 +191,10 @@ planning and design documents.
 - Each task is the smallest complete, reviewable change, including supporting
   callers, registration, configuration, integration, and appropriate tests.
   Separate unrelated cleanup; do not separate wiring needed for the same outcome.
-- Completion criteria describe observable results and relevant verification;
-  report required work outside the authorized scope instead of silently omitting it.
+- Completion criteria describe each task's observable result and link only its
+  relevant acceptance cases, not blanket whole-LLD verification for partial work.
+  Include necessary criteria directly when no design covers the task; report required
+  work outside the authorized scope instead of silently omitting it.
 
 **Phase identity**
 
@@ -213,6 +236,9 @@ planning and design documents.
 - Check duplication, conflicting decisions, stale assumptions, phase mappings,
   and whether links support their associated claims. Cite both sides of conflicts;
   distinguish contrary evidence from unavailable or unverified information.
+- Enforce concise ownership without stripping useful context or demanding optional
+  sections, extra document layers, or word-count compliance. Check task-specific
+  acceptance links and FR/NFR grouping without adding duplicate specifications.
 - Recommend targeted corrections in the owning document; preserve explicit legacy
   mappings and do not require missing document layers or edit artifacts during review.
 

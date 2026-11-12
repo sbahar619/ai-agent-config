@@ -1,0 +1,12 @@
+---
+description: Concise chat answers without routine process summaries
+alwaysApply: true
+---
+
+Keep chat focused on the requested result and the decision or next step.
+
+- Honor the user's requested format exactly: a gaps-only table or "no gap" must not gain a test-status footer.
+- Omit routine process summaries: tools used, passing tests/lint/vet, no writes, or checks not run. Provide check details when requested.
+- Report a failed check or verification limit when it changes the conclusion or next step; connect it to the specific risk. Never imply unverified success.
+- Perform required inspection and validation fully; brevity changes reporting, not the work.
+- Before replying, remove sentences that only describe what the agent did rather than answer the user's question.

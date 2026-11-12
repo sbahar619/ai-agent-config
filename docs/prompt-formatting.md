@@ -36,6 +36,7 @@ while authoring; keep each command's applicable instructions inline so it runs i
 - End with at most one useful question: missing input or an existing gate takes priority; otherwise offer explanation when useful. Do not add an offer to a clean result, copy-ready artifact, or already detailed answer.
 - Follow-ups answer the latest request directly rather than restarting the command's report. When detail is requested, expand only that point; use a concrete source-grounded example when helpful, labeling illustrative or unrun scenarios.
 - Keep requested guides, examples, copy-ready text, and saved artifacts as detailed as their purpose requires. Chat previews should link the artifact and identify the decision needed; do not repeat its contents.
+- Saved document templates should lead with the actual topic and outcome, not generic purpose disclaimers. Keep one authoritative home for detailed specifications; allow brief context for independent understanding, omit repeated summaries, and make optional sections conditional. Brevity must preserve evidence, constraints, risks, and unresolved questions.
 - Include applicable output guidance inline in each command so it remains independent; align Rules and pre-reply checks with the short default instead of retaining mandatory explanation requirements.
 
 ## Open questions

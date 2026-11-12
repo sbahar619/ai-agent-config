@@ -19,7 +19,7 @@ User provides a goal, problem, or path to research or requirements.
 - References — include relevant existing research and requirements in the plan's References line, with requirement IDs where applicable; link sections instead of repeating them. Use relative paths from the saved plan and verify targets; omit absent sources without requiring new documents.
 - Document state — keep assumptions separate from agreed outcomes; approval or saving the plan does not mean its phases are implemented or validated
 - Work status — when reporting progress, distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
-- Reviewability — keep outcomes, sequencing, and deferrals easy to scan; include only context needed to judge them. Remove repetition before proposing independently reviewable scopes; preserve essential obligations and rationale rather than cutting them to fit a length target.
+- Reviewability — lead with the goal and usable phase outcomes; give a brief reason for their order. Keep context needed to understand the plan on its own, but link detailed evidence and requirements. Preserve deferrals, risks, and uncertainty; omit repeated summaries and sections that add no decision-relevant information.
 - Phased — prefer 2–4 phases; 1 when the change is already small; each phase delivers a useful, reviewable outcome after its prerequisites, without relying on a later phase to make that outcome work. Bundle tightly coupled work and separate unrelated concerns; each one line: title — usable outcome + why now.
 - Phase identity — delivery phases are identified by this plan's path, phase number, and title; do not silently renumber phases referenced by other documents. Identify any required remapping in Next.
 - Bias toward the smallest useful next step
@@ -52,7 +52,7 @@ Draft ready for review: [plan.md](<resolved path>)
 **File:**
 
 ```
-**Purpose:** Define phased outcomes and why they matter; architecture, API contracts, and implementation details are outside this document's scope.
+# <topic> delivery plan
 
 **References:** {links to relevant research and requirements sections; omit when none exist}
 
@@ -72,6 +72,10 @@ Draft ready for review: [plan.md](<resolved path>)
 ## Deferred
 
 - {source gap or requirement reference} — {reason for proposed or previously agreed deferral}
+
+## Assumptions
+
+- {unverified premise affecting scope or sequencing}
 
 ## Open questions
 

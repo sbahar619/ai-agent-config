@@ -11,10 +11,10 @@ A goal or path to a plan doc, with optional domain scope.
 - Ask at most 1–2 questions only if scope is unclear
 - Read and inspect as needed, including topic-level architecture for domain work; surface conflicts instead of overriding shared decisions.
 - Draft for review — write the full HLD to the selected path before requesting content approval; show the file link and a brief overview in chat, marking the draft as awaiting review. Keep gate prompts and review commentary outside the file.
-- Reviewability — keep goals, scope, consequential decisions, and tradeoffs easy to scan; use clearly titled sections for necessary supporting detail. Aim for roughly one page, preserving essential constraints, failure cases, and rationale; remove repetition before proposing independently reviewable scopes.
+- Reviewability — lead with the outcome, architecture, and consequential choices in plain language; give each important choice a brief reason or tradeoff. Aim for roughly one page, preserving essential constraints, failure cases, and uncertainty. Keep supporting detail only when it affects review; no repeated summary or routine implementation instructions.
 - Location — save `hld.md` in `docs/plans/<topic>/`, or `docs/plans/<topic>/<domain>/` when the domain is requested or already established; keep shared architecture above phase folders, preserve existing document paths, and show concrete paths in output
 - Requirements — read supplied requirements and `requirements.md` in the selected scope and its topic root when present; explain how the architecture satisfies in-scope requirements by ID and surface conflicts for resolution without changing them. A separate requirements file is not mandatory.
-- References — include a References line in the saved HLD linking its delivery plan and, for domain work, applicable topic-level HLD sections; retain relevant requirement links. Use relative paths and verify targets instead of copying content; omit absent sources without requiring new documents.
+- References — include a References line linking its delivery plan and, for domain work, applicable topic-level HLD sections; retain relevant requirement links. Use verified relative links for authoritative detail; brief context may repeat when needed to understand the HLD on its own. Omit absent sources without requiring new documents.
 - Rollout stages — label architectural sequencing as stages, not delivery phases; when a delivery plan exists, map stages to its phases by plan link, number, and title without assuming a one-to-one match. Stage labels do not determine `phase-N` folder names.
 - Document state — approval or saving the HLD does not establish implementation or validation
 - Work status — distinguish proposed work from implemented (code evidence at a stated revision or working-tree state), validated (relevant passing checks, scope, and tested state), and merged (confirmed inclusion in a named target branch). Cite evidence beside each claim; mark unsupported claims unverified. Merge evidence does not establish validation.
@@ -49,7 +49,7 @@ Draft ready for review: [hld.md](<resolved path>)
 **File:**
 
 ```
-**Purpose:** Describe the architecture, components, flows, and design rationale; detailed API contracts, implementation steps, and per-phase tests are outside this document's scope.
+# <topic> architecture
 
 **References:** <relative links to relevant parent documents and sections>
 
@@ -57,7 +57,7 @@ Draft ready for review: [hld.md](<resolved path>)
 <intended outcome, boundaries, and non-goals>
 
 ## Architecture and decisions
-<components, flows, choices, rationale, and tradeoffs>
+<components and main flow; consequential choices with brief rationale and tradeoffs>
 
 <additional sections warranted by the scope>
 
